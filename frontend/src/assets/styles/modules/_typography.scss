@@ -1,0 +1,272 @@
+/*
+** Importing typography
+*/
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  src: url('../fonts/fraunces/Fraunces[SOFT,WONK,opsz,wght].woff2');
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: italic;
+  src: url('../fonts/fraunces/Fraunces-Italic[SOFT,WONK,opsz,wght].woff2');
+}
+
+@font-face {
+  font-family: "Recursive";
+  src: url('../fonts/recursive/Recursive_VF_1.085.woff2');
+}
+
+
+
+/*
+** Defining typographic variables
+*/
+
+h1,
+h2 {
+  line-height: $spacing-display-line-height;
+  letter-spacing: $spacing-letter-spacing-title;
+}
+
+h1 {
+  font-family: $font-display;
+  font-variation-settings:
+          'wght' 700,
+          'SOFT' 10,
+          'WONK' 1,
+          'opsz' 80;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin-bottom: $spacing-200;
+  @include very-very-large-display {
+    font-size: ms(8);
+  }
+
+  @include very-large-display {
+    font-size: ms(7);
+  }
+
+  @include large-display {
+    font-size: ms(6);
+  }
+
+  @include medium-display {
+    font-size: ms(5);
+  }
+}
+
+h2 {
+  font-family: $font-display;
+  //font-variation-settings:
+  //        'SOFT' 0,
+  //        'wght' 600,
+  //        'WONK' 1,
+  //        'opsz' 80;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  //margin-bottom: $spacing-100;
+  @include very-very-large-display {
+    font-size: ms(7);
+  }
+
+  @include very-large-display {
+    font-size: ms(6);
+  }
+
+  @include large-display {
+    font-size: ms(5);
+  }
+
+  @include medium-display {
+    font-size: ms(4);
+  }
+}
+
+h3 {
+  //font-family: $font-display;
+  //font-variation-settings:
+  //        $font-display-soft,
+  //        'wght' 350,
+  //        'opsz' 80,
+  //        'WONK' 0;
+  margin-bottom: $spacing-100;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  @include very-very-large-display {
+    font-size: ms(6);
+  }
+  @include very-large-display {
+    font-size: ms(5);
+  }
+  @include large-display {
+    font-size: ms(4);
+  }
+  @include medium-display {
+    font-size: ms(3);
+  }
+}
+
+h4 {
+  font-family: $font-text;
+  font-size: ms(2);
+  margin-bottom: $spacing-100;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  @include very-very-large-display {
+    font-size: ms(6);
+  }
+  @include very-large-display {
+    font-size: ms(5);
+  }
+  @include large-display {
+    font-size: ms(4);
+  }
+  @include medium-display {
+    font-size: ms(3);
+  }
+  @include small-display {
+    font-size: ms(2);
+  }
+}
+
+.a-display {
+  font-family: $font-display;
+  letter-spacing: $spacing-letter-spacing-display;
+  line-height: $spacing-display-line-height;
+  margin-bottom: $spacing-200;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  @include very-very-large-display {
+    font-size: ms(10);
+  }
+  @include very-large-display {
+    font-size: ms(9);
+  }
+  @include large-display {
+    font-size: ms(8);
+  }
+  @include medium-display {
+    font-size: ms(7);
+  }
+  @include small-display {
+    font-size: ms(6);
+  }
+
+  &.-fat {
+    font-variation-settings:
+      'SOFT' 0,
+      'opsz' 96,
+      'WONK' 1,
+      'wght' 900;
+  }
+}
+
+p,
+.paragraph {
+  font: {
+    family: $font-text;
+    //size: ms(1);
+  }
+  letter-spacing: $spacing-letter-spacing-text;
+  line-height: $spacing-body-line-height;
+  max-width: 64ch;
+  margin-bottom: $spacing-100;
+  @include small-display {
+    font-size: ms(0);
+  }
+
+  &.-jumbo {
+    font-variation-settings: 'wght' 300;
+    line-height: $spacing-200;
+    max-width: 48ch;
+    margin-bottom: $spacing-100;
+    @include very-very-large-display {
+      font-size: ms(3);
+    }
+    @include very-large-display {
+      font-size: ms(3);
+    }
+
+    @include large-display {
+      font-size: ms(2);
+    }
+    @include small-display {
+      font-size: ms(1);
+    }
+  }
+}
+
+.context {
+  &.-subtitle {
+    font-family: $font-text;
+    font-size: ms(3);
+    font-variation-settings: 'wght' 700;
+    margin-bottom: $spacing-200;
+  }
+}
+
+/* ----- Normalizing typography in paragraphs ----- */
+b,
+i,
+p,
+em,
+span {
+  font-family: inherit;
+  line-height: inherit;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+i,
+em,
+.italic {
+  color: inherit;
+  font-family: inherit;
+  font-style: italic;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+b,
+strong,
+.bold {
+  color: inherit;
+  font-family: inherit;
+  font-variation-settings: 'wght' 600;
+}
+
+/* ----- Links ----- */
+a,
+.link {
+  & > p {
+    color: inherit;
+  }
+  &.-ui {
+    @include transition(border-bottom);
+    font-size: ms(1);
+    text-decoration: none;
+    padding-bottom: $spacing-50;
+    border-bottom: solid 3px transparent;
+    @include light-theme {
+      font-variation-settings: $text-ui, "wght" 500;
+      color: $grey-900;
+      &:hover {
+        border-bottom: solid 2px $grey-900;
+      }
+    }
+    @include dark-theme {
+      font-variation-settings: $text-ui, "wght" 520;
+      color: $grey-100;
+      &:hover {
+        border-bottom: solid 2px $grey-100;
+      }
+    }
+    &.-active {
+      font-variation-settings: $text-ui, "wght" 700;
+      border-bottom: solid 3px $grey-400;
+    }
+  }
+}

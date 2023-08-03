@@ -1,0 +1,36 @@
+.hero {
+  //height: calc(100vh - $spacing-200 - 28px);
+  display: flex;
+  flex-grow: 1;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: flex-start;
+  padding: 0 $spacing-800;
+  @include medium-display {
+    padding: 0 $spacing-400;
+  }
+  @include small-display {
+    padding: 0 $spacing-200;
+  }
+
+  &__greeting,
+  &__description {
+    @extend h3;
+    font-family: $font-text;
+    &:not(.hero__description) {
+      margin-bottom: $spacing-400;
+    }
+  }
+
+  &__introduction {
+    @extend .a-display;
+    @extend .-fat;
+    font-family: $font-display;
+    max-width: 20ch;
+    margin-bottom: $spacing-400;
+    @include dark-theme {
+      color: $grey-200;
+    }
+  }
+}

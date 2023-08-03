@@ -1,0 +1,9 @@
+.logo {
+  max-height: ms(2);
+  @include light-theme {
+    fill: $grey-900;
+  }
+  @include dark-theme {
+    fill: $grey-200;
+  }
+}

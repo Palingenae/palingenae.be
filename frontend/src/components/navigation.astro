@@ -1,0 +1,24 @@
+---
+import Logo from '../components/logo.astro';
+
+const navigationLinks = [
+    {
+        label: "À propos",
+        route: "/a-propos"
+    },
+]
+---
+<nav class="navigation">
+    <div class="navigation__logo">
+        <a href="/">
+            <Logo />
+        </a>
+    </div>
+    <div class="navigation__links">
+        {
+            navigationLinks.map((link) =>  (
+                <a class="link -ui" href=`{link.route}`>{ link.label }</a>
+            ))
+        }
+    </div>
+</nav>

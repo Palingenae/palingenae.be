@@ -1,0 +1,15 @@
+.navigation {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: $spacing-200 $spacing-800;
+  @include medium-display {
+    padding: 0 $spacing-400;
+  }
+  @include small-display {
+    padding: 0 $spacing-200;
+  }
+
+  &__logo {}
+  &__links {}
+}
