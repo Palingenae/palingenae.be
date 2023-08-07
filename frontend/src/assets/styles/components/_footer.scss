@@ -1,0 +1,20 @@
+.footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  color: $white;
+  padding: $spacing-200 $spacing-800;
+  @include medium-display {
+    padding: $spacing-100 $spacing-400;
+  }
+  @include small-display {
+    padding: $spacing-50 $spacing-200;
+  }
+
+  @include light-theme {
+    background-color: $colour-emerald-800;
+  }
+  @include dark-theme {
+    background-color: $colour-emerald-1000;
+  }
+}

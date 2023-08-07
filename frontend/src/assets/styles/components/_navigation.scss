@@ -3,11 +3,14 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   padding: $spacing-200 $spacing-800;
+  @include large-display {
+    padding: $spacing-200 $spacing-600;
+  }
   @include medium-display {
-    padding: 0 $spacing-400;
+    padding: $spacing-200 $spacing-400;
   }
   @include small-display {
-    padding: 0 $spacing-200;
+    padding: $spacing-200;
   }
   &__logo {}
   &__links {}

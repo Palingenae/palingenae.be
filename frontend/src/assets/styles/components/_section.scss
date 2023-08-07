@@ -1,7 +1,28 @@
 .section {
+  @include transition(background-color);
+  @include transition(color);
   display: flex;
   flex-grow: 1;
   padding: $spacing-800;
+  @include large-display {
+    padding: $spacing-600;
+  }
+  @include medium-display {
+    padding: $spacing-400;
+  }
+  @include small-display {
+    padding: $spacing-400 $spacing-200;
+  }
+  &.-gold {
+    @include light-theme {
+      background-color: $colour-gold-100;
+      color: $colour-gold-900;
+    }
+    @include dark-theme {
+      background-color: $colour-gold-900;
+      color: $colour-gold-100;
+    }
+  }
 }
 
 .division {
@@ -14,6 +35,9 @@
 
 .-row {
   flex-direction: row;
+  @include large-display {
+    flex-direction: column;
+  }
 }
 
 .-column {

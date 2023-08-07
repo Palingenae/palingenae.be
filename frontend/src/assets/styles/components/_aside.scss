@@ -2,9 +2,18 @@
   @extend .-column;
   @extend .-noWrap;
   display: flex;
-  max-width: 25%;
+  max-width: 33%;
   margin-left: $spacing-800;
+  @include large-display {
+    flex-grow: 1;
+    max-width: 100%;
+    margin-left: 0;
+    flex-wrap: wrap;
+  }
   &Section {
+    @include large-display {
+      width: fit-content;
+    }
     &Title {
       @extend h4;
       font-size: ms(3);
