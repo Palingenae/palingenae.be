@@ -1,0 +1,18 @@
+.contact {
+  @extend .section;
+  @extend .-column;
+  &Mean {
+    @extend .context;
+    @extend .-subtitle;
+    @include light-theme {
+      color: $grey-800;
+    }
+    @include dark-theme {
+      color: $grey-200;
+    }
+  }
+  &Mail {
+    @extend .display;
+    @extend .-fat;
+  }
+}

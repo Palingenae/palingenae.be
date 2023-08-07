@@ -1,7 +1,7 @@
 ---
 import MainLayout from '../layouts/main.astro';
 
-const pageTitle = "Index ";
+const pageTitle = "Salut ! ";
 
 const hero = {
 	greetings: "Oui, salut ! Ici tu trouveras...",
@@ -9,8 +9,8 @@ const hero = {
 	description: "... et parfois tout ça en même temps !"
 };
 ---
-<MainLayout>
-	<section class="hero">
+<MainLayout title={ pageTitle }>
+	<section class="hero -pageCover">
 		<p class="hero__greeting">
 			{ hero.greetings }
 		</p>

@@ -1,0 +1,27 @@
+.decorated {
+  display: inline-flex;
+  align-items: center;
+  &::before {
+    content: "";
+    display: flex;
+    height: 1.5rem;
+    width: 1.5rem;
+    transform: rotate(45deg);
+    @include light-theme {
+      background-color: $grey-1000;
+    }
+    @include dark-theme {
+      background-color: $grey-100;
+    }
+    border-radius: 25%;
+    margin-right: $spacing-200;
+  }
+  &::after {
+    content: "";
+    display: flex;
+    height: 2px;
+    flex-grow: 1;
+    background-color: $grey-500;
+    margin-left: $spacing-200;
+  }
+}

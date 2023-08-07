@@ -1,0 +1,18 @@
+.aside {
+  @extend .-column;
+  @extend .-noWrap;
+  display: flex;
+  max-width: 25%;
+  margin-left: $spacing-800;
+  &Section {
+    &Title {
+      @extend h4;
+      font-size: ms(3);
+      margin-bottom: $spacing-200;
+    }
+  }
+  &Note {
+    @extend .paragraph;
+    margin-bottom: $spacing-50;
+  }
+}

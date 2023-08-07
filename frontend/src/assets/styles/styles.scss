@@ -1,12 +1,18 @@
 @import 'vendor/modularscale';
 
-@import 'modules/_variables.scss';
-@import 'modules/_transitions.scss';
-@import 'modules/_theme.scss';
-@import 'modules/_breakpoints.scss';
-@import 'modules/_typography.scss';
-@import 'modules/_default.scss';
+@import 'modules/_variables';
+@import 'modules/_transitions';
+@import 'modules/_theme';
+@import 'modules/_breakpoints';
+@import 'modules/_typography';
+@import 'modules/_default';
+@import 'modules/_decoration';
 
-@import 'components/_hero.scss';
+@import 'components/_section';
+@import 'components/_aside';
+@import 'components/_hero';
+@import 'components/_event';
+@import 'components/_tag';
 @import 'components/_logo';
-@import 'components/_navigation.scss';
+@import 'components/_navigation';
+@import 'components/_contact';

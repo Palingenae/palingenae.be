@@ -1,0 +1,52 @@
+.event {
+  @extend .-row;
+  display: flex;
+  align-content: flex-start;
+  margin-bottom: $spacing-400;
+  &Meta {
+    @extend .-column;
+    display: flex;
+    justify-content: center;
+    width: 240px;
+    margin-right: $spacing-200;
+  }
+  &Dates {
+    display: inline-flex;
+    font-size: ms(1);
+    //margin-bottom: $spacing-100;
+    @include light-theme {
+      font-variation-settings: 'wght' 360;
+      color: $grey-600;
+    }
+    @include dark-theme {
+      font-variation-settings: 'wght' 380;
+      color: $grey-300;
+    }
+  }
+  &Content {}
+  &Name {
+    @extend h2;
+    @include light-theme {
+      font-variation-settings: 'wght' 450;
+
+    }
+    @include dark-theme {
+      font-variation-settings: 'wght' 480;
+    }
+    font-size: ms(4);
+    line-height: 1.4;
+    margin-bottom: $spacing-50;
+  }
+  &Place {
+    @include light-theme {
+      color: $grey-600;
+    }
+    @include dark-theme {
+      color: $grey-300;
+    }
+    margin-bottom: 0;
+  }
+  &Container {
+    margin-bottom: $spacing-400;
+  }
+}

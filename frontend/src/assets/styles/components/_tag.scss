@@ -1,0 +1,37 @@
+.tag {
+  display: inline-flex;
+  font-size: ms(0);
+  width: fit-content;
+  border-radius: 8px;
+  padding: $spacing-25 $spacing-100;
+  &.-outline {
+    @include light-theme {
+      color: $grey-800;
+      border: solid 2px $grey-800;
+    }
+    @include dark-theme {
+      color: $grey-200;
+      border: solid 2px $grey-200;
+    }
+    &Ruby {
+      @include light-theme {
+        color: $colour-ruby-600;
+        border: solid 2px $colour-ruby-600;
+      }
+      @include dark-theme {
+        color: $colour-ruby-400;
+        border: solid 2px $colour-ruby-400;
+      }
+    }
+  }
+
+  &Container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-50;
+    margin-bottom: $spacing-200;
+    &:last-of-type {
+      margin-bottom: $spacing-200;
+    }
+  }
+}

@@ -1,10 +1,12 @@
 ---
 import Logo from '../components/logo.astro';
 
+const currentPath = Astro.url.pathname;
+
 const navigationLinks = [
     {
         label: "À propos",
-        route: "/a-propos"
+        route: "/about"
     },
 ]
 ---
@@ -17,7 +19,7 @@ const navigationLinks = [
     <div class="navigation__links">
         {
             navigationLinks.map((link) =>  (
-                <a class="link -ui" href=`{link.route}`>{ link.label }</a>
+                <a class={currentPath === link.route ? "link -ui -active" : "link -ui"} href={ link.route }>{ link.label }</a>
             ))
         }
     </div>

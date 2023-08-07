@@ -1,3 +1,171 @@
 ---
+import MainLayout from '../../layouts/main.astro'
 
+import Contact from '../../components/contact.astro';
+import Event from "../../components/event.astro";
+import Tag from "../../components/tag.astro";
+
+const pageTitle = "À propos"
 ---
+<MainLayout title={pageTitle}>
+    <section class="hero -pageBanner">
+        <p class="display">Simplement : <b><i>Olivia</i></b>.</p>
+        <p class="paragraph -jumbo -sans">Je suis une “<i>développeuse créative</i>”, je porte un grand soin à la conception avant de passer au développement, <b>du Back-End au Front-End</b>.</p>
+        <p class="paragraph -jumbo -serif">Actuellement, je me concentre sur <b>JavaScript</b>, <b>TypeScript</b> & <b>VueJS</b>.</p>
+    </section>
+    <section class="section -column">
+        <h2 class="decorated">Une courte bio</h2>
+        <article class="article">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Occultum facinus esse potuerit, gaudebit; Sapientem locupletat ipsa natura, cuius divitias Epicurus parabiles esse docuit. <b>Quae ista amicitia est?</b> Quaero igitur, quo modo hae tantae commendationes a natura profectae subito a sapientia relictae sint. </p>
+
+            <p>Sed quia studebat laudi et dignitati, multum in virtute processerat.</p>
+
+            <p>Istam voluptatem perpetuam quis potest praestare sapienti? <a href="http://loripsum.net/" target="_blank">Obsecro, inquit, Torquate, haec dicit Epicurus?</a> Certe non potest. Illud quaero, quid ei, qui in voluptate summum bonum ponat, consentaneum sit dicere. Bork </p>
+
+            <p><b>Duo Reges: constructio interrete.</b> Scisse enim te quis coarguere possit? Sed non alienum est, quo facilius vis verbi intellegatur, rationem huius verbi faciendi Zenonis exponere. Expectoque quid ad id, quod quaerebam, respondeas. Illum mallem levares, quo optimum atque humanissimum virum, Cn. <a href="http://loripsum.net/" target="_blank">Teneo, inquit, finem illi videri nihil dolere.</a> <i>Tuo vero id quidem, inquam, arbitratu.</i> Suo genere perveniant ad extremum; Eaedem enim utilitates poterunt eas labefactare atque pervertere. </p>
+
+            <p>Sed haec quidem liberius ab eo dicuntur et saepius. Neque enim civitas in seditione beata esse potest nec in discordia dominorum domus; Facillimum id quidem est, inquam. Haec quo modo conveniant, non sane intellego. Sin kakan malitiam dixisses, ad aliud nos unum certum vitium consuetudo Latina traduceret. Deque his rebus satis multa in nostris de re publica libris sunt dicta a Laelio. Quamquam id quidem licebit iis existimare, qui legerint. Sed tamen enitar et, si minus multa mihi occurrent, non fugiam ista popularia. Non quaero, quid dicat, sed quid convenienter possit rationi et sententiae suae dicere. <b>Cur haec eadem Democritus?</b> Nec enim, omnes avaritias si aeque avaritias esse dixerimus, sequetur ut etiam aequas esse dicamus. </p>
+
+            <p><b>Rhetorice igitur, inquam, nos mavis quam dialectice disputare?</b> Quantum Aristoxeni ingenium consumptum videmus in musicis? Non pugnem cum homine, cur tantum habeat in natura boni; <b>At multis malis affectus.</b> Ad eas enim res ab Epicuro praecepta dantur. Perturbationes autem nulla naturae vi commoventur, omniaque ea sunt opiniones ac iudicia levitatis. </p>
+        </article>
+    </section>
+    <section class="section -rows">
+        <div class="division -column -grow">
+            <div class="division -column">
+                <h2>Mes expériences</h2>
+                <div class="eventContainer">
+                    <Event
+                        startDate="05/2023"
+                        endDate="07/2023"
+                        eventName="Développeuse d'Applications Web"
+                        eventPlace="Saint-Herblain, France"
+                    />
+                    <Event
+                        startDate="11/2021"
+                        endDate="10/2022"
+                        eventName="Développeuse d'application PHP / Symfony"
+                        eventPlace="Nantes / Lille, France"
+                    />
+                    <Event
+                        startDate="08/2020"
+                        endDate="11/2021"
+                        eventName="Développeuse d'application PHP / Symfony"
+                        eventPlace="Nantes, France"
+                    />
+                    <Event
+                        startDate="02/2018"
+                        endDate="05/2018"
+                        eventName="Développeuse Web Full-Stack"
+                        eventPlace="Bruxelles, Belgique"
+                    />
+
+                </div>
+            </div>
+            <div class="division -column">
+                <h2>Mes formations</h2>
+                <div class="eventContainer">
+                    <Event
+                            startDate="08/2020"
+                            endDate="Auj."
+                            eventName="“Développeur d’applications PHP / Symfony”"
+                            eventPlace="OpenClassrooms, France"
+                    />
+                    <Event
+                            startDate="01/2017"
+                            endDate="08/2017"
+                            eventName="“Développeur Web Apps”"
+                            eventPlace="Gosselies, Belgique"
+                    />
+                   <Event
+                            startDate="09/2016"
+                            endDate="11/2016"
+                            eventName="“Développeur Logiciel d’Entreprise”"
+                            eventPlace="Gosselies, Belgique"
+                    />
+
+                    <Event
+                            startDate="09/2012"
+                            endDate="09/2015"
+                            eventName="Licence en Écriture Multimédia"
+                            eventPlace="Charleroi, Belgique"
+                    />
+                </div>
+            </div>
+            <div class="division">
+                <p class="paragraph">J'ai effectivement quelques projets, mais il faut préparer leur hébergement.</p>
+            </div>
+        </div>
+        <aside class="aside -column">
+            <h2>Mes technos</h2>
+            <div class="asideSection">
+                <p class="asideSectionTitle">Front-End</p>
+                <div class="tagContainer">
+                    <Tag variant="outline" label="HTML"/>
+                    <Tag variant="outline" label="Twig"/>
+                    <Tag variant="outline" label="Nunjucks"/>
+                    <Tag variant="outline" label="Pug"/>
+                </div>
+                <div class="tagContainer">
+                    <Tag variant="outline" label="CSS"/>
+                    <Tag variant="outline" label="Sass"/>
+                    <Tag variant="outline" label="Bootstrap"/>
+                    <Tag variant="outline" label="TailwindCSS"/>
+                    <Tag variant="outline" label="Atomic Design"/>
+                    <Tag variant="outline" label="(A)BEM"/>
+                    <Tag variant="outline" label="Utility CSS"/>
+                </div>
+                <div class="tagContainer">
+                    <Tag variant="outline" label="JavaScript"/>
+                    <Tag variant="outline" label="NPM"/>
+                    <Tag variant="outline" label="Yarn"/>
+                    <Tag variant="outline" label="Webpack"/>
+                    <Tag variant="outline" label="PostCSS"/>
+                </div>
+                    <p class="asideNote">Concentrée sur :</p>
+                <div class="tagContainer">
+                    <Tag variant="outline" label="VueJS"/>
+                    <Tag variant="outline" label="TypeScript"/>
+                </div>
+            </div>
+            <div>
+                <p class="asideSectionTitle">Back-Ends</p>
+                <div class="tagContainer">
+                    <Tag variant="outline" label="PHP"/>
+                    <Tag variant="outline" label="Symfony"/>
+                    <Tag variant="outline" label="API Platform"/>
+                    <Tag variant="outline" label="CS Fixer"/>
+                    <Tag variant="outline" label="PHPStan"/>
+                    <Tag variant="outline" label="PHPUnit"/>
+                    <Tag variant="outline" label="Behat"/>
+                </div>
+                <p class="asideNote">Concentrée sur :</p>
+                <div class="tagContainer">
+                    <Tag variant="outline" label="NodeJS"/>
+                    <Tag variant="outline" label="AdonisJS"/>
+                </div>
+            </div>
+            <div>
+                <p class="asideSectionTitle">Environnements</p>
+                <div class="tagContainer">
+                    <Tag variant="outline" label="Git"/>
+                    <Tag variant="outline" label="Github"/>
+                    <Tag variant="outline" label="Gitlab"/>
+                    <Tag variant="outline" label="Bitbucket"/>
+                </div>
+                <div class="tagContainer">
+                    <Tag variant="outline" label="Docker"/>
+                    <Tag variant="outline" label=".env"/>
+                    <Tag variant="outline" label="Make"/>
+                </div>
+                <div class="tagContainer">
+                    <Tag variant="outline" label="Linux"/>
+                    <Tag variant="outline" label="FedoraLinux"/>
+                    <Tag variant="outline" label="Ubuntu"/>
+                    <Tag variant="outline" label="MacOS"/>
+                    <Tag variant="outline" label="Windows"/>
+                </div>
+            </div>
+        </aside>
+    </section>
+    <Contact/>
+</MainLayout>

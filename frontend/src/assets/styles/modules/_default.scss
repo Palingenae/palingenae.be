@@ -30,11 +30,9 @@ body {
   @include light-theme {
     color: $grey-900;
     background-color: $white;
-    font-variation-settings: $text-content, $text-lightThemeRegular;
   }
   @include dark-theme {
     color: $grey-100;
     background-color: $black;
-    font-variation-settings: $text-content, $text-darkThemeRegular;
   }
 }

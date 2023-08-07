@@ -1,0 +1,37 @@
+.section {
+  display: flex;
+  flex-grow: 1;
+  padding: $spacing-800;
+}
+
+.division {
+  display: flex;
+}
+
+.-grow {
+  flex-grow: 1;
+}
+
+.-row {
+  flex-direction: row;
+}
+
+.-column {
+  flex-direction: column;
+}
+
+.-noWrap {
+  flex-wrap: nowrap;
+}
+
+.-wrap {
+  flex-wrap: wrap;
+}
+
+.-justify-spaceBetween {
+  justify-content: space-between;
+}
+
+.-align-flexEnd {
+  align-items: flex-end;
+}

@@ -75,7 +75,7 @@ $grey-400: #909090;
 $grey-300: #A7A7A7;
 $grey-200: #BFBFBF;
 $grey-100: #D7D7D7;
-$white: F4F4F4;
+$white: #F4F4F4;
 
 $font-display: "Fraunces", serif;
 $font-text : "Recursive", monospace;
@@ -85,7 +85,7 @@ $text-content: "MONO" 0, "CASL" 0.5 ,"CRSV" 1;
 $text-paragraph: "MONO" 0, "CASL" 0, "CRSV" 0;
 $text-codeBlock: "MONO" 1, "CASL" 0, "CRSV" 0;
 $text-codeComment: "MONO" 1, "CASL" 1, "CRSV" 1;
-$text-darkThemeRegular: "wght" 400;
+$text-darkThemeRegular: "wght" 390;
 $text-lightThemeRegular: "wght" 360;
 
 $modularscale: (
@@ -102,9 +102,10 @@ $spacing-letter-spacing-display: -0.15rem;
 $spacing-letter-spacing-title: 0.1rem;
 $spacing-letter-spacing-text: 0.05rem;
 $spacing-display-line-height: 1.16;
-$spacing-largeText-line-height: 1.5;
-$spacing-body-line-height: 1.8;
+$spacing-largeText-line-height: 1.9;
+$spacing-body-line-height: 1.7;
 
+$spacing-25: 0.25rem;
 $spacing-50: 0.5rem;
 $spacing-100: 1rem;
 $spacing-150: 1.5rem;
