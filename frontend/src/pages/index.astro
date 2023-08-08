@@ -8,19 +8,15 @@ const hero = {
 	introduction: "Développement Web, Photographie & Design" ,
 	description: "... et parfois tout ça en même temps !"
 };
+
+const availableForHire = true;
 ---
 <MainLayout title={ pageTitle }>
-	<section class="hero -pageCover">
-		<p class="hero__greeting">
-			{ hero.greetings }
-		</p>
-
+	<section class="hero -pageCover -animated">
 		<p class="hero__introduction">
-			{ hero.introduction }
-		</p>
-
-		<p class="hero__description">
-			{ hero.description }
+			<!--{ hero.introduction }-->
+			<span>Développement Web,</span> <span>Photographie,</span> <span>Design,</span> <br/>
+			<span class="display -thin"><i>Roller Skate</i></span>.
 		</p>
 	</section>
 </MainLayout>

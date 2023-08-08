@@ -5,6 +5,9 @@ import Contact from '@components/contact.astro';
 import Footer from "@components/footer.astro";
 import Curriculum from "@components/curriculum.astro";
 
+import Biography from "./biography.md";
+import Message from "../../components/message.astro";
+
 const pageTitle = "À propos"
 const availableForHire = true;
 ---
@@ -17,18 +20,10 @@ const availableForHire = true;
         }
         <p class="display">Simplement : <b><i>Olivia</i></b>.</p>
         <p class="paragraph -jumbo -sans">Je suis une “<i>développeuse créative</i>”, je porte un grand soin à la conception avant de passer au développement, <b>du Back-End au Front-End</b>.</p>
-        <!--<p class="paragraph -jumbo -serif">Actuellement, je me concentre sur <b>JavaScript</b>, <b>TypeScript</b> & <b>VueJS</b>.</p>-->
     </section>
-    <section class="section -column -gold">
-        <h2>Une courte bio</h2>
+    <section class="section -row -gold">
         <article class="article">
-            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Occultum facinus esse potuerit, gaudebit; Sapientem locupletat ipsa natura, cuius divitias Epicurus parabiles esse docuit. <b>Quae ista amicitia est?</b> Quaero igitur, quo modo hae tantae commendationes a natura profectae subito a sapientia relictae sint. </p>
-
-            <p class="paragraph">Sed quia studebat laudi et dignitati, multum in virtute processerat.</p>
-
-            <p class="paragraph">Istam voluptatem perpetuam quis potest praestare sapienti? <a href="http://loripsum.net/" target="_blank">Obsecro, inquit, Torquate, haec dicit Epicurus?</a> Certe non potest. Illud quaero, quid ei, qui in voluptate summum bonum ponat, consentaneum sit dicere. Bork </p>
-
-            <p class="paragraph"><b>Duo Reges: constructio interrete.</b> Scisse enim te quis coarguere possit? Sed non alienum est, quo facilius vis verbi intellegatur, rationem huius verbi faciendi Zenonis exponere. Expectoque quid ad id, quod quaerebam, respondeas. Illum mallem levares, quo optimum atque humanissimum virum, Cn. <a href="http://loripsum.net/" target="_blank">Teneo, inquit, finem illi videri nihil dolere.</a> <i>Tuo vero id quidem, inquam, arbitratu.</i> Suo genere perveniant ad extremum; Eaedem enim utilitates poterunt eas labefactare atque pervertere. </p>
+            <Biography />
         </article>
     </section>
     { availableForHire == true ?

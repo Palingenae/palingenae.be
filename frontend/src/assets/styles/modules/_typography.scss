@@ -255,6 +255,25 @@ h4 {
 }
 
 /* ----- Normalizing typography in paragraphs ----- */
+article,
+.article {
+  p {
+    @extend .paragraph;
+  }
+}
+
+blockquote {
+  padding: $spacing-100 $spacing-200;
+  border-left: solid 4px $colour-gold-600;
+  margin-top: $spacing-100;
+  margin-bottom: $spacing-200;
+  p {
+    @extend .paragraph;
+    @extend .-jumbo;
+    font-style: italic;
+  }
+}
+
 b,
 i,
 em,

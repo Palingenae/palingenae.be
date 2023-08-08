@@ -52,7 +52,7 @@
     @extend .-fat;
     font-family: $font-display;
     max-width: 20ch;
-    margin-bottom: $spacing-400;
+    margin-bottom: 0;
     @include dark-theme {
       color: $grey-200;
     }
