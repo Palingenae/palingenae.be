@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/prefetch": "^0.3.0",
     "@astrojs/prism": "^2.1.2",
+    "@astrojs/ts-plugin": "^1.1.1",
     "@astrojs/vue": "^2.2.1",
     "@astrolib/seo": "^0.4.0",
     "astro": "^2.9.0",

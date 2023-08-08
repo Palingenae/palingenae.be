@@ -1,14 +1,21 @@
 .footer {
   display: flex;
   flex-flow: row nowrap;
+  align-items: center;
   justify-content: space-between;
   color: $white;
   padding: $spacing-200 $spacing-800;
   @include medium-display {
-    padding: $spacing-100 $spacing-400;
+    text-align: center;
+    flex-direction: column-reverse;
+    padding: $spacing-200 $spacing-400;
+    .copyright {
+      text-align: center;
+      margin-top: $spacing-200;
+    }
   }
   @include small-display {
-    padding: $spacing-50 $spacing-200;
+    padding:$spacing-200;
   }
 
   @include light-theme {

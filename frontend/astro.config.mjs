@@ -1,10 +1,9 @@
 import { defineConfig } from 'astro/config';
-import vue from "@astrojs/vue";
 import prefetch from "@astrojs/prefetch";
 
 import purgecss from "astro-purgecss";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [vue(), prefetch(), purgecss()]
+  integrations: [prefetch(), purgecss()]
 });
