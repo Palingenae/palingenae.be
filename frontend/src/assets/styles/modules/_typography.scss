@@ -201,7 +201,7 @@ h4 {
   //  margin-bottom: $spacing-150;
   //}
   @include small-display {
-    font-size: ms(1);
+    font-size: ms(0);
     margin-bottom: $spacing-100;
   }
 
@@ -210,6 +210,9 @@ h4 {
     max-width: 68ch;
     &:not(:last-of-type) {
       margin-bottom: $spacing-400;
+    }
+    @include very-very-large-display {
+      font-size: ms(4);
     }
     @include very-large-display {
       font-size: ms(3);

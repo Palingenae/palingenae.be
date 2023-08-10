@@ -21,8 +21,8 @@
   &::after {
     content: "";
     display: flex;
-    height: 2px;
     flex-grow: 1;
+    height: 2px;
     background-color: $grey-500;
     margin-left: $spacing-200;
   }
@@ -48,5 +48,15 @@
       }
     }
   }
-
+  &Ruby {
+    @extend .decorated;
+    &:before {
+      @include light-theme {
+        background-color: $colour-ruby-700;
+      }
+      @include dark-theme {
+        background-color: $colour-ruby-300;
+      }
+    }
+  }
 }

@@ -6,9 +6,7 @@
   &.-pageCover {
     flex-grow: 1;
     justify-content: center;
-    @include very-large-display {
-      padding: $spacing-800;
-    }
+    padding: $spacing-800;
     @include large-display {
       padding: $spacing-600;
     }

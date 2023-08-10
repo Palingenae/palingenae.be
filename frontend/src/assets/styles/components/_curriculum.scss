@@ -22,9 +22,9 @@
       animation: 1.5s linear availabilityStatus infinite alternate;
       margin-left: $spacing-50;
     }
-    &::after {
-      display: none;
-    }
+    //&::after {
+    //  display: none;
+    //}
   }
   &Path {
     @extend .division;
