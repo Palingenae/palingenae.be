@@ -35,7 +35,8 @@
     }
   }
   &Title {
-    @extend .decoratedGold;
+    @extend .decorated;
+    @extend .-gold;
     color: $grey-100;
     &::before {
       background-color: $colour-gold-200;

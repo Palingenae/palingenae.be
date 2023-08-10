@@ -1,6 +1,7 @@
 .curriculum {
   &Available {
-    @extend .decoratedEmerald;
+    @extend .decorated;
+    @extend .-emerald;
     font-size: ms(2);
     font-variation-settings: $text-codeBlock,  'wght' 500;
     margin-bottom: $spacing-200;

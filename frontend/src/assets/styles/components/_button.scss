@@ -5,7 +5,15 @@
   display: flex;
   border-radius: 8px;
   text-decoration: none;
-  @include light-theme {}
+  @include light-theme {
+    color: $grey-700;
+    background-color: $grey-200;
+    &:hover,
+    &:active {
+      color: $grey-900;
+      background-color: $grey-200;
+    }
+  }
   @include dark-theme {
     color: $black;
     background-color: $grey-400;
@@ -18,7 +26,15 @@
   padding: $spacing-100 $spacing-200;
   margin: $spacing-200 0;
   &.-emerald {
-    @include light-theme {}
+    @include light-theme {
+      background-color: $colour-emerald-600;
+      color: $colour-emerald-100;
+      font-variation-settings: "wght" 550;
+      &:hover,
+      &:active {
+        background-color: $colour-emerald-800;
+      }
+    }
     @include dark-theme {
       background-color: $colour-emerald-400;
       color: $colour-emerald-1000;

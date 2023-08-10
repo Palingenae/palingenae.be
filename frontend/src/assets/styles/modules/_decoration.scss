@@ -26,7 +26,7 @@
     background-color: $grey-500;
     margin-left: $spacing-200;
   }
-  &Gold {
+  &.-gold {
     @extend .decorated;
     &:before {
       @include light-theme {
@@ -37,7 +37,7 @@
       }
     }
   }
-  &Emerald {
+  &.-emerald {
     @extend .decorated;
     &:before {
       @include light-theme {
@@ -48,7 +48,7 @@
       }
     }
   }
-  &Ruby {
+  &.-ruby {
     @extend .decorated;
     &:before {
       @include light-theme {
