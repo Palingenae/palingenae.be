@@ -19,8 +19,6 @@
   src: url('../fonts/recursive/Recursive_VF_1.085.woff2');
 }
 
-
-
 /*
 ** Defining typographic variables
 */
@@ -107,7 +105,7 @@ h3 {
 h4 {
   font-family: $font-text;
   font-variation-settings: $text-content, "wght" 440;
-  font-size: ms(2);
+  font-size: ms(4);
   margin-bottom: $spacing-400;
   @include very-large-display {
     font-size: ms(4);
@@ -188,18 +186,6 @@ h4 {
   @include dark-theme {
     font-variation-settings: $text-content, $text-darkThemeRegular;
   }
-  //@include very-large-display {
-  //  font-size: ms(1);
-  //  margin-bottom: $spacing-200;
-  //}
-  //@include large-display {
-  //  font-size: ms(1);
-  //  margin-bottom: $spacing-200;
-  //}
-  //@include medium-display {
-  //  font-size: ms(1);
-  //  margin-bottom: $spacing-150;
-  //}
   @include small-display {
     font-size: ms(0);
     margin-bottom: $spacing-100;
@@ -312,6 +298,7 @@ a,
     @include transition(border-bottom);
     width: fit-content;
     font-size: ms(1);
+    line-height: $spacing-body-line-height;
     text-decoration: none;
     padding-bottom: $spacing-50;
     border-bottom: solid 3px transparent;
