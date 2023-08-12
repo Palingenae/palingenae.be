@@ -80,9 +80,10 @@ $white: #F4F4F4;
 $font-display: "Fraunces", serif;
 $font-text : "Recursive", monospace;
 
-$text-ui: "MONO" 0.6, "CASL" 0, "CRSV" 0;
-$text-content: "MONO" 0, "CASL" 0.5 ,"CRSV" 1;
-$text-paragraph: "MONO" 0, "CASL" 0, "CRSV" 0;
+
+$text-ui: "MONO" 0.6, "CASL" 0, "CRSV" 0; /* UI links */
+$text-content: "MONO" 0, "CASL" 0.5 ,"CRSV" 1; /* Large text */
+$text-paragraph: "MONO" 0, "CASL" 0, "CRSV" 0; /* Paragraphs and tags */
 $text-codeBlock: "MONO" 1, "CASL" 0, "CRSV" 0;
 $text-codeComment: "MONO" 1, "CASL" 1, "CRSV" 1;
 $text-darkThemeRegular: "wght" 390;

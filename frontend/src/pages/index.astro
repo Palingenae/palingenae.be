@@ -6,7 +6,7 @@ const pageTitle = "Salut ! ";
 const hero = {
 	greetings: "Oui, salut ! Ici tu trouveras...",
 	introduction: "Développement Web, Photographie & Design" ,
-	description: "... et parfois tout ça en même temps !"
+	description: "... et bientôt d'autres choses !"
 };
 
 const availableForHire = true;
@@ -15,8 +15,10 @@ const availableForHire = true;
 	<section class="hero -pageCover -animated">
 		<p class="hero__introduction">
 			<!--{ hero.introduction }-->
-			<span>Développement Web,</span> <span>Photographie,</span> <span>Design,</span> <br/>
-			<span class="display -thin"><i>Roller Skate</i></span>.
+			<span>Développement Web,</span> <span>Photographie,</span> <span>Design</span>
+		</p>
+		<p class="hero__description">
+			{ hero.description }
 		</p>
 	</section>
 </MainLayout>

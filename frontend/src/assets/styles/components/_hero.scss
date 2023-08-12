@@ -40,6 +40,14 @@
   &__description {
     @extend h3;
     font-family: $font-text;
+    @include light-theme {
+      color: $grey-800;
+      font-variation-settings: $text-content, $text-lightThemeRegular;
+    }
+    @include dark-theme {
+      color: $grey-200;
+      font-variation-settings: $text-content, $text-darkThemeRegular;
+    }
     &:not(.hero__description) {
       margin-bottom: $spacing-400;
     }
@@ -50,7 +58,7 @@
     @extend .-fat;
     font-family: $font-display;
     max-width: 20ch;
-    margin-bottom: 0;
+    //margin-bottom: 0;
     @include dark-theme {
       color: $grey-200;
     }
