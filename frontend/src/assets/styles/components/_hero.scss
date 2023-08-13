@@ -3,62 +3,76 @@
   flex-flow: column nowrap;
   align-content: flex-start;
   align-items: flex-start;
+
   &.-pageCover {
     flex-grow: 1;
     justify-content: center;
     padding: $spacing-800;
+
     @include large-display {
       padding: $spacing-600;
     }
+
     @include medium-display {
       padding: $spacing-400;
     }
-    @include small-display {
-      padding: $spacing-200;
-    }
-  }
-  &.-pageBanner {
-    height: 75vh;
-    justify-content: flex-end;
-    padding: $spacing-800;
-    @include very-large-display {
-      padding: $spacing-800;
-    }
-    @include large-display {
-      height: 100%;
-      padding: $spacing-600;
-    }
-    @include medium-display {
-      padding: $spacing-400;
-    }
+
     @include small-display {
       padding: $spacing-200;
     }
   }
 
-  &__greeting,
-  &__description {
+  &.-pageBanner {
+    height: 75vh;
+    justify-content: flex-end;
+    padding: $spacing-800;
+
+    @include very-large-display {
+      padding: $spacing-800;
+    }
+
+    @include large-display {
+      height: 100%;
+      padding: $spacing-600;
+    }
+
+    @include medium-display {
+      padding: $spacing-400;
+    }
+
+    @include small-display {
+      padding: $spacing-200;
+    }
+  }
+
+  &Greeting,
+  &Description {
     @extend h3;
+
     font-family: $font-text;
+
     @include light-theme {
       color: $grey-800;
-      font-variation-settings: $text-content, $text-lightThemeRegular;
+      font-variation-settings: $text-content, $text-light-theme-regular;
     }
+
     @include dark-theme {
       color: $grey-200;
-      font-variation-settings: $text-content, $text-darkThemeRegular;
+      font-variation-settings: $text-content, $text-dark-theme-regular;
     }
+
     &:not(.hero__description) {
       margin-bottom: $spacing-400;
     }
   }
 
-  &__introduction {
+  &Introduction {
     @extend .display;
     @extend .-fat;
+
     font-family: $font-display;
     max-width: 20ch;
-    //margin-bottom: 0;
+
     @include dark-theme {
       color: $grey-200;
     }
