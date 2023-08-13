@@ -5,9 +5,6 @@ import Contact from '@components/contact.astro';
 import Footer from "@components/footer.astro";
 import Curriculum from "@components/curriculum.astro";
 
-import Biography from "./biography.md";
-import Message from "../../components/message.astro";
-
 const pageTitle = "À propos"
 const availableForHire = true;
 ---
@@ -23,7 +20,20 @@ const availableForHire = true;
     </section>
     <section class="section -row -gold">
         <article class="article">
-            <Biography />
+            <p>Clairement, la phrase qui me caractérise le mieux est :</p>
+
+            <blockquote>
+                <p class="paragraph -jumbo">"Une véritable curieuse et touche-à-tout."</p>
+            </blockquote>
+
+            <p>J'aime beaucoup le design, la photographie et la typographie, de manière générale. Sans oublier le fait
+                que j'ai décidé que j'allais faire du développement web ma carrière, commencée en Belgique, dont
+                je suis originaire. C'est pour cela que je me désigne comme "<i>Développeuse Créative</i>".</p>
+
+            <p>J'ai repris une formation en tant que <i>Développeuse PHP / Symfony</i> à travers OpenClassrooms. Toujours à l'écoute de ce qui se passe dans mon domaine, j'ai récemment décidé de m'intéresser très fortement à JavaScript. Je songe d'ailleurs reprendre un projet originalement en Symfony pour le réécrire en TypeScript.</p>
+
+            <p>Je pratique le Roller Derby (<i>il n'y a pas de balle !</i>) au sein de l'équipe Vice-Championne de
+                France de la discipline, <a href="https://nantesrollerderby.fr" target="_blank"> Nantes Roller Derby</a>. Je vais aussi m'intéresser à la communication associative.</p>
         </article>
     </section>
     { availableForHire == true ?
