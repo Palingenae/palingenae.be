@@ -1,15 +1,25 @@
 ---
----
+import MainLayout from "@layouts/main.astro";
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+const pageTitle = "Salut ! ";
+
+const hero = {
+	greetings: "Oui, salut ! Ici tu trouveras...",
+	introduction: "Développement Web, Photographie & Design" ,
+	description: "... et bientôt d'autres choses !"
+};
+
+const availableForHire = true;
+---
+<MainLayout title={ pageTitle }>
+	<section class="hero -pageCover -animated">
+		<p class="heroIntroduction">
+			<!--{ hero.introduction }-->
+			<span>Développement Web,</span> <span>Photographie,</span> <span>Design</span>
+		</p>
+		<p class="heroDescription">
+			{ hero.description }
+		</p>
+	</section>
+</MainLayout>
+

@@ -1,0 +1,36 @@
+---
+import MainLayout from '@layouts/main.astro'
+
+import Contact from '@components/contact.astro';
+import Footer from "@components/footer.astro";
+import Curriculum from "@components/curriculum.astro";
+
+import Biography from "./biography.md";
+import Message from "../../components/message.astro";
+
+const pageTitle = "À propos"
+const availableForHire = true;
+---
+<MainLayout title={pageTitle}>
+    <section class="hero -pageBanner">
+        { availableForHire == true ?
+                <p class="curriculumAvailable">Disponible</p>
+            :
+            ''
+        }
+        <p class="display">Simplement : <b><i>Olivia</i></b>.</p>
+        <p class="paragraph -jumbo -sans">Je suis une “<i>développeuse créative</i>”, je porte un grand soin à la conception avant de passer au développement, <b>du Back-End au Front-End</b>.</p>
+    </section>
+    <section class="section -row -gold">
+        <article class="article">
+            <Biography />
+        </article>
+    </section>
+    { availableForHire == true ?
+        <Curriculum />
+        :
+        ''
+    }
+    <Contact />
+    <Footer />
+</MainLayout>
