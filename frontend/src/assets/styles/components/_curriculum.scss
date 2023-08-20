@@ -1,9 +1,9 @@
 .curriculum {
 
   &Available {
-    @extend .decorated;
-    @extend .-emerald;
-
+    display: flex;
+    align-items: baseline;
+    gap: $spacing-100;
     font-size: ms(2);
     font-variation-settings: $text-code-block,  'wght' 500;
     margin-bottom: $spacing-200;
@@ -14,6 +14,20 @@
     }
 
     &::before {
+      content: "";
+      display: inline-flex;
+      flex-shrink: 0;
+      transform: rotate(45deg);
+      border-radius: 25%;
+
+      @include light-theme {
+        background-color: $colour-emerald-600;
+      }
+      @include dark-theme {
+        background-color: $colour-emerald-200;
+      }
+
+
       @keyframes availability-status {
 
         from { opacity: 0.5;
