@@ -1,4 +1,5 @@
 .tag {
+  @include transition(all);
   display: inline-flex;
   align-items: center;
   font-size: ms(0);

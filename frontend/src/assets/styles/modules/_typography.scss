@@ -136,23 +136,23 @@ h4 {
   font-family: $font-display;
   letter-spacing: $spacing-letter-spacing-display;
   line-height: $spacing-display-line-height;
-  margin-bottom: $spacing-400;
+  margin-bottom: $spacing-800;
 
   @include very-very-large-display {
-    font-size: ms(10);
+    font-size: ms(11);
   }
 
   @include very-large-display {
-    font-size: ms(9);
+    font-size: ms(10);
   }
 
   @include large-display {
-    font-size: ms(8);
+    font-size: ms(9);
     margin-bottom: $spacing-300;
   }
 
   @include medium-display {
-    font-size: ms(7);
+    font-size: ms(8);
     margin-bottom: $spacing-200;
   }
 
@@ -256,7 +256,7 @@ a,
 
   letter-spacing: $spacing-letter-spacing-text;
   line-height: $spacing-body-line-height;
-  max-width: 72ch;
+  max-width: 80ch;
   font-size: ms(1);
 
   &:not(:last-of-type) {
@@ -337,6 +337,10 @@ a,
   }
 }
 
+.action {
+  font-family: $font-display;
+  font-variation-settings: $display-action;
+}
 /* ----- Normalizing typography in paragraphs ----- */
 
 blockquote {
@@ -384,3 +388,4 @@ strong,
   font-family: inherit;
   font-variation-settings: 'wght' 700;
 }
+
