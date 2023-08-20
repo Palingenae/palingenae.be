@@ -1,0 +1,21 @@
+---
+import Tag from "./tag.astro";
+import Action from "./action.astro";
+
+const { title } = Astro.props;
+const { type } = Astro.props;
+const { date } = Astro.props;
+---
+<a href="#" class="project">
+    <div class="projectContainer">
+        <div class="projectContent">
+            <h2 class="projectTitle">{ title }</h2>
+            <div class="projectMeta">
+                <span class="projectDate">{ date }</span>
+                <Tag class="projectType" variant="-outline" label={ type }/>
+            </div>
+        </div>
+    </div>
+    <Action label="Voir" icon="forward">
+    </Action>
+</a>

@@ -1,0 +1,18 @@
+---
+import MainLayout from "@layouts/main.astro";
+import Project from "@components/project.astro";
+
+const pageTitle = "Projets";
+---
+<MainLayout title={pageTitle}>
+    <section class="section -column">
+        <h1 class="display -thin decorated">Projets</h1>
+        <div class="projectCollection">
+            <Project title="Consectetur Roller Derby" type="Site web" date="TBA"/>
+            <Project title="OpenClassrooms: BileMo" type="API" date="2022"/>
+            <Project title="OpenClassrooms: SnowTricks" type="Site web" date="2021"/>
+            <Project title="OpenClassrooms: Les Films de Plein Air" type="Site web" date="2020"/>
+            <Project title="Portfolio" type="Site web" date="2023"/>
+        </div>
+    </section>
+</MainLayout>

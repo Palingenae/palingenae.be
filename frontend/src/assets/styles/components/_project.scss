@@ -1,0 +1,118 @@
+.project {
+  @include transition(all);
+  @include diamond('outline', $grey-800, $grey-200);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: $spacing-400;
+  border-radius: 8px;
+  padding: {
+    top: $spacing-200;
+    left: $spacing-400;
+    right: $spacing-800;
+    bottom: $spacing-200;
+  }
+  color: inherit;
+  margin-bottom: $spacing-200;
+
+  &:hover {
+    @include diamond('outline', $colour-gold-200, $colour-gold-200);
+    @include diamond('filled', $colour-gold-200, $colour-gold-200);
+    background-color: $grey-800;
+    color: $grey-100;
+    padding-right: $spacing-400;
+    @include dark-theme {
+      @include diamond('filled', $colour-gold-200, $colour-gold-200);
+      background-color: $grey-700;
+      color: $white;
+    }
+    .tag.-outline {
+      border-color: $grey-100;
+      color: $grey-100;
+    }
+    .projectContainer:before {
+      color: $colour-gold-100;
+    }
+    .projectAction {
+      color: inherit;
+    }
+  }
+
+  &Container {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-grow: 1;
+    align-items: center;
+    gap: $spacing-400;
+    &:before {
+      @include transition(color);
+      content: "0" counter(project-counter);
+      counter-increment: project-counter -1;
+      font-size: ms(9);
+      font-variation-settings: $text-code-block, 'wght' 300;
+      color: $grey-100;
+      @include dark-theme {
+        color: $grey-800;
+      }
+    }
+  }
+
+  &Content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &Collection {
+    display: flex;
+    flex-direction: column;
+    counter-reset: project-counter 5;
+  }
+
+  &Meta {
+    display: flex;
+    align-items: center;
+    gap: $spacing-400;
+  }
+
+  &Title {
+    @extend h2;
+
+    font-size: ms(5);
+    margin-bottom: $spacing-150;
+
+    @include light-theme {
+      font-variation-settings: 'wght' 450;
+    }
+
+    @include dark-theme {
+      font-variation-settings: 'wght' 480;
+    }
+
+    @include medium-display {
+      font-size: ms(4);
+    }
+
+    @include small-display {
+      font-size: ms(2);
+    }
+  }
+
+  &Date {
+    font-size: ms(1);
+    font-variation-settings: $text-code-block, $text-light-theme-regular;
+  }
+
+  &Type {
+    @extend .tag;
+    @extend .-outline;
+  }
+
+  &Action {
+    @include transition(color);
+    font-size: ms(4);
+    font-family: $font-display;
+    font-variation-settings: $display-action;
+    font-style: italic;
+    color: transparent;
+  }
+}
