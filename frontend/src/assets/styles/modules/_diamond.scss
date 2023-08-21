@@ -1,4 +1,4 @@
-@mixin diamond($variant, $light-theme-color, $dark-theme-color) {
+@mixin diamond($variant, $light-theme-color: $grey-600, $dark-theme-color: $grey-400) {
   &::before {
     @include transition(all);
     content: "";
@@ -35,6 +35,10 @@
       @include dark-theme {
         background-color: $dark-theme-color;
       }
+    }
+
+    @if $variant == 'none' {
+      display: none;
     }
   }
 }
