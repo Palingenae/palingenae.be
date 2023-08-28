@@ -1,0 +1,79 @@
+article,
+.article {
+  h2 {
+    max-width: 48ch;
+    line-height: $spacing-display-line-height;
+    margin-bottom: $spacing-400;
+
+    @include very-very-large-display {
+      font-size: ms(6);
+      margin-bottom: $spacing-400;
+    }
+
+    @include very-large-display {
+      font-size: ms(5);
+      margin-bottom: $spacing-300;
+    }
+
+    @include large-display {
+      font-size: ms(4);
+      margin-bottom: $spacing-200;
+    }
+
+    @include medium-display {
+      font-size: ms(3);
+      margin-bottom: $spacing-200;
+    }
+
+    & + p {
+      margin-top: 3rem;
+    }
+  }
+
+  h3 {
+    max-width: 50ch;
+    font-family: $font-text;
+    line-height: 1.5;
+
+    @include very-very-large-display {
+      font-size: ms(5);
+      margin-top: $spacing-400;
+      margin-bottom: $spacing-400;
+    }
+
+    @include very-large-display {
+      font-size: ms(3);
+      margin-top: $spacing-400;
+      margin-bottom: $spacing-200;
+    }
+
+    @include large-display {
+      font-size: ms(2);
+      margin-top: $spacing-400;
+      margin-bottom: $spacing-200;
+    }
+
+    @include medium-display {
+      font-size: ms(2);
+      margin-top: $spacing-300;
+      margin-bottom: $spacing-150;
+    }
+  }
+
+  p {
+    @extend .paragraph;
+  }
+
+  blockquote {
+    @extend .paragraph;
+    @extend .-jumbo;
+
+    font-style: italic;
+    font-variation-settings: $text-content;
+    padding: $spacing-100 $spacing-200;
+    border-left: solid 4px $colour-gold-600;
+    margin-top: $spacing-200;
+    margin-bottom: $spacing-200;
+
+  }
+}

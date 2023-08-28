@@ -18,10 +18,12 @@
 
   &__logo {
     display: inline-flex;
+    align-items: center;
   }
 
   &__links {
     display: inline-flex;
     align-items: baseline;
+    gap: $spacing-100;
   }
 }

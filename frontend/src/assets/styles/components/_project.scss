@@ -1,6 +1,7 @@
 .project {
   @include transition(all);
   @include diamond('outline', $grey-800, $grey-200);
+
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -9,12 +10,15 @@
   padding: $spacing-200 $spacing-400;
   color: inherit;
   margin-bottom: $spacing-200;
+
   @include medium-display {
     gap: $spacing-400;
     padding: $spacing-200;
   }
+
   @include small-display {
     @include diamond('none');
+
     row-gap: 0;
     padding: $spacing-100;
   }
@@ -22,20 +26,26 @@
   &:hover {
     @include diamond('outline', $colour-gold-200, $colour-gold-200);
     @include diamond('filled', $colour-gold-200, $colour-gold-200);
+
     background-color: $grey-800;
     color: $grey-100;
+
     @include dark-theme {
       @include diamond('filled', $colour-gold-200, $colour-gold-200);
+
       background-color: $grey-700;
       color: $white;
     }
+
     .tag.-outline {
       border-color: $grey-100;
       color: $grey-100;
     }
-    .projectContainer:before {
+
+    .projectContainer::before {
       color: $colour-gold-100;
     }
+
     .projectAction {
       color: inherit;
     }
@@ -48,10 +58,13 @@
   &:focus {
     @include diamond('filled', $colour-emerald-200, $colour-emerald-500);
     @include diamond('outline', transparent, transparent);
+
     background-color: $colour-emerald-600;
+
     @include dark-theme {
       background-color: $grey-100;
       color: $grey-800;
+
       .tag {
         border-color: $grey-600;
         color: $grey-600;
@@ -65,13 +78,16 @@
     flex-grow: 1;
     align-items: center;
     gap: $spacing-400;
-    &:before {
+
+    &::before {
       @include transition(color);
+
       content: "0" counter(project-counter);
       counter-increment: project-counter -1;
       font-size: ms(9);
       font-variation-settings: $text-code-block, 'wght' 300;
       color: $grey-100;
+
       @include dark-theme {
         color: $grey-800;
       }
@@ -98,6 +114,7 @@
     display: flex;
     align-items: center;
     gap: $spacing-400;
+
     @include small-display {
       gap: $spacing-100;
       flex-direction: column;
@@ -129,7 +146,7 @@
 
 /*    @include small-display {
       font-size: ms(2);
-    }*/
+    } */
   }
 
   &Date {
@@ -144,6 +161,7 @@
 
   &Action {
     @include transition(color);
+
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
@@ -157,6 +175,7 @@
     @include large-display {
       font-size: ms(3);
       max-width: 20%;
+
       .actionLabel {
         display: none;
       }
@@ -165,5 +184,53 @@
     //@include medium-display {
     //  display: none;
     //}
+  }
+
+  &__header {
+    @extend .hero;
+    @extend .-pageBanner;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: $spacing-400;
+    height: fit-content;
+
+    &__title {
+      h1.display {
+        max-width: 16ch;
+      }
+    }
+
+    &__meta {
+      display: flex;
+      align-items: baseline;
+      gap: $spacing-200;
+
+      &Container {
+        @extend .aside;
+
+        align-self: flex-end;
+        gap: $spacing-200;
+        flex-shrink: 1;
+        width: 25%;
+      }
+
+      &Label {
+        display: inline-flex;
+        font-family: $font-display;
+        font-size: ms(3);
+        width: 30%;
+      }
+
+      &Properties {
+        display: inline-flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        font-size: ms(2);
+        gap: $spacing-50;
+        width: 70%;
+      }
+    }
   }
 }

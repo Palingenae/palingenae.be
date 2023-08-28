@@ -1,0 +1,65 @@
+---
+import MainLayout from '@layouts/main.astro';
+import RichText from "@components/RichText.astro";
+import Tag from "../../components/tag.astro";
+
+const { title, year, type, status, responsibilities, stack, content } = Astro.props;
+
+export async function getStaticPaths() {
+    let response: Response = await fetch("http://localhost:3333/api/projects");
+    let projects = await response.json();
+
+    return projects.docs.map((project) => {
+        return {
+            params: {
+                slug: project.slug
+            },
+            props: {
+                title: project.title,
+                year: project.year,
+                type: project.type,
+                status: project.status,
+                responsibilities: project.scope,
+                stack: project.stack,
+                content: project.article
+            }
+        }
+    })
+}
+---
+<MainLayout title= { title }>
+    <header class="project__header">
+        <div class="project__header__title">
+            <h1 class="display -thin"> { title } </h1>
+        </div>
+        <div class="project__header__metaContainer">
+            <div class="project__header__meta">
+                <span class="project__header__metaLabel">Année</span>
+                <span class="project__header__metaProperties">{ year }</span>
+            </div>
+            <div class="project__header__meta">
+                <span class="project__header__metaLabel">Type</span>
+                <span class="project__header__metaProperties">{ type }</span>
+            </div>
+            <div class="project__header__meta">
+                <span class="project__header__metaLabel">Statut</span>
+                <span class="project__header__metaProperties"><Tag label={ status } variant="filledEmerald"/></span>
+            </div>
+            <div class="project__header__meta">
+                <span class="project__header__metaLabel">Stack</span>
+                <span class="project__header__metaProperties">{
+                    stack.map((tool): void => (
+                        <Tag label={ tool } variant="outline"/>
+                    ))
+                }</span>
+            </div>
+        </div>
+    </header>
+    <section class="section">
+        <main class="main">
+            <article class="article">
+                <RichText richText={ content }/>
+            </article>
+        </main>
+    </section>
+</MainLayout>

@@ -5,5 +5,8 @@ import purgecss from "astro-purgecss";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [prefetch(), purgecss()]
+  integrations: [prefetch(), purgecss()],
+  experimental: {
+    viewTransitions: true
+  }
 });

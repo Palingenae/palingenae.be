@@ -136,7 +136,7 @@ h4 {
   font-family: $font-display;
   letter-spacing: $spacing-letter-spacing-display;
   line-height: $spacing-display-line-height;
-  margin-bottom: $spacing-800;
+  margin-bottom: $spacing-400;
 
   @include very-very-large-display {
     font-size: ms(11);
@@ -180,67 +180,9 @@ h4 {
 
 /* ----- Links ----- */
 
-a,
-.link {
 
-  &.-ui {
-    @include transition(border-bottom);
-
-    width: fit-content;
-    font-size: ms(1);
-    line-height: $spacing-body-line-height;
-    text-decoration: none;
-    padding-bottom: $spacing-50;
-    border-bottom: solid 3px transparent;
-    margin: 0 $spacing-100;
-
-    &:first-of-type {
-      margin-left: 0;
-    }
-
-    &:last-of-type {
-      margin-right: 0;
-    }
-
-    @include medium-display {
-      margin: $spacing-50 0;
-
-      &:first-of-type {
-        margin-top: 0;
-      }
-
-      &:last-of-type {
-        margin-bottom: 0;
-      }
-    }
-
-    @include light-theme {
-      font-variation-settings: $text-ui, "wght" 500;
-      color: $grey-900;
-
-      &:hover {
-        border-bottom: solid 2px $grey-900;
-      }
-    }
-
-    @include dark-theme {
-      font-variation-settings: $text-ui, "wght" 520;
-      color: $grey-100;
-
-      &:hover {
-        border-bottom: solid 2px $grey-100;
-      }
-    }
-
-    &.-active {
-      font-variation-settings: $text-ui, "wght" 700;
-      border-bottom: solid 3px $grey-400;
-    }
-  }
-}
 
 .paragraph {
-
   & > a,
   & > .link {
     color: inherit;
@@ -256,7 +198,7 @@ a,
 
   letter-spacing: $spacing-letter-spacing-text;
   line-height: $spacing-body-line-height;
-  max-width: 80ch;
+  max-width: 72ch;
   font-size: ms(1);
 
   &:not(:last-of-type) {
@@ -264,11 +206,11 @@ a,
   }
 
   @include light-theme {
-    font-variation-settings: $text-content, $text-light-theme-regular;
+    font-variation-settings: $text-paragraph, $text-light-theme-regular;
   }
 
   @include dark-theme {
-    font-variation-settings: $text-content, $text-dark-theme-regular;
+    font-variation-settings: $text-paragraph, $text-dark-theme-regular;
   }
 
   @include small-display {
@@ -324,7 +266,6 @@ a,
 }
 
 .context {
-
   &.-subtitle {
     font-family: $font-text;
     font-size: ms(3);
@@ -341,31 +282,9 @@ a,
   font-family: $font-display;
   font-variation-settings: $display-action;
 }
-/* ----- Normalizing typography in paragraphs ----- */
-
-blockquote {
-  padding: $spacing-100 $spacing-200;
-  border-left: solid 4px $colour-gold-600;
-  margin-top: $spacing-100;
-  margin-bottom: $spacing-200;
-
-  p {
-    @extend .paragraph;
-    @extend .-jumbo;
-
-    font-style: italic;
-  }
-}
-
-article,
-.article {
-
-  p {
-    @extend .paragraph;
-  }
-}
 
 b,
+strong,
 i,
 em,
 span {
@@ -388,4 +307,3 @@ strong,
   font-family: inherit;
   font-variation-settings: 'wght' 700;
 }
-

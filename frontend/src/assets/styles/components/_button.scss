@@ -5,6 +5,8 @@
 
   font-variation-settings: $text-ui, 'wght' 500;
   display: flex;
+  align-items: center;
+  gap: $spacing-150;
   border-radius: 8px;
   text-decoration: none;
 
@@ -32,6 +34,10 @@
 
   padding: $spacing-100 $spacing-200;
   margin: $spacing-200 0;
+
+  .icon {
+    font-size: ms(1);
+  }
 
   &.-emerald {
     @include light-theme {

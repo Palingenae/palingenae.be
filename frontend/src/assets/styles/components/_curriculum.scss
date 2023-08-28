@@ -1,4 +1,8 @@
 .curriculum {
+  @extend .section;
+  @extend .-row;
+
+  gap: $spacing-800;
 
   &Available {
     display: flex;
@@ -23,13 +27,13 @@
       @include light-theme {
         background-color: $colour-emerald-600;
       }
+
       @include dark-theme {
         background-color: $colour-emerald-200;
       }
 
 
       @keyframes availability-status {
-
         from { opacity: 0.5;
         }
 

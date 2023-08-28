@@ -1,10 +1,8 @@
 .aside {
-  @extend .-column;
-  @extend .-noWrap;
-
   display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
   max-width: 33%;
-  margin-left: $spacing-800;
 
   @include large-display {
     flex-grow: 1;

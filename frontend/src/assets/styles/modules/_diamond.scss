@@ -1,6 +1,7 @@
 @mixin diamond($variant, $light-theme-color: $grey-600, $dark-theme-color: $grey-400) {
   &::before {
     @include transition(all);
+
     content: "";
     display: inline-flex;
     flex-shrink: 0;
@@ -23,6 +24,7 @@
       @include light-theme {
         border: solid 3px $light-theme-color;
       }
+
       @include dark-theme {
         border: solid 4px $dark-theme-color;
       }
@@ -32,6 +34,7 @@
       @include light-theme {
         background-color: $light-theme-color;
       }
+
       @include dark-theme {
         background-color: $dark-theme-color;
       }

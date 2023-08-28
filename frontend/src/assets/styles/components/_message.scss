@@ -2,9 +2,12 @@
   @include transition(background-color);
   @include transition(color);
   @include transition(border-left);
-  @extend .-column;
 
   display: flex;
+  flex-direction: column;
+  color: $grey-900;
+  background-color: $grey-100;
+  border-left: solid 2px $grey-900;
   border-radius: 8px;
   padding: $spacing-100 $spacing-200;
 
@@ -12,16 +15,15 @@
     margin-bottom: $spacing-200;
   }
 
-  @include light-theme {
-    color: $grey-900;
-    background-color: $grey-100;
-    border-left: solid 2px $grey-900;
-  }
-
   @include dark-theme {
     color: $grey-100;
     background-color: $grey-900;
     border-left: solid 2px $grey-100;
+  }
+
+  &Container {
+    display: flex;
+    flex-direction: column;
   }
 
   &Type {

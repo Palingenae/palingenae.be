@@ -1,5 +1,6 @@
 .tag {
   @include transition(all);
+
   display: inline-flex;
   align-items: center;
   font-size: ms(0);
@@ -43,7 +44,6 @@
     }
 
     &Ruby {
-
       &Light {
         color: $colour-ruby-900;
         background-color: $colour-ruby-200;
