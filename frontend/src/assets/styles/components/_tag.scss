@@ -8,6 +8,12 @@
   border-radius: 12px;
   padding: $spacing-25 $spacing-100;
 
+  @include small-display {
+    font-size: ms(-1);
+    border-radius: 10px;
+    padding-right: $spacing-25 $spacing-50;
+  }
+
   &.-outline {
     @include light-theme {
       color: $grey-800;
