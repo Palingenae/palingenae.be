@@ -2,6 +2,7 @@
 import MainLayout from '@layouts/main.astro';
 import RichText from "@components/RichText.astro";
 import Tag from "../../components/tag.astro";
+import Contact from "../../components/contact.astro";
 
 const { title, year, type, status, responsibilities, stack, content } = Astro.props;
 
@@ -55,6 +56,7 @@ export async function getStaticPaths() {
             </div>
         </div>
     </header>
+    <hr class="separator">
     <section class="section">
         <main class="main">
             <article class="article">
@@ -62,4 +64,5 @@ export async function getStaticPaths() {
             </article>
         </main>
     </section>
+    <Contact />
 </MainLayout>
