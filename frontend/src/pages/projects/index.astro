@@ -15,18 +15,18 @@ const projects = await response.json();
         <div class="projectCollection">
             {
                 projects.docs.map((project) => (
-                    <a href={ `projects/${ project.slug }` } class="project">
-                        <div class="projectContainer">
-                            <div class="projectContent">
-                                <h2 class="projectTitle">{ project.title }</h2>
-                                <div class="projectMeta">
-                                    <span class="projectDate">{ project.year }</span>
-                                    <Tag class="projectType" variant="outline" label={ project.type }/>
+                        <a href={`projects/${project.slug}`} class="project">
+                            <div class="projectContainer">
+                                <div class="projectContent">
+                                    <h2 class="projectTitle">{project.title}</h2>
+                                    <div class="projectMeta">
+                                        <span class="projectDate">{project.year}</span>
+                                        <Tag class="projectType" variant="outline" label={project.type}/>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <Action label="Voir" icon="forward" />
-                    </a>
+                            <Action label="Voir" icon="forward"/>
+                        </a>
                 ))
             }
         </div>

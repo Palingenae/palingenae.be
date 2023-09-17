@@ -221,17 +221,10 @@ h4 {
   &.-jumbo {
     line-height: $spacing-large-text-line-height;
     max-width: 68ch;
+    font-size: ms(3);
 
     &:not(:last-of-type) {
       margin-bottom: $spacing-400;
-    }
-
-    @include very-very-large-display {
-      font-size: ms(4);
-    }
-
-    @include very-large-display {
-      font-size: ms(3);
     }
 
     @include large-display {

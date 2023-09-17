@@ -6,7 +6,7 @@
   flex-grow: 1;
 
   @include very-very-large-display {
-    padding: $spacing-1600;
+    padding: $spacing-800 $spacing-1600;
   }
 
   @include very-large-display {
