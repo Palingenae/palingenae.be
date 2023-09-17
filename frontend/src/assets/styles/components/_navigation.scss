@@ -2,7 +2,14 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  padding: $spacing-200 $spacing-800;
+
+  @include very-very-large-display {
+    padding: $spacing-200 $spacing-1600;
+  }
+
+  @include very-large-display {
+    padding: $spacing-200 $spacing-800;
+  }
 
   @include large-display {
     padding: $spacing-200 $spacing-600;
@@ -21,9 +28,45 @@
     align-items: center;
   }
 
-  &__links {
-    display: inline-flex;
+  &__horizontal {
+    display: none;
     align-items: baseline;
     gap: $spacing-100;
+    @include medium-display {
+      display: none;
+    }
+  }
+
+  /* Not actually mobile but smaller displays */
+  &__mobile {
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    background-color: $colour-ruby-600;
+    //@include medium-display {
+    //  display: flex;
+    //}
+    &__menu {
+      @keyframes drawer-menu-appear {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      display: none;
+      flex-direction: column;
+      align-items: flex-end;
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      height: 85vh;
+      background-color: $grey-500;
+      gap: $spacing-200;
+      padding: $spacing-400 $spacing-800;
+      z-index: 10000;
+      animation: drawer-menu-appear ease-in 200ms;
+
+      &.-visible {
+        display: flex;
+      }
+    }
   }
 }

@@ -9,6 +9,10 @@
     justify-content: center;
     padding: $spacing-800;
 
+    @include very-very-large-display {
+      padding: $spacing-1600;
+    }
+
     @include large-display {
       padding: $spacing-600;
     }
@@ -26,6 +30,10 @@
     height: 75vh;
     justify-content: flex-end;
     padding: $spacing-400 $spacing-800;
+
+    @include very-very-large-display {
+      padding: $spacing-800 $spacing-1600;
+    }
 
     @include very-large-display {
       padding: $spacing-800;
