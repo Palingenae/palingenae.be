@@ -3,6 +3,7 @@ import path from 'path';
 import Users from './collections/Users';
 import Projects from "./collections/Projects";
 import { payloadCloud } from '@payloadcms/plugin-cloud';
+import Medias from "./collections/Medias";
 
 export default buildConfig({
   admin: {
@@ -10,7 +11,8 @@ export default buildConfig({
   },
   collections: [
     Users,
-    Projects
+    Projects,
+    Medias
   ],
   localization: {
     locales: [

@@ -54,4 +54,16 @@ a,
       border-bottom: solid 3px $grey-400;
     }
   }
+
+  &.-navigation {
+    @include transition(border-bottom);
+
+    color: inherit;
+    width: fit-content;
+    font-size: ms(1);
+    line-height: $spacing-body-line-height;
+    text-decoration: none;
+    padding-bottom: $spacing-50;
+    border-bottom: solid 3px transparent;
+  }
 }

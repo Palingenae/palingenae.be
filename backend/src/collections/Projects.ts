@@ -172,7 +172,31 @@ const Projects: CollectionConfig = {
             label: "Contenu",
             name: "article",
             type: "richText",
-        }
+            required: true,
+            admin: {
+                elements: [
+                    "h2",
+                    "h3",
+                    "h4",
+                    "h5",
+                    "h6",
+                    "link",
+                    "blockquote"
+                ]
+            }
+        },
+        {
+            label: "Image de couverture",
+            name: "coverImage",
+            type: "upload",
+            relationTo: "media",
+            access: {
+                read: () => true
+            },
+            admin: {
+                position: "sidebar",
+            }
+        },
     ]
 }
 

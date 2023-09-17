@@ -32,23 +32,23 @@ export interface Project {
   slug: string;
   year: string;
   type: 'Site web' | 'API';
-  status: 'active' | 'done';
-  scope: ('design' | 'design_system' | 'integration' | 'front_end' | 'back_mono' | 'back_api' | 'hosting')[];
+  status: 'Actif' | 'Terminé';
+  scope: ('Design' | 'Design System' | 'Intégration' | 'Front-End' | 'Back-End' | 'API' | 'Hébergement')[];
   stack: (
-    | 'figma'
-    | 'astro'
-    | 'payload_cms'
-    | 'sass'
-    | 'javascript'
-    | 'typescript'
-    | 'react'
-    | 'php'
-    | 'symfony'
-    | 'mysql'
-    | 'mongodb'
-    | 'docker'
+    | 'Figma'
+    | 'Astro'
+    | 'PayloadCMS'
+    | 'Sass'
+    | 'JavaScript'
+    | 'TypeScript'
+    | 'React'
+    | 'PHP'
+    | 'Symfony'
+    | 'MySQL'
+    | 'MongoDB'
+    | 'Docker'
   )[];
-  article?: {
+  article: {
     [k: string]: unknown;
   }[];
   updatedAt: string;
