@@ -5,8 +5,20 @@ const currentPath = Astro.url.pathname;
 
 const navigationLinks = [
     {
+        label: "Blog",
+        route: "/blog"
+    },
+    {
         label: "Projets",
         route: "/projects"
+    },
+    {
+        label: "Galerie",
+        route: "/gallery"
+    },
+    {
+        label: "Bakasable",
+        route: "/playground"
     },
     {
         label: "À propos",
@@ -20,11 +32,32 @@ const navigationLinks = [
             <Logo />
         </a>
     </div>
-    <div class="navigation__links">
+    <div class="navigation__horizontal">
         {
             navigationLinks.map((link) =>  (
-                <a class={currentPath === link.route ? "link -ui -active" : "link -ui"} href={ link.route }>{ link.label }</a>
+                <a class={currentPath === link.route ? "link -navigation -active" : "link -navigation"} href={ link.route }>{ link.label }</a>
             ))
         }
     </div>
+    <div class="navigation__mobile">
+        <p>x</p>
+    </div>
 </nav>
+
+<div class="navigation__mobile__menu">
+    {
+        navigationLinks.map((link) =>  (
+                <a class={currentPath === link.route ? "link -navigation -mobile -active" : "link -navigation -mobile"} href={ link.route }>{ link.label }</a>
+        ))
+    }
+</div>
+
+<script>
+    const drawerMenuToggler = document.querySelector('.navigation__mobile');
+    const drawerMenu = document.querySelector('.navigation__mobile__menu');
+
+    drawerMenuToggler.addEventListener('click', () => {
+        drawerMenu.classList.toggle('-visible');
+    });
+</script>
+
