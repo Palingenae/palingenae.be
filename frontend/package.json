@@ -14,15 +14,11 @@
     "@astrojs/prefetch": "^0.3.0",
     "@astrojs/prism": "^2.1.2",
     "@astrojs/ts-plugin": "^1.1.1",
-    "@astrojs/vue": "^2.2.1",
-    "@astrolib/seo": "^0.4.0",
-    "astro": "^2.10.0",
+    "astro": "^3.0.8",
     "astro-breadcrumbs": "^1.6.1",
-    "astro-purgecss": "^2.3.0",
     "escape-html": "^1.0.3",
     "sass": "^1.64.1",
-    "slate": "^0.94.1",
-    "vue": "^3.3.4"
+    "slate": "^0.94.1"
   },
   "devDependencies": {
     "stylelint": "^15.10.2",
