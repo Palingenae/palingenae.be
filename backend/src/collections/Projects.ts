@@ -4,13 +4,6 @@ const Projects: CollectionConfig = {
     slug: "projects",
     admin: {
         useAsTitle: "title",
-        preview: (doc, { locale }) => {
-            if (doc?.slug) {
-                return `http://localhost:3333/preview/projects/${doc.slug}?locale=${locale}`;
-            }
-
-            return null;
-        },
     },
     access: {
         read: () => true
@@ -112,11 +105,6 @@ const Projects: CollectionConfig = {
             type: "select",
             hasMany: true,
             required: true,
-            // custom: true,
-            // admin: {
-            //     isClearable: true,
-            //     isSortable: true
-            // },
             options: [
                 {
                     label: "Figma",
