@@ -6,11 +6,15 @@
 
   &.-pageCover {
     flex-grow: 1;
-    justify-content: center;
+    justify-content: flex-end;
     padding: $spacing-800;
 
     @include very-very-large-display {
-      padding: $spacing-1600;
+      padding: $spacing-800 $spacing-1600;
+    }
+
+    @include very-large-display {
+      padding: $spacing-800;
     }
 
     @include large-display {
@@ -27,29 +31,33 @@
   }
 
   &.-pageBanner {
-    height: 75vh;
+    height: calc(75vh + 3rem);
     justify-content: flex-end;
-    padding: $spacing-400 $spacing-800;
+    padding: calc($spacing-600 + 3rem) $spacing-800;
 
     @include very-very-large-display {
       padding: $spacing-800 $spacing-1600;
+      padding-top: calc($spacing-800 + 3rem);
     }
 
     @include very-large-display {
       padding: $spacing-800;
+      padding-top: calc($spacing-800 + 3rem);
     }
 
     @include large-display {
-      height: 100%;
       padding: $spacing-600;
+      padding-top: calc($spacing-800 + 3rem);
     }
 
     @include medium-display {
       padding: $spacing-400;
+      padding-top: calc($spacing-400 + 3rem);
     }
 
     @include small-display {
-      padding: $spacing-200;
+      padding: $spacing-400 $spacing-200;
+      padding-top: calc($spacing-600 + 3rem);
     }
   }
 

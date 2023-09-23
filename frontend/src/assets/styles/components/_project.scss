@@ -147,10 +147,6 @@
     @include medium-display {
       font-size: ms(3);
     }
-
-/*    @include small-display {
-      font-size: ms(2);
-    } */
   }
 
   &Date {
@@ -184,10 +180,6 @@
         display: none;
       }
     }
-
-    //@include medium-display {
-    //  display: none;
-    //}
   }
 
   &__header {
@@ -204,6 +196,10 @@
     @include large-display {
       flex-direction: column;
       justify-content: flex-start;
+    }
+
+    @include small-display {
+      min-height: fit-content;
     }
 
     &__title {
@@ -237,7 +233,7 @@
         }
 
         @include medium-display {
-          width: 75%;
+          width: 100%;
           align-self: flex-start;
         }
 
@@ -251,9 +247,11 @@
         font-family: $font-display;
         font-size: ms(3);
         width: 30%;
+
         @include medium-display {
           font-size: ms(2);
         }
+
         @include small-display {
           font-size: ms(1);
         }
@@ -266,6 +264,7 @@
         font-size: ms(2);
         gap: $spacing-50;
         width: 70%;
+
         @include small-display {
           font-size: ms(1);
         }

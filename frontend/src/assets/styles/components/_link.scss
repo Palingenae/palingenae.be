@@ -1,5 +1,5 @@
 a,
-.link {
+%link {
   &.-ui {
     @include transition(border-bottom);
 
@@ -65,5 +65,82 @@ a,
     text-decoration: none;
     padding-bottom: $spacing-50;
     border-bottom: solid 3px transparent;
+  }
+
+  &.-vertical{
+    font-size: ms(4);
+    font-variation-settings: $text-ui, $text-light-theme-regular;
+
+    &:hover,
+    &:focus {
+      @keyframes widden-on-interaction {
+        from {
+          font-variation-settings: $text-ui, $text-light-theme-regular;
+        }
+
+        to {
+          font-variation-settings: $text-ui, 'wght' 600;
+        }
+      }
+
+      animation: widden-on-interaction 100ms ease-in;
+      font-variation-settings: $text-ui, 'wght' 600;
+      color: $colour-cobalt-700;
+
+      @include dark-theme {
+        color: $colour-cobalt-300;
+      }
+
+      &::before {
+        @keyframes point-to-route {
+          from {
+            font-variation-settings: $text-ui, $text-light-theme-regular;
+            opacity: 0;
+            margin-right: $spacing-400
+          }
+
+          to {
+            font-variation-settings: $text-ui, 'wght' 600;
+            opacity: 1;
+            margin-right: $spacing-300;
+          }
+        }
+
+        content: "\00261E";
+        font-family: $font-text;
+        font-size: inherit;
+        color: inherit;
+        opacity: 1;
+        margin-right: $spacing-300;
+        animation: point-to-route 200ms ease-in;
+      }
+    }
+
+    @include large-display {
+      font-size: ms(4);
+    }
+
+    @include small-display {
+      font-size: ms(3);
+    }
+
+    &.-active {
+      font-variation-settings: $text-ui, 'wght' 700;
+      color: $colour-emerald-600;
+
+      @include dark-theme {
+        color: $colour-emerald-300;
+      }
+
+      &::before {
+        content: "\01F441";
+        font-family: $font-text;
+        font-size: inherit;
+        color: inherit;
+        opacity: 1;
+        margin-right: $spacing-300;
+        animation: point-to-route 200ms ease-in;
+      }
+    }
   }
 }
