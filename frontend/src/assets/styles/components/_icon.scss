@@ -1,5 +1,5 @@
 .icon {
-  // Thumb Up
+  // Ok sign
   &.-positive {
     &::after {
       content: "\01F58F";
@@ -9,7 +9,7 @@
     }
   }
 
-  // Index Up ?
+  // Open Hand
   &.-information {
     &::after {
       content: "\01F590";

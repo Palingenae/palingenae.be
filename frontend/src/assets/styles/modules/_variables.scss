@@ -78,8 +78,8 @@ $text-content: "MONO" 0, "CASL" 0.5 ,"CRSV" 1; /* Large text */
 $text-paragraph: "MONO" 0, "CASL" 0, "CRSV" 0; /* Paragraphs and tags */
 $text-code-block: "MONO" 1, "CASL" 0, "CRSV" 0;
 $text-code-comment: "MONO" 1, "CASL" 1, "CRSV" 1;
-$text-dark-theme-regular: "wght" 390;
-$text-light-theme-regular: "wght" 360;
+$text-dark-theme-regular: "wght" 360;
+$text-light-theme-regular: "wght" 380;
 $modularscale: (
   base: 16px,
   ratio: 1.25
