@@ -176,6 +176,15 @@ h4 {
       'WONK' 1,
       'wght' 300;
   }
+
+  &.decorated {
+    &::after {
+      margin-top: $spacing-150;
+      @include medium-display {
+        margin-top: $spacing-100;
+      }
+    }
+  }
 }
 
 .paragraph {

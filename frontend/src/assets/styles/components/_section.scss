@@ -37,15 +37,19 @@
     }
   }
 
-  &:first-child {
-    padding-top: $spacing-1600;
+  &:first-of-type {
+    padding-top: calc($spacing-800 + 3rem);
+
+    @include large-display {
+      padding-top: calc($spacing-800 + 3rem);
+    }
 
     @include medium-display {
-      padding-top: $spacing-800;
+      padding-top: calc($spacing-600 + 3rem);
     }
 
     @include small-display {
-      padding-top: $spacing-800
+      padding-top: calc($spacing-400 + 3rem);
     }
   }
 }

@@ -33,7 +33,8 @@
   &.-pageBanner {
     height: calc(75vh + 3rem);
     justify-content: flex-end;
-    padding: calc($spacing-600 + 3rem) $spacing-800;
+    padding: $spacing-600 $spacing-800;
+    padding-top: calc($spacing-800 + 3rem);
 
     @include very-very-large-display {
       padding: $spacing-800 $spacing-1600;
@@ -52,7 +53,7 @@
 
     @include medium-display {
       padding: $spacing-400;
-      padding-top: calc($spacing-400 + 3rem);
+      padding-top: calc($spacing-600 + 3rem);
     }
 
     @include small-display {
