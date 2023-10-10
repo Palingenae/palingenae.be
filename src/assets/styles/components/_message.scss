@@ -1,0 +1,82 @@
+.message {
+  @include transition(background-color);
+  @include transition(color);
+  @include transition(border-left);
+
+  display: flex;
+  flex-direction: column;
+  color: $grey-900;
+  background-color: $grey-100;
+  border-left: solid 2px $grey-900;
+  border-radius: 8px;
+  padding: $spacing-100 $spacing-200;
+
+  &:not(:last-of-type) {
+    margin-bottom: $spacing-200;
+  }
+
+  @include dark-theme {
+    color: $grey-100;
+    background-color: $grey-900;
+    border-left: solid 2px $grey-100;
+  }
+
+  &Container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &Type {
+    font-variation-settings: 'wght' 700;
+    font-size: ms(0);
+    margin-bottom: $spacing-50;
+  }
+
+  &Content {
+    @extend .paragraph;
+
+    margin-bottom: 0;
+  }
+
+  &.-info {
+    @include dark-theme {
+      color: $colour-cobalt-100;
+      background-color: $colour-cobalt-1000;
+      border-left: solid 2px $colour-cobalt-100;
+    }
+
+    @include light-theme {
+      color: $colour-cobalt-900;
+      background-color: $colour-cobalt-100;
+      border-left: solid 2px $colour-cobalt-900;
+    }
+  }
+
+  &.-notice {
+    @include dark-theme {
+      color: $colour-copper-100;
+      background-color: $colour-copper-900;
+      border-left: solid 2px $colour-copper-100;
+    }
+
+    @include light-theme {
+      color: $colour-copper-900;
+      background-color: $colour-copper-100;
+      border-left: solid 2px $colour-copper-900;
+    }
+  }
+
+  &.-positive {
+    @include dark-theme {
+      color: $colour-emerald-100;
+      background-color: $colour-emerald-900;
+      border-left: solid 2px $colour-emerald-100;
+    }
+
+    @include light-theme {
+      color: $colour-emerald-900;
+      background-color: $colour-emerald-100;
+      border-left: solid 2px $colour-emerald-900;
+    }
+  }
+}
