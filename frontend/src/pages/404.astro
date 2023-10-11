@@ -1,0 +1,17 @@
+---
+import MainLayout from '@layouts/main.astro';
+import Message from "../components/message.astro";
+
+const pageTitle = "Erreur 404 "
+---
+<MainLayout title={ pageTitle }>
+    <section class="hero -pageCover -animated">
+        <h4 class="decorated -ruby">Oups ? { pageTitle }...</h4>
+        <p class="display -fat">
+            <i>Il n'y a rien ici ?</i>
+        </p>
+        <p class="paragraph -jumbo">C'est comme ça ! On y peut rien ! Des fois, on pense faire les choses correctement et puis quelque chose ne passe pas comme on voudrait. C'est très certainement la faute à-pas-de-chance !</p>
+        <p class="paragraph">Ceci dit, si ce problème persiste, c'est que j'ai dû me tromper quelque part. <br/>Il est possible de me signaler ce problème par email et de me le décrire. <br />Merci beaucoup !</p>
+        <a class='button -emerald' href="mailto:hey@palingenae.be?subject=[palingenae.be] Erreur 404 persistante">Envoyer l'email</a>
+    </section>
+</MainLayout>
