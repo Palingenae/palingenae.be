@@ -1,0 +1,35 @@
+---
+import MainLayout from "@layouts/main.astro";
+import Footer from "../../components/footer.astro";
+import Tag from "../../components/tag.astro";
+import Action from "../../components/action.astro";
+
+const pageTitle = "Projets";
+
+const response = await fetch('http://localhost:3333/api/projects');
+const projects = await response.json();
+---
+<MainLayout title={pageTitle}>
+    <section class="section -column">
+        <h1 class="display -thin decorated">Projets</h1>
+        <div class="projectCollection">
+            {
+                projects.docs.map((project) => (
+                        <a href={`projects/${project.slug}`} class="project">
+                            <div class="projectContainer">
+                                <div class="projectContent">
+                                    <h2 class="projectTitle">{project.title}</h2>
+                                    <div class="projectMeta">
+                                        <span class="projectDate">{project.year}</span>
+                                        <Tag class="projectType" variant="outline" label={project.type}/>
+                                    </div>
+                                </div>
+                            </div>
+                            <Action label="Voir" icon="forward"/>
+                        </a>
+                ))
+            }
+        </div>
+    </section>
+    <Footer/>
+</MainLayout>

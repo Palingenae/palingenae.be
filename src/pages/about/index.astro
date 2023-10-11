@@ -1,0 +1,39 @@
+---
+import MainLayout from '@layouts/main.astro'
+
+import Contact from '@components/contact.astro';
+import Footer from "@components/footer.astro";
+import Curriculum from "@components/curriculum.astro";
+
+const pageTitle = "À propos"
+const availableForHire = true;
+---
+<MainLayout title={pageTitle}>
+    <section class="hero -pageBanner">
+        { availableForHire == true ?
+                <p class="curriculumAvailable">Disponible</p>
+            :
+            ''
+        }
+        <p class="display">Simplement : <b><i>Olivia</i></b>.</p>
+        <p class="paragraph -jumbo -sans">Je suis une “<i>développeuse créative</i>”, je porte un grand soin à la conception avant de passer au développement, <b>du Back-End au Front-End</b>.</p>
+    </section>
+    <section class="section -row -gold">
+        <article class="article">
+            <p class="paragraph">Clairement, la phrase qui me caractérise le mieux est :</p>
+
+            <blockquote> "Une véritable curieuse et touche-à-tout."</blockquote>
+
+            <p class="paragraph">J'aime beaucoup le design, la photographie et la typographie, de manière générale. Sans oublier le fait que j'ai décidé que j'allais faire du développement web ma carrière, commencée en Belgique, dont je suis originaire. C'est pour cela que je me désigne comme "<em>Développeuse Créative</em>", car je m'intéresse autant design qu'au code.</p>
+
+            <p class="paragraph">J'ai repris une formation en tant que <em>Développeuse PHP / Symfony</em> à travers OpenClassrooms. Toujours à l'écoute de ce qui se passe dans mon domaine, j'ai récemment décidé de m'intéresser très fortement à JavaScript. Je songe d'ailleurs reprendre un projet originalement en Symfony pour le réécrire en TypeScript.</p>
+        </article>
+    </section>
+    { availableForHire == true ?
+        <Curriculum />
+        :
+        ''
+    }
+    <Contact />
+    <Footer />
+</MainLayout>

@@ -1,0 +1,274 @@
+.project {
+  @include transition(all);
+  @include diamond('outline', $grey-800, $grey-200);
+
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: $spacing-400;
+  border-radius: 8px;
+  padding: $spacing-200 $spacing-400;
+  color: inherit;
+  margin-bottom: $spacing-200;
+
+  @include medium-display {
+    gap: $spacing-400;
+    padding: $spacing-200;
+  }
+
+  @include small-display {
+    @include diamond('none');
+
+    row-gap: 0;
+    padding: $spacing-100;
+  }
+
+  &:hover {
+    @include diamond('outline', $colour-gold-200, $colour-gold-200);
+    @include diamond('filled', $colour-gold-200, $colour-gold-200);
+
+    background-color: $grey-800;
+    color: $grey-100;
+
+    @include dark-theme {
+      @include diamond('filled', $colour-gold-200, $colour-gold-200);
+
+      background-color: $grey-700;
+      color: $white;
+    }
+
+    .tag.-outline {
+      border-color: $grey-100;
+      color: $grey-100;
+    }
+
+    .projectContainer::before {
+      color: $colour-gold-100;
+    }
+
+    .projectAction {
+      color: inherit;
+    }
+
+    @include small-display {
+      @include diamond('none');
+    }
+  }
+
+  &:focus {
+    @include diamond('filled', $colour-emerald-200, $colour-emerald-500);
+    @include diamond('outline', transparent, transparent);
+
+    background-color: $colour-emerald-600;
+
+    @include dark-theme {
+      background-color: $grey-100;
+      color: $grey-800;
+
+      .tag {
+        border-color: $grey-600;
+        color: $grey-600;
+      }
+
+      .projectContainer::before {
+        color: $colour-emerald-500;
+      }
+    }
+  }
+
+  &Container {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-grow: 1;
+    align-items: center;
+    gap: $spacing-400;
+
+    &::before {
+      @include transition(color);
+
+      content: "0" counter(project-counter);
+      counter-increment: project-counter -1;
+      font-size: ms(9);
+      font-variation-settings: $text-code-block, 'wght' 300;
+      color: $grey-100;
+
+      @include dark-theme {
+        color: $grey-800;
+      }
+
+      @include medium-display {
+        display: none;
+      }
+    }
+  }
+
+  &Content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &Collection {
+    display: flex;
+    flex-direction: column;
+    counter-reset: project-counter 5;
+  }
+
+  &Meta {
+    display: flex;
+    align-items: center;
+    gap: $spacing-400;
+
+    @include small-display {
+      gap: $spacing-100;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &Title {
+    @extend h2;
+
+    font-size: ms(5);
+    margin-bottom: $spacing-150;
+
+    @include light-theme {
+      font-variation-settings: 'wght' 450;
+    }
+
+    @include dark-theme {
+      font-variation-settings: 'wght' 480;
+    }
+
+    @include large-display {
+      font-size: ms(4);
+    }
+
+    @include medium-display {
+      font-size: ms(3);
+    }
+  }
+
+  &Date {
+    font-size: ms(1);
+    font-variation-settings: $text-code-block, $text-light-theme-regular;
+  }
+
+  &Type {
+    @extend .tag;
+    @extend .-outline;
+  }
+
+  &Action {
+    @include transition(color);
+
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: ms(4);
+    font-family: $font-display;
+    font-variation-settings: $display-action;
+    font-style: italic;
+    color: transparent;
+
+    @include large-display {
+      font-size: ms(3);
+      max-width: 20%;
+
+      .actionLabel {
+        display: none;
+      }
+    }
+  }
+
+  &__header {
+    @extend .hero;
+    @extend .-pageBanner;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: $spacing-400;
+    height: fit-content;
+    min-height: 75vh;
+
+    @include large-display {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    @include small-display {
+      min-height: fit-content;
+    }
+
+    &__title {
+      max-width: 70%;
+      padding-right: 4rem;
+
+      h1.display {
+        margin-bottom: 0;
+      }
+
+      @include small-display {
+        width: 100%;
+        padding: 0;
+      }
+    }
+
+    &__meta {
+      display: flex;
+      align-items: baseline;
+      gap: $spacing-200;
+
+      &Container {
+        @extend .aside;
+
+        align-self: flex-end;
+        gap: $spacing-200;
+        width: 25%;
+
+        @include large-display {
+          width: 50%;
+        }
+
+        @include medium-display {
+          width: 100%;
+          align-self: flex-start;
+        }
+
+        @include small-display {
+          width: 100%;
+        }
+      }
+
+      &Label {
+        display: inline-flex;
+        font-family: $font-display;
+        font-size: ms(3);
+        width: 30%;
+
+        @include medium-display {
+          font-size: ms(2);
+        }
+
+        @include small-display {
+          font-size: ms(1);
+        }
+      }
+
+      &Properties {
+        display: inline-flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        font-size: ms(2);
+        gap: $spacing-50;
+        width: 70%;
+
+        @include small-display {
+          font-size: ms(1);
+        }
+      }
+    }
+  }
+}
