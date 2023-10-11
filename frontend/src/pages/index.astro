@@ -1,0 +1,25 @@
+---
+import MainLayout from "@layouts/main.astro";
+
+const pageTitle = "Salut ! ";
+
+const hero = {
+	greetings: "Oui, salut ! Ici tu trouveras...",
+	introduction: "Développement Web, Photographie & Design" ,
+	description: "... et bientôt d'autres choses !"
+};
+
+const availableForHire = true;
+---
+<MainLayout title={ pageTitle }>
+	<section class="hero -pageCover -animated">
+		<p class="heroIntroduction">
+			<!--{ hero.introduction }-->
+			<span>Développement Web,</span> <span>Photographie,</span> <span>Design</span>
+		</p>
+		<p class="heroDescription">
+			{ hero.description }
+		</p>
+	</section>
+</MainLayout>
+
