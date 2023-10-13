@@ -1,4 +1,24 @@
 .action {
+  @include transition(color);
+
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: ms(4);
+  font-family: $font-display;
+  font-variation-settings: $display-action;
+  font-style: italic;
+  color: transparent;
+
+  @include large-display {
+    font-size: ms(3);
+    max-width: 20%;
+
+    .actionLabel {
+      display: none;
+    }
+  }
   &Label {}
 
   &Icon {

@@ -11,22 +11,22 @@ const projects = await response.json();
 ---
 <MainLayout title={pageTitle}>
     <section class="section -column">
-        <h1 class="display -thin decorated">Projets</h1>
-        <div class="projectCollection">
+        <h1 class="display -thin decorated">{pageTitle}</h1>
+        <div class="collection">
             {
                 projects.docs.map((project) => (
-                        <a href={`projects/${project.slug}`} class="project">
-                            <div class="projectContainer">
-                                <div class="projectContent">
-                                    <h2 class="projectTitle">{project.title}</h2>
-                                    <div class="projectMeta">
-                                        <span class="projectDate">{project.year}</span>
-                                        <Tag class="projectType" variant="outline" label={project.type}/>
-                                    </div>
+                    <a href={`projects/${project.slug}`} class="collection__card">
+                        <div class="card__container -counter">
+                            <div class="card__content">
+                                <h2 class="card__title">{project.title}</h2>
+                                <div class="card__meta">
+                                    <span class="card__date">{project.year}</span>
+                                    <Tag class="projectType" variant="outline" label={project.type}/>
                                 </div>
                             </div>
-                            <Action label="Voir" icon="forward"/>
-                        </a>
+                        </div>
+                        <Action label="Voir" icon="forward"/>
+                    </a>
                 ))
             }
         </div>

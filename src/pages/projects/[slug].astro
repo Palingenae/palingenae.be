@@ -5,10 +5,10 @@ import Tag from "@components/tag.astro";
 import Contact from "@components/contact.astro";
 import Footer from "@components/footer.astro"
 
-const { title, year, type, status, responsibilities, stack, content } = Astro.props;
+const { title, year, type, status, stack, content } = Astro.props;
 
 export async function getStaticPaths() {
-    let response: Response = await fetch("http://localhost:3333/api/projects");
+    let response = await fetch("http://localhost:3333/api/projects");
     let projects = await response.json();
 
     return projects.docs.map((project) => {
@@ -21,7 +21,6 @@ export async function getStaticPaths() {
                 year: project.year,
                 type: project.type,
                 status: project.status,
-                responsibilities: project.scope,
                 stack: project.stack,
                 content: project.article
             }
@@ -29,27 +28,27 @@ export async function getStaticPaths() {
     })
 }
 ---
-<MainLayout title= { title }>
-    <header class="project__header">
-        <div class="project__header__title">
+<MainLayout title={ title }>
+    <header class="story__header -horizontal">
+        <div class="story__header__title">
             <h1 class="display -thin"> { title } </h1>
         </div>
-        <div class="project__header__metaContainer">
-            <div class="project__header__meta">
-                <span class="project__header__metaLabel">Année</span>
-                <span class="project__header__metaProperties">{ year }</span>
+        <div class="story__header__metaContainer -vertical">
+            <div class="story__header__meta">
+                <span class="story__header__metaLabel">Année</span>
+                <span class="story__header__metaProperties">{ year }</span>
             </div>
-            <div class="project__header__meta">
-                <span class="project__header__metaLabel">Type</span>
-                <span class="project__header__metaProperties">{ type }</span>
+            <div class="story__header__meta">
+                <span class="story__header__metaLabel">Type</span>
+                <span class="story__header__metaProperties">{ type }</span>
             </div>
-            <div class="project__header__meta">
-                <span class="project__header__metaLabel">Statut</span>
-                <span class="project__header__metaProperties"><Tag label={ status } variant={status === "Actif" ? "filledEmerald" : "filled"}/></span>
+            <div class="story__header__meta">
+                <span class="story__header__metaLabel">Statut</span>
+                <span class="story__header__metaProperties"><Tag label={ status } variant={status === "Actif" ? "filledEmerald" : "filled"}/></span>
             </div>
-            <div class="project__header__meta">
-                <span class="project__header__metaLabel">Stack</span>
-                <span class="project__header__metaProperties">{
+            <div class="story__header__meta">
+                <span class="story__header__metaLabel">Stack</span>
+                <span class="story__header__metaProperties">{
                     stack.map((tool): void => (
                         <Tag label={ tool } variant="outline"/>
                     ))

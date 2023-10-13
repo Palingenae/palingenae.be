@@ -1,0 +1,77 @@
+.card {
+  &__container {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-grow: 1;
+    align-items: center;
+    gap: $spacing-400;
+
+    &.-counter {
+      &::before {
+        @include transition(color);
+
+        content: "0" counter(collection-counter);
+        counter-increment: collection-counter -1;
+        font-size: ms(9);
+        font-variation-settings: $text-code-block, 'wght' 300;
+        color: $grey-100;
+        line-height: 1;
+
+        @include dark-theme {
+          color: $grey-800;
+        }
+
+        @include medium-display {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    @extend h2;
+
+    font-size: ms(5);
+    margin-bottom: $spacing-100;
+
+    @include light-theme {
+      font-variation-settings: 'wght' 450;
+    }
+
+    @include dark-theme {
+      font-variation-settings: 'wght' 480;
+    }
+
+    @include large-display {
+      font-size: ms(4);
+    }
+
+    @include medium-display {
+      font-size: ms(3);
+    }
+  }
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: $spacing-400;
+
+    @include small-display {
+      gap: $spacing-100;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__tagsContainer {
+      display: flex;
+      gap: $spacing-100;
+    }
+  }
+  &__date {
+    font-size: ms(1);
+    font-variation-settings: $text-code-block, $text-light-theme-regular;
+  }
+}

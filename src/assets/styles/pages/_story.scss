@@ -1,0 +1,134 @@
+/* "Story" is the abstract word used to mention both projects and blog articles. Both content-types have the same structure */
+
+.story {
+  &__header {
+    @extend .hero;
+    @extend .-pageBanner;
+
+    &__title {
+      max-width: 70%;
+      padding-right: 4rem;
+
+      h1.display {
+        margin-bottom: 0;
+      }
+
+      @include small-display {
+        width: 100%;
+        padding: 0;
+      }
+    }
+    &.-horizontal {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: $spacing-400;
+      height: fit-content;
+      min-height: 75vh;
+
+      @include large-display {
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      @include small-display {
+        min-height: fit-content;
+      }
+    }
+
+    &.-vertical {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: $spacing-400;
+      height: fit-content;
+      padding-top: calc($spacing-800 + 3rem);
+      .story__header__title {
+        max-width: 100%;
+      }
+    }
+
+
+    &__meta {
+      display: flex;
+      align-items: baseline;
+      gap: $spacing-200;
+
+      &__tags {
+        display: flex;
+        gap: $spacing-100;
+      }
+
+      &Label {
+        display: inline-flex;
+        font-family: $font-display;
+        font-size: ms(3);
+        width: 30%;
+
+        @include medium-display {
+          font-size: ms(2);
+        }
+
+        @include small-display {
+          font-size: ms(1);
+        }
+      }
+
+      &Properties {
+        display: inline-flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        font-size: ms(2);
+        gap: $spacing-50;
+        width: 70%;
+
+        @include small-display {
+          font-size: ms(1);
+        }
+      }
+
+      &Container {
+        &.-vertical {
+          @extend .aside;
+
+          align-self: flex-end;
+          gap: $spacing-200;
+          width: 25%;
+
+          @include large-display {
+            width: 50%;
+          }
+
+          @include medium-display {
+            width: 100%;
+            align-self: flex-start;
+          }
+
+          @include small-display {
+            width: 100%;
+          }
+        }
+
+        &.-horizontal {
+          display: flex;
+          flex-direction: column;
+
+          gap: $spacing-400;
+          .story__header__meta {
+            gap: 1rem;
+            &__info {
+              display: flex;
+              gap: $spacing-400;
+            }
+            &Label,
+            &Properties {
+              justify-content: flex-start;
+              width: 100%;
+            }
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}

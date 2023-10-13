@@ -1,0 +1,69 @@
+---
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import localeFR from 'dayjs/locale/fr';
+import MainLayout from '@layouts/main.astro';
+import RichText from "@components/RichText.astro";
+import Tag from "@components/tag.astro";
+import Contact from "@components/contact.astro";
+import Footer from "@components/footer.astro"
+
+dayjs.extend(relativeTime);
+dayjs.locale('fr');
+
+const { title, category, tags, published, content } = Astro.props;
+
+export async function getStaticPaths() {
+    let response = await fetch("http://localhost:3333/api/articles");
+    let articles = await response.json();
+
+    return articles.docs.map((article) => {
+        return {
+            params: {
+                slug: article.slug
+            },
+            props: {
+                title: article.title,
+                category: article.categories,
+                tags: article.tags,
+                content: article.article,
+                published: article.createdAt
+            }
+        }
+    })
+}
+---
+<MainLayout title={ title }>
+    <header class="story__header -vertical">
+        <div class="story__header__title">
+            <h1> { title } </h1>
+        </div>
+        <div class="story__header__metaContainer -horizontal">
+            <div class="story__header__meta__info">
+                <div class="story__header__meta">
+                    <span class="story__header__metaLabel">Publié</span>
+                    <span class="story__header__metaProperties">{ dayjs(published).locale(localeFR).fromNow() }</span>
+                </div>
+                <div class="story__header__meta">
+                    <span class="story__header__metaLabel">Catégorie</span>
+                    <span class="story__header__metaProperties">{ category }</span>
+                </div>
+            </div>
+            <div class="story__header__meta__tags">
+                {
+                    tags.map((tag): void => (<Tag label={ tag } variant="outline"/>
+                    ))
+                }
+            </div>
+        </div>
+    </header>
+    <section class="section">
+        <main class="main">
+            <article class="article">
+                <RichText richText={ content }/>
+            </article>
+        </main>
+    </section>
+    <Contact />
+    <Footer />
+</MainLayout>
