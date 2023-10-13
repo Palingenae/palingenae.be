@@ -1,0 +1,44 @@
+---
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import localeFR from 'dayjs/locale/fr';
+import MainLayout from '@layouts/main.astro';
+import Action from "@components/action.astro";
+import Tag from "@components/tag.astro";
+
+dayjs.extend(relativeTime);
+dayjs.locale('fr');
+
+const pageTitle = "Écrits"
+
+const response = await fetch('http://localhost:3333/api/articles')
+const articles = await response.json();
+---
+<MainLayout title={pageTitle}>
+    <section class="section -column">
+        <h1 class="display -thin decorated">{pageTitle}</h1>
+        <div class="collection">
+            {
+                articles.docs.map((article) => (
+                    <a href={`blog/${article.slug}`} class="collection__card">
+                        <div class="card__container">
+                            <div class="card__content">
+                                <h2 class="card__title">{ article.title }</h2>
+                                <div class="card__meta">
+                                    <span class="card__date">{ dayjs(article.createdAt).locale(localeFR).fromNow() }</span>
+                                    <div class="card__meta__tagsContainer">
+                                        { article.tags.map((tag) => (
+                                            <Tag class="articleType" variant="outline" label={tag}/>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <Action label="Voir" icon="forward"/>
+                    </a>
+                ))
+            }
+
+        </div>
+    </section>
+</MainLayout>

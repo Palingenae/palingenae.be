@@ -5,6 +5,10 @@ const currentPath = Astro.url.pathname;
 
 const navigationLinks = [
     {
+        label: "Blog",
+        route: "/blog"
+    },
+    {
         label: "Projets",
         route: "/projects"
     },
@@ -37,7 +41,7 @@ const navigationLinks = [
             <p class="navigation__vertical__menu__title">Navigation</p>
             {
                 navigationLinks.map((link) =>  (
-                        <a class={currentPath === link.route ? "link -navigation -vertical -active" : "link -navigation -vertical"} href={ link.route }>{ link.label }</a>
+                    <a class={currentPath === link.route ? "link -navigation -vertical -active" : "link -navigation -vertical"} href={ link.route }>{ link.label }</a>
                 ))
             }
         </div>
