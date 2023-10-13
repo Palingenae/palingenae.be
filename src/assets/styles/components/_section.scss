@@ -37,7 +37,7 @@
     }
   }
 
-  &:first-of-type {
+  /*&:first-of-type {
     padding-top: calc($spacing-800 + 3rem);
 
     @include large-display {
@@ -51,7 +51,7 @@
     @include small-display {
       padding-top: calc($spacing-400 + 3rem);
     }
-  }
+  }*/
 }
 
 .division {
