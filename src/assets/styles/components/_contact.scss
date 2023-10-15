@@ -87,24 +87,31 @@
   }
 
   &Issue {
-    @extend .division;
-    @extend .-column;
-    @extend .-align-flexEnd;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .paragraph {
+      text-align: end;
+      color: $white;
+    }
 
     @include medium-display {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin-bottom: $spacing-200;
-    }
 
-    .paragraph {
-      color: $white;
-      text-align: end;
+      .paragraph {
+        text-align: center;
+      }
     }
 
     @include small-display {
-      text-align: center;
+      .paragraph {
+        color: $white;
+        text-align: center;
+      }
     }
   }
 }

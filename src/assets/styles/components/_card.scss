@@ -32,6 +32,7 @@
     display: flex;
     flex-direction: column;
   }
+
   &__title {
     @extend h2;
 
@@ -54,6 +55,7 @@
       font-size: ms(3);
     }
   }
+
   &__meta {
     display: flex;
     align-items: center;
@@ -70,6 +72,7 @@
       gap: $spacing-100;
     }
   }
+
   &__date {
     font-size: ms(1);
     font-variation-settings: $text-code-block, $text-light-theme-regular;

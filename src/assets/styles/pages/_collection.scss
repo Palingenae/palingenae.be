@@ -15,9 +15,15 @@
     padding: $spacing-200 $spacing-400;
     color: inherit;
     margin-bottom: $spacing-200;
+
     @include medium-display {
       gap: $spacing-400;
       padding: $spacing-200;
+    }
+
+    .action {
+      color: transparent;
+      font-style: italic;
     }
 
     @include small-display {
