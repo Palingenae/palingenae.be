@@ -8,8 +8,14 @@
   font-size: ms(4);
   font-family: $font-display;
   font-variation-settings: $display-action;
-  font-style: italic;
-  color: transparent;
+
+  //font-style: italic;
+  color: inherit;
+  gap: $spacing-100;
+
+  &.-reverse {
+    flex-direction: row-reverse;
+  }
 
   @include large-display {
     font-size: ms(3);
@@ -19,9 +25,14 @@
       display: none;
     }
   }
-  &Label {}
 
-  &Icon {
+  &__label {
+    font-size: ms(3);
+    padding-top: $spacing-25;
+  }
+
+  &__icon {
     font-style: normal;
+    font-size: ms(4);
   }
 }

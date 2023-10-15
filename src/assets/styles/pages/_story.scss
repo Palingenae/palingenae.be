@@ -18,7 +18,10 @@
         padding: 0;
       }
     }
+
     &.-horizontal {
+      @include top-spacer;
+
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -37,12 +40,15 @@
     }
 
     &.-vertical {
+      @include top-spacer;
+
       display: flex;
       flex-direction: column;
       justify-content: center;
       gap: $spacing-400;
       height: fit-content;
-      padding-top: calc($spacing-800 + 3rem);
+      padding-top: $spacing-1600;
+
       .story__header__title {
         max-width: 100%;
       }
@@ -112,19 +118,26 @@
         &.-horizontal {
           display: flex;
           flex-direction: column;
-
           gap: $spacing-400;
+
           .story__header__meta {
             gap: 1rem;
+
             &__info {
               display: flex;
               gap: $spacing-400;
             }
+
             &Label,
             &Properties {
               justify-content: flex-start;
               width: 100%;
             }
+
+            &Properties {
+              font-size: ms(1);
+            }
+
             flex-direction: column;
           }
         }

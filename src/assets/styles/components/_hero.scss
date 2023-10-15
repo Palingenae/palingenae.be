@@ -31,10 +31,10 @@
   }
 
   &.-pageBanner {
-    height: calc(75vh + 3rem);
+    height: calc(75vh);
     justify-content: flex-end;
     padding: $spacing-600 $spacing-800;
-    padding-top: calc($spacing-800 + 3rem);
+    padding-top: $spacing-1600;
 
     @include very-very-large-display {
       padding: $spacing-800 $spacing-1600;

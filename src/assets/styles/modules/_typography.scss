@@ -45,7 +45,7 @@ h1 {
   }
 
   @include medium-display {
-    font-size: ms(5);
+    font-size: ms(6);
   }
 }
 
@@ -180,6 +180,7 @@ h4 {
   &.decorated {
     &::after {
       margin-top: $spacing-150;
+
       @include medium-display {
         margin-top: $spacing-100;
       }

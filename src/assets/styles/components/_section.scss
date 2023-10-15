@@ -36,22 +36,6 @@
       color: $colour-gold-100;
     }
   }
-
-  /*&:first-of-type {
-    padding-top: calc($spacing-800 + 3rem);
-
-    @include large-display {
-      padding-top: calc($spacing-800 + 3rem);
-    }
-
-    @include medium-display {
-      padding-top: calc($spacing-600 + 3rem);
-    }
-
-    @include small-display {
-      padding-top: calc($spacing-400 + 3rem);
-    }
-  }*/
 }
 
 .division {
@@ -84,6 +68,10 @@
 
 .-justify-spaceBetween {
   justify-content: space-between;
+}
+
+.-justify-center {
+  justify-content: center;
 }
 
 .-align-flexEnd {
