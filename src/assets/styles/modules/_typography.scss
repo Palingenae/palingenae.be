@@ -157,7 +157,7 @@ h4 {
   }
 
   @include small-display {
-    font-size: ms(7);
+    font-size: ms(6);
     margin-bottom: $spacing-100;
   }
 
@@ -189,6 +189,12 @@ h4 {
 }
 
 .paragraph {
+  font-family: $font-text, sans-serif, -apple-system, BlinkMacSystemFont, “Segoe UI”, “Roboto”, “Helvetica Neue”, sans-serif;
+  letter-spacing: $spacing-letter-spacing-text;
+  line-height: $spacing-body-line-height;
+  max-width: 72ch;
+  font-size: ms(1);
+
   & > a,
   & > .link {
     color: inherit;
@@ -201,11 +207,6 @@ h4 {
       font-variation-settings: 'wght' 540;
     }
   }
-
-  letter-spacing: $spacing-letter-spacing-text;
-  line-height: $spacing-body-line-height;
-  max-width: 72ch;
-  font-size: ms(1);
 
   &:not(:last-of-type) {
     margin-bottom: $spacing-150;
@@ -220,7 +221,7 @@ h4 {
   }
 
   @include small-display {
-    font-size: ms(1);
+    font-size: ms(0);
     margin-bottom: $spacing-100;
   }
 

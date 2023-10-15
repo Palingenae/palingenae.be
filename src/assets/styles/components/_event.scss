@@ -14,7 +14,13 @@
     margin-bottom: 0;
 
     @include medium-display {
-      gap: $spacing-400;
+      gap: calc($spacing-800 + $spacing-200);
+    }
+
+    @include small-display {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: $spacing-50;
     }
   }
 

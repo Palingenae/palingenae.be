@@ -29,7 +29,7 @@ const navLinks = await response.json();
             <p class="navigation__vertical__menu__title">Navigation</p>
             {
                 navLinks.Routes.map((link) =>  (
-                    <a class={currentPath === link.route ? "link -navigation -vertical -active" : "link -navigation -vertical"} href={ link.route }>{ link.label }</a>
+                    <a class={currentPath === link.URL ? "link -navigation -vertical -active" : "link -navigation -vertical"} href={ link.URL }>{ link.Name }</a>
                 ))
             }
         </div>
