@@ -11,11 +11,11 @@ dayjs.locale('fr');
 
 const pageTitle = "Écrits"
 
-const response = await fetch('http://localhost:3333/api/articles')
+const response = await fetch(`${import.meta.env.API_URL}/api/articles`)
 const articles = await response.json();
 ---
 <MainLayout title={pageTitle}>
-    <section class="section -column">
+    <section class="section -column -top-spacer">
         <h1 class="display -thin decorated">{pageTitle}</h1>
         <div class="collection">
             {

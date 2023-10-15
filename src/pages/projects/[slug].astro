@@ -4,11 +4,12 @@ import RichText from "@components/RichText.astro";
 import Tag from "@components/tag.astro";
 import Contact from "@components/contact.astro";
 import Footer from "@components/footer.astro"
+import { Project } from "../../../types/Project";
 
-const { title, year, type, status, stack, content } = Astro.props;
+const { title, year, type, status, stack, content, image } = Astro.props;
 
-export async function getStaticPaths() {
-    let response = await fetch("http://localhost:3333/api/projects");
+export async function getStaticPaths(): Promise<Project> {
+    let response = await fetch(`${import.meta.env.API_URL}/api/projects`);
     let projects = await response.json();
 
     return projects.docs.map((project) => {
@@ -22,7 +23,8 @@ export async function getStaticPaths() {
                 type: project.type,
                 status: project.status,
                 stack: project.stack,
-                content: project.article
+                content: project.article,
+                image: project.coverImage
             }
         }
     })

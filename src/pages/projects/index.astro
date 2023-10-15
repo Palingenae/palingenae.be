@@ -6,11 +6,11 @@ import Action from "../../components/action.astro";
 
 const pageTitle = "Projets";
 
-const response = await fetch('http://localhost:3333/api/projects');
+const response = await fetch(`${import.meta.env.API_URL}/api/projects`);
 const projects = await response.json();
 ---
 <MainLayout title={pageTitle}>
-    <section class="section -column">
+    <section class="section -column -top-spacer">
         <h1 class="display -thin decorated">{pageTitle}</h1>
         <div class="collection">
             {
