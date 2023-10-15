@@ -2,13 +2,14 @@
 import Tag from "./tag.astro";
 
 const { startDate, endDate } = Astro.props;
-const { eventProperty } = Astro.props;
 const { eventName } = Astro.props;
 const { eventPlace } = Astro.props;
+const { apprenticeship } = Astro.props;
 ---
 <div class="event">
     <div class="eventMeta">
         <span class="eventDates">{ startDate } -> { endDate }</span>
+        { apprenticeship === "yes" ? <Tag variant="filledAmethyst" label="Alternance"/> : ''}
     </div>
     <div class="eventContent">
         <p class="eventName">{ eventName }</p>
