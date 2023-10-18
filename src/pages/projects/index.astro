@@ -3,18 +3,28 @@ import MainLayout from "@layouts/main.astro";
 import Footer from "../../components/footer.astro";
 import Tag from "../../components/tag.astro";
 import Action from "../../components/action.astro";
+import PageHeader from "@components/PageHeader.astro";
+import type { Project } from "types/Project";
 
-const pageTitle = "Projets";
+const pageTitle: string = "Projets";
+const pageDescription: string = "Mes projets favoris";
 
-const response = await fetch(`${import.meta.env.API_URL}/api/projects`);
-const projects = await response.json();
+let projects;
+
+try {
+    const response = await fetch(`${import.meta.env.API_URL}/api/projects`);
+    const projects = await response.json();
+} catch (error) {
+    return Astro.redirect('/404');
+}
 ---
 <MainLayout title={pageTitle}>
+    <PageHeader pageName={pageTitle} pageDescription={pageDescription}/>
     <section class="section -column -top-spacer">
         <h1 class="display -thin decorated">{pageTitle}</h1>
         <div class="collection">
             {
-                projects.docs.map((project) => (
+                projects.docs.map((project: Project) => (
                     <a href={`projects/${project.slug}`} class="collection__card">
                         <div class="card__container -counter">
                             <div class="card__content">
@@ -32,4 +42,3 @@ const projects = await response.json();
         </div>
     </section>
     <Footer/>
-</MainLayout>

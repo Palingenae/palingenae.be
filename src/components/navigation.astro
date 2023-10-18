@@ -2,9 +2,14 @@
 import Logo from '@components/logo.astro';
 
 const currentPath = Astro.url.pathname;
+let navLinks;
 
-const response = await fetch(`${import.meta.env.API_URL}/api/globals/navigation`);
-const navLinks = await response.json();
+try {
+    const response = await fetch(`${import.meta.env.API_URL}/api/globals/navigation`);
+    navLinks = await response.json();
+} catch (error) {
+    console.error(error);
+}
 ---
 <nav class="navigation">
     <div class="navigation__bar">
@@ -15,9 +20,12 @@ const navLinks = await response.json();
         </div>
         <div class="navigation__horizontal">
             {
-              navLinks.Routes.map((link) => (
-                <a class={currentPath === link.URL ? "link -ui -active" : "link -ui"} href={ link.URL }>{ link.Name }</a>
-              ))
+                navLinks === undefined ?
+                    <a class={currentPath === '/about' ? "link -ui -active" : "link -ui"} href="/about">À propos</a>
+                :
+                    navLinks.Routes.map((link: any) => (
+                        <a class={currentPath === link.URL ? "link -ui -active" : "link -ui"} href={ link.URL }>{ link.Name }</a>
+                    ))
             }
         </div>
         <div class="navigation__vertical__toggler">
@@ -28,22 +36,26 @@ const navLinks = await response.json();
         <div class="navigation__vertical__menu">
             <p class="navigation__vertical__menu__title">Navigation</p>
             {
-                navLinks.Routes.map((link) =>  (
+                navLinks !== undefined ?
+                navLinks.Routes.map((link: any) => (
                     <a class={currentPath === link.URL ? "link -navigation -vertical -active" : "link -navigation -vertical"} href={ link.URL }>{ link.Name }</a>
                 ))
+                :
+                <a class={currentPath === '/about' ? "link -navigation -vertical -active" : "link -navigation -vertical"} href="/about">A propos</a>
             }
         </div>
     </div>
 </nav>
 
 
-
 <script>
     const drawerMenuToggler = document.querySelector('.navigation__vertical__toggler');
     const drawerMenu = document.querySelector('.navigation__vertical__menu');
 
-    drawerMenuToggler.addEventListener('click', () => {
-        drawerMenu.classList.toggle('-visible');
-    });
+    if (drawerMenuToggler !== null && drawerMenu !== null) {
+        drawerMenuToggler.addEventListener('click', () => {
+            drawerMenu.classList.toggle('-visible');
+        });
+    }
 </script>
 

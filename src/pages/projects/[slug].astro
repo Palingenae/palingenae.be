@@ -12,22 +12,26 @@ export async function getStaticPaths(): Promise<Project> {
     let response = await fetch(`${import.meta.env.API_URL}/api/projects`);
     let projects = await response.json();
 
-    return projects.docs.map((project) => {
-        return {
-            params: {
-                slug: project.slug
-            },
-            props: {
-                title: project.title,
-                year: project.year,
-                type: project.type,
-                status: project.status,
-                stack: project.stack,
-                content: project.article,
-                image: project.coverImage
+    if (undefined !== projects) {
+        return projects.docs.map((project) => {
+            return {
+                params: {
+                    slug: project.slug
+                },
+                props: {
+                    title: project.title,
+                    year: project.year,
+                    type: project.type,
+                    status: project.status,
+                    stack: project.stack,
+                    content: project.article,
+                    image: project.coverImage
+                }
             }
-        }
-    })
+        })
+    } else {
+        return Astro.redirect('/404');
+    }
 }
 ---
 <MainLayout title={ title }>
