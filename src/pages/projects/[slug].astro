@@ -4,16 +4,16 @@ import RichText from "@components/RichText.astro";
 import Tag from "@components/tag.astro";
 import Contact from "@components/contact.astro";
 import Footer from "@components/footer.astro"
-import { Project } from "../../../types/Project";
+import type { Project } from "../../../types/Project";
 
 const { title, year, type, status, stack, content, image } = Astro.props;
 
-export async function getStaticPaths(): Promise<Project> {
-    let response = await fetch(`${import.meta.env.API_URL}/api/projects`);
-    let projects = await response.json();
+export async function getStaticPaths(): Promise<Project | []> {
+    try {
+        let response = await fetch(`${import.meta.env.API_URL}/api/projects`);
+        let projects = await response.json();
 
-    if (undefined !== projects) {
-        return projects.docs.map((project) => {
+        return projects.docs.map((project: Project) => {
             return {
                 params: {
                     slug: project.slug
@@ -29,8 +29,10 @@ export async function getStaticPaths(): Promise<Project> {
                 }
             }
         })
-    } else {
-        return Astro.redirect('/404');
+    } catch (error) {
+        console.error(error);
+    } finally {
+        return [];
     }
 }
 ---
@@ -55,7 +57,7 @@ export async function getStaticPaths(): Promise<Project> {
             <div class="story__header__meta">
                 <span class="story__header__metaLabel">Stack</span>
                 <span class="story__header__metaProperties">{
-                    stack.map((tool): void => (
+                    stack.map((tool: any): void => (
                         <Tag label={ tool } variant="outline"/>
                     ))
                 }</span>

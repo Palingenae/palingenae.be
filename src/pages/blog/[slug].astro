@@ -7,34 +7,40 @@ import Tag from "@components/tag.astro";
 import Contact from "@components/contact.astro";
 import Footer from "@components/footer.astro"
 import Action from '@components/action.astro';
-import { Article } from '../../../types/Article';
+import type { Article } from '../../../types/Article';
 
 dayjs.extend(relativeTime);
 dayjs.locale('fr');
 
 const { title, category, tags, published, content, image } = Astro.props;
 
-export async function getStaticPaths(): Promise<Article> {
-    let response = await fetch(`${import.meta.env.API_URL}/api/articles`);
-    let articles = await response.json();
+export async function getStaticPaths(): Promise<Article | []> {
+    try {
+        let response = await fetch(`${import.meta.env.API_URL}/api/articles`);
+        let article = await response.json();
 
-    if (undefined !== articles) {
-        return articles.docs.map((article) => {
-            return {
-                params: {
-                    slug: article.slug
-                },
-                props: {
-                    title: article.title,
-                    category: article.categories,
-                    tags: article.tags,
-                    content: article.article,
-                    published: article.createdAt,
+        if (undefined !== article) {
+            return article.docs.map((article: Article) => {
+                return {
+                    params: {
+                        slug: article.slug
+                    },
+                    props: {
+                        title: article.title,
+                        category: article.categories,
+                        tags: article.tags,
+                        content: article.article,
+                        published: article.createdAt,
+                    }
                 }
-            }
-        })
-    } else {
-        return Astro.redirect('/404');
+            })
+        } else {
+            Astro.redirect('/404');
+        }
+    } catch (error) {
+        console.error(error);
+    } finally {
+        return [];
     }
 }
 ---
@@ -56,7 +62,7 @@ export async function getStaticPaths(): Promise<Article> {
             </div>
             <div class="story__header__meta__tags">
                 {
-                    tags.map((tag): void => (<Tag label={ tag } variant="outline"/>
+                    tags.map((tag: any): void => (<Tag label={ tag } variant="outline"/>
                     ))
                 }
             </div>
