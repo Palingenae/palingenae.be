@@ -14,7 +14,7 @@ dayjs.locale('fr');
 
 const { title, category, tags, published, content, image } = Astro.props;
 
-export async function getStaticPaths(): Promise<Article | []> {
+export async function getStaticPaths(): Promise<Article | undefined> {
     try {
         let response = await fetch(`${import.meta.env.API_URL}/api/articles`);
         let article = await response.json();
@@ -39,8 +39,6 @@ export async function getStaticPaths(): Promise<Article | []> {
         }
     } catch (error) {
         console.error(error);
-    } finally {
-        return [];
     }
 }
 ---
