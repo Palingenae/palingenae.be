@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "stylelint:fix": "stylelint **/*.scss --fix"
+    "stylelint:fix": "stylelint **/*.scss --fix",
+    "prettier": "prettier --check ."
   },
   "dependencies": {
     "@astrojs/prefetch": "^0.3.0",
