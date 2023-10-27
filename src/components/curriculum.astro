@@ -2,6 +2,8 @@
 import Event from "@components/event.astro";
 import Message from "@components/message.astro";
 import Tag from "@components/tag.astro";
+
+const githubProjects = "palingenae.github.io";
 ---
 <section class="curriculum">
     <div class="curriculumPath">
@@ -138,6 +140,6 @@ import Tag from "@components/tag.astro";
                 <Tag variant="outline" label="Windows"/>
             </div>
         </div>
-        <Message type="Au fait !" context="info" content="J'ai quelques projets déjà existants, mais il faut préparer leur hébergement et les bumper vers une version plus récente."/>
+        <Message type="Au fait !" context="info" content={`J'ai quelques projets déjà existants, vous pouvez les retrouver ici : ${githubProjects}`} />
     </aside>
 </section>
