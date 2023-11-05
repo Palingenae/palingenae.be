@@ -1,0 +1,61 @@
+---
+import Logo from '@components/logo.astro';
+
+const currentPath = Astro.url.pathname;
+let navLinks;
+
+try {
+    const response = await fetch(`${import.meta.env.API_URL}/api/globals/navigation`);
+    navLinks = await response.json();
+} catch (error) {
+    console.error(error);
+}
+---
+<nav class="navigation">
+    <div class="navigation__bar">
+        <div class="navigation__logo">
+            <a href="/">
+                <Logo />
+            </a>
+        </div>
+        <div class="navigation__horizontal">
+            {
+                navLinks === undefined ?
+                    <a class={currentPath === '/about' ? "link -ui -active" : "link -ui"} href="/about">À propos</a>
+                :
+                    navLinks.Routes.map((link: any) => (
+                        <a class={currentPath === link.URL ? "link -ui -active" : "link -ui"} href={ link.URL }>{ link.Name }</a>
+                    ))
+            }
+        </div>
+        <div class="navigation__vertical__toggler">
+            <button type="button" class="navigation__vertical__toggler__label" aria-label="Accéder au menu vertical">Menu</button>
+        </div>
+    </div>
+    <div class="navigation__vertical">
+        <div class="navigation__vertical__menu">
+            <p class="navigation__vertical__menu__title">Navigation</p>
+            {
+                navLinks !== undefined ?
+                navLinks.Routes.map((link: any) => (
+                    <a class={currentPath === link.URL ? "link -navigation -vertical -active" : "link -navigation -vertical"} href={ link.URL }>{ link.Name }</a>
+                ))
+                :
+                <a class={currentPath === '/about' ? "link -navigation -vertical -active" : "link -navigation -vertical"} href="/about">A propos</a>
+            }
+        </div>
+    </div>
+</nav>
+
+
+<script>
+    const drawerMenuToggler = document.querySelector('.navigation__vertical__toggler');
+    const drawerMenu = document.querySelector('.navigation__vertical__menu');
+
+    if (drawerMenuToggler !== null && drawerMenu !== null) {
+        drawerMenuToggler.addEventListener('click', () => {
+            drawerMenu.classList.toggle('-visible');
+        });
+    }
+</script>
+

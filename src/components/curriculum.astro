@@ -1,0 +1,145 @@
+---
+import Event from "@components/event.astro";
+import Message from "@components/message.astro";
+import Tag from "@components/tag.astro";
+
+const githubProjects = "palingenae.github.io";
+---
+<section class="curriculum">
+    <div class="curriculumPath">
+        <div class="division -column">
+            <h2>Mes expériences</h2>
+            <div class="eventContainer">
+                <Event
+                        startDate="05/2023"
+                        endDate="07/2023"
+                        eventName="Développeuse d'Applications Web"
+                        eventPlace="Saint-Herblain, France"
+                />
+                <Event
+                        startDate="11/2021"
+                        endDate="10/2022"
+                        eventName="Développeuse d'Applications Web"
+                        eventPlace="Nantes / Lille, France"
+                        apprenticeship="yes"
+                />
+                <Event
+                        startDate="08/2020"
+                        endDate="11/2021"
+                        eventName="Développeuse d'Applications Web"
+                        eventPlace="Nantes, France"
+                        apprenticeship="yes"
+                />
+                <Event
+                        startDate="02/2018"
+                        endDate="05/2018"
+                        eventName="Développeuse Web Full-Stack"
+                        eventPlace="Bruxelles, Belgique"
+                />
+
+            </div>
+        </div>
+        <div class="division -column">
+            <h2>Mes formations</h2>
+            <div class="eventContainer">
+                <Event
+                        startDate="08/2020"
+                        endDate="Auj."
+                        eventName="“Développeur d’applications PHP / Symfony”"
+                        eventPlace="OpenClassrooms, France"
+                />
+                <Event
+                        startDate="01/2017"
+                        endDate="08/2017"
+                        eventName="“Développeur Web Apps”"
+                        eventPlace="Gosselies, Belgique"
+                />
+                <Event
+                        startDate="09/2016"
+                        endDate="11/2016"
+                        eventName="“Développeur Logiciel d’Entreprise”"
+                        eventPlace="Gosselies, Belgique"
+                />
+                <Event
+                        startDate="09/2012"
+                        endDate="09/2015"
+                        eventName="Licence en Écriture Multimédia"
+                        eventPlace="Charleroi, Belgique"
+                />
+            </div>
+        </div>
+        <Message context="positive" type="Disponible au recrutement" content="En tant que Développeuse Web, dans les environnement PHP et/ou JavaScript."/>
+        <Message context="notice" type="Information :" content="Une version complète de mon CV (au format PDF) et de mes références sont disponibles sur demande par email uniquement."/>
+    </div>
+    <aside class="aside -column">
+        <h2>Mes technos</h2>
+        <div class="asideSection">
+            <p class="asideSectionTitle">Front-End</p>
+            <div class="tagContainer">
+                <Tag variant="filledCopper" label="HTML"/>
+                <Tag variant="outline" label="Twig"/>
+                <Tag variant="outline" label="Nunjucks"/>
+                <Tag variant="outline" label="Pug"/>
+            </div>
+            <div class="tagContainer">
+                <Tag variant="filledCobalt" label="CSS"/>
+                <Tag variant="filledRubyLight" label="Sass"/>
+                <Tag variant="outline" label="Bootstrap"/>
+                <Tag variant="outline" label="Atomic Design"/>
+                <Tag variant="outline" label="(A)BEM"/>
+                <Tag variant="outline" label="Utility CSS"/>
+            </div>
+            <div class="tagContainer">
+                <Tag variant="filledGold" label="JavaScript"/>
+                <Tag variant="outline" label="NPM"/>
+                <Tag variant="outline" label="Yarn"/>
+                <Tag variant="outline" label="Webpack"/>
+                <Tag variant="outline" label="PostCSS"/>
+            </div>
+            <p class="asideNote">Concentrée sur :</p>
+            <div class="tagContainer">
+                <Tag variant="filledCobalt" label="TypeScript"/>
+                <Tag variant="filledCobaltLight" label="ReactJS"/>
+                <Tag variant="filledAmethystLight" label="ViteJS"/>
+            </div>
+        </div>
+        <div class="asideSection">
+            <p class="asideSectionTitle">Back-Ends</p>
+            <div class="tagContainer">
+                <Tag variant="filledAmethyst" label="PHP"/>
+                <Tag variant="filled" label="Symfony"/>
+                <Tag variant="outline" label="CS Fixer"/>
+                <Tag variant="outline" label="PHPStan"/>
+                <Tag variant="outline" label="PHPUnit"/>
+                <Tag variant="outline" label="Behat"/>
+            </div>
+            <p class="asideNote">Concentrée sur :</p>
+            <div class="tagContainer">
+                <Tag variant="filledEmeraldLight" label="NodeJS"/>
+                <Tag variant="filledRubyLight" label="NestJS"/>
+            </div>
+        </div>
+        <div class="asideSection">
+            <p class="asideSectionTitle">Environnements</p>
+            <div class="tagContainer">
+                <Tag variant="filledCopper" label="Git"/>
+                <Tag variant="outline" label="Github"/>
+                <Tag variant="outline" label="Gitlab"/>
+                <Tag variant="outline" label="Bitbucket"/>
+            </div>
+            <div class="tagContainer">
+                <Tag variant="filledCobaltLight" label="Docker"/>
+                <Tag variant="outline" label=".env"/>
+                <Tag variant="outline" label="Make"/>
+            </div>
+            <div class="tagContainer">
+                <Tag variant="filled" label="Linux"/>
+                <Tag variant="outline" label="FedoraLinux"/>
+                <Tag variant="outline" label="Ubuntu"/>
+                <Tag variant="filled" label="MacOS"/>
+                <Tag variant="outline" label="Windows"/>
+            </div>
+        </div>
+        <Message type="Au fait !" context="info" content={`J'ai quelques projets déjà existants, vous pouvez les retrouver ici : ${githubProjects}`} />
+    </aside>
+</section>

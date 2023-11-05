@@ -1,0 +1,117 @@
+.contact {
+  @extend .section;
+  @extend .-column;
+
+  @include light-theme {
+    background-color: $colour-emerald-700;
+  }
+
+  &Mean {
+    @extend .context;
+    @extend .-subtitle;
+
+    @include light-theme {
+      color: $grey-100;
+    }
+
+    @include dark-theme {
+      color: $grey-200;
+    }
+
+    @include medium-display {
+      text-align: center;
+    }
+  }
+
+  &Mail {
+    @extend .display;
+    @extend .-fat;
+
+    @include light-theme {
+      color: $colour-gold-100;
+    }
+
+    @include dark-theme {
+      color: $colour-emerald-300;
+    }
+
+    @include medium-display {
+      text-align: center;
+      margin-bottom: $spacing-400;
+    }
+
+    @include small-display {
+      font-size: ms(5);
+    }
+  }
+
+  &Title {
+    @include diamond('filled', $colour-gold-200, $colour-gold-200,);
+    @extend .decorated;
+
+    color: $grey-100;
+  }
+
+  &Links {
+    @extend .division;
+    @extend .-justify-spaceBetween;
+
+    @include medium-display {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &Networks {
+    @extend .-column;
+
+    @include medium-display {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: $spacing-200;
+    }
+
+    &List {
+      @extend .division;
+
+      @include medium-display {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .link.-ui {
+        color: $white;
+      }
+    }
+  }
+
+  &Issue {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .paragraph {
+      text-align: end;
+      color: $white;
+    }
+
+    @include medium-display {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: $spacing-200;
+
+      .paragraph {
+        text-align: center;
+      }
+    }
+
+    @include small-display {
+      .paragraph {
+        color: $white;
+        text-align: center;
+      }
+    }
+  }
+}
