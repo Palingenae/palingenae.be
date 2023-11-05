@@ -4,53 +4,60 @@ import RichText from "@components/RichText.astro";
 import Tag from "@components/tag.astro";
 import Contact from "@components/contact.astro";
 import Footer from "@components/footer.astro"
+import type { Project } from "../../../types/Project";
 
-const { title, year, type, status, responsibilities, stack, content } = Astro.props;
+const { title, year, type, status, stack, content, image } = Astro.props;
 
-export async function getStaticPaths() {
-    let response: Response = await fetch("http://localhost:3333/api/projects");
-    let projects = await response.json();
+export async function getStaticPaths(): Promise<Project | []> {
+    try {
+        let response = await fetch(`${import.meta.env.API_URL}/api/projects`);
+        let projects = await response.json();
 
-    return projects.docs.map((project) => {
-        return {
-            params: {
-                slug: project.slug
-            },
-            props: {
-                title: project.title,
-                year: project.year,
-                type: project.type,
-                status: project.status,
-                responsibilities: project.scope,
-                stack: project.stack,
-                content: project.article
+        return projects.docs.map((project: Project) => {
+            return {
+                params: {
+                    slug: project.slug
+                },
+                props: {
+                    title: project.title,
+                    year: project.year,
+                    type: project.type,
+                    status: project.status,
+                    stack: project.stack,
+                    content: project.article,
+                    image: project.coverImage
+                }
             }
-        }
-    })
+        })
+    } catch (error) {
+        console.error(error);
+    } finally {
+        return [];
+    }
 }
 ---
-<MainLayout title= { title }>
-    <header class="project__header">
-        <div class="project__header__title">
+<MainLayout title={ title }>
+    <header class="story__header -horizontal">
+        <div class="story__header__title">
             <h1 class="display -thin"> { title } </h1>
         </div>
-        <div class="project__header__metaContainer">
-            <div class="project__header__meta">
-                <span class="project__header__metaLabel">Année</span>
-                <span class="project__header__metaProperties">{ year }</span>
+        <div class="story__header__metaContainer -vertical">
+            <div class="story__header__meta">
+                <span class="story__header__metaLabel">Année</span>
+                <span class="story__header__metaProperties">{ year }</span>
             </div>
-            <div class="project__header__meta">
-                <span class="project__header__metaLabel">Type</span>
-                <span class="project__header__metaProperties">{ type }</span>
+            <div class="story__header__meta">
+                <span class="story__header__metaLabel">Type</span>
+                <span class="story__header__metaProperties">{ type }</span>
             </div>
-            <div class="project__header__meta">
-                <span class="project__header__metaLabel">Statut</span>
-                <span class="project__header__metaProperties"><Tag label={ status } variant={status === "Actif" ? "filledEmerald" : "filled"}/></span>
+            <div class="story__header__meta">
+                <span class="story__header__metaLabel">Statut</span>
+                <span class="story__header__metaProperties"><Tag label={ status } variant={status === "Actif" ? "filledEmerald" : "filled"}/></span>
             </div>
-            <div class="project__header__meta">
-                <span class="project__header__metaLabel">Stack</span>
-                <span class="project__header__metaProperties">{
-                    stack.map((tool): void => (
+            <div class="story__header__meta">
+                <span class="story__header__metaLabel">Stack</span>
+                <span class="story__header__metaProperties">{
+                    stack.map((tool: any): void => (
                         <Tag label={ tool } variant="outline"/>
                     ))
                 }</span>

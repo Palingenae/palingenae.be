@@ -2,6 +2,8 @@
 import Event from "@components/event.astro";
 import Message from "@components/message.astro";
 import Tag from "@components/tag.astro";
+
+const githubProjects = "palingenae.github.io";
 ---
 <section class="curriculum">
     <div class="curriculumPath">
@@ -17,14 +19,16 @@ import Tag from "@components/tag.astro";
                 <Event
                         startDate="11/2021"
                         endDate="10/2022"
-                        eventName="Développeuse d'application PHP / Symfony"
+                        eventName="Développeuse d'Applications Web"
                         eventPlace="Nantes / Lille, France"
+                        apprenticeship="yes"
                 />
                 <Event
                         startDate="08/2020"
                         endDate="11/2021"
-                        eventName="Développeuse d'application PHP / Symfony"
+                        eventName="Développeuse d'Applications Web"
                         eventPlace="Nantes, France"
+                        apprenticeship="yes"
                 />
                 <Event
                         startDate="02/2018"
@@ -64,8 +68,8 @@ import Tag from "@components/tag.astro";
                 />
             </div>
         </div>
-        <Message context="-positive" type="Disponible au recrutement" content="En tant que Développeuse Web, dans les environnement PHP et/ou JavaScript."/>
-        <Message context="-notice" type="Information :" content="Une version complète de mon CV (au format PDF) et de mes références sont disponibles sur demande par email uniquement."/>
+        <Message context="positive" type="Disponible au recrutement" content="En tant que Développeuse Web, dans les environnement PHP et/ou JavaScript."/>
+        <Message context="notice" type="Information :" content="Une version complète de mon CV (au format PDF) et de mes références sont disponibles sur demande par email uniquement."/>
     </div>
     <aside class="aside -column">
         <h2>Mes technos</h2>
@@ -81,7 +85,6 @@ import Tag from "@components/tag.astro";
                 <Tag variant="filledCobalt" label="CSS"/>
                 <Tag variant="filledRubyLight" label="Sass"/>
                 <Tag variant="outline" label="Bootstrap"/>
-                <Tag variant="outline" label="TailwindCSS"/>
                 <Tag variant="outline" label="Atomic Design"/>
                 <Tag variant="outline" label="(A)BEM"/>
                 <Tag variant="outline" label="Utility CSS"/>
@@ -105,7 +108,6 @@ import Tag from "@components/tag.astro";
             <div class="tagContainer">
                 <Tag variant="filledAmethyst" label="PHP"/>
                 <Tag variant="filled" label="Symfony"/>
-                <Tag variant="outline" label="API Platform"/>
                 <Tag variant="outline" label="CS Fixer"/>
                 <Tag variant="outline" label="PHPStan"/>
                 <Tag variant="outline" label="PHPUnit"/>
@@ -114,7 +116,7 @@ import Tag from "@components/tag.astro";
             <p class="asideNote">Concentrée sur :</p>
             <div class="tagContainer">
                 <Tag variant="filledEmeraldLight" label="NodeJS"/>
-                <Tag variant="filledAmethyst" label="AdonisJS"/>
+                <Tag variant="filledRubyLight" label="NestJS"/>
             </div>
         </div>
         <div class="asideSection">
@@ -138,6 +140,6 @@ import Tag from "@components/tag.astro";
                 <Tag variant="outline" label="Windows"/>
             </div>
         </div>
-        <Message type="Au fait !" context="-info" content="J'ai quelques projets déjà existants, mais il faut préparer leur hébergement et les bumper vers une version plus récente."/>
+        <Message type="Au fait !" context="info" content={`J'ai quelques projets déjà existants, vous pouvez les retrouver ici : ${githubProjects}`} />
     </aside>
 </section>

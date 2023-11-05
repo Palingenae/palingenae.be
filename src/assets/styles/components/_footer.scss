@@ -19,8 +19,13 @@
 
 
   @include very-very-large-display {
+    padding: $spacing-200 $spacing-1600;
+  }
+
+  @include very-large-display {
     padding: $spacing-200 $spacing-800;
   }
+
 
   @include small-display {
     padding: $spacing-200;

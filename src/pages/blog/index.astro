@@ -1,0 +1,60 @@
+---
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import localeFR from 'dayjs/locale/fr';
+import MainLayout from '@layouts/main.astro';
+import Action from "@components/action.astro";
+import Tag from "@components/tag.astro";
+import type { Article } from 'types/Article';
+import PageHeader from '@components/PageHeader.astro';
+import Footer from '@components/footer.astro';
+import Message from '@components/message.astro';
+
+dayjs.extend(relativeTime);
+dayjs.locale('fr');
+
+const pageTitle: string = "Écrits";
+const pageDescription: string = "Un sujet de plus de 3 tweets ? Ça mérite un article de blog.";
+
+let articles;
+
+try {
+    const response = await fetch(`${import.meta.env.API_URL}/api/articles`)
+    articles = await response.json();
+} catch (error) {
+    console.error(error);
+} finally {
+    Astro.redirect('/404');
+}
+---
+<MainLayout title={pageTitle}>
+    <PageHeader pageName={pageTitle} pageDescription={pageDescription}/>
+    <section class="section -column">
+        <div class="collection">
+            {
+                articles !== undefined ?
+                    articles.docs.map((article: Article): void => (
+                        <a href={`/blog/${article.slug}`} class="collection__card">
+                            <div class="card__container">
+                                <div class="card__content">
+                                    <h2 class="card__title">{ article.title }</h2>
+                                    <div class="card__meta">
+                                        <span class="card__date">{ dayjs(article.createdAt).locale(localeFR).fromNow() }</span>
+                                        <div class="card__meta__tagsContainer">
+                                            { article.tags.map((tag) => (
+                                                <Tag class="articleType" variant="outline" label={tag}/>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <Action label="Voir" icon="forward"/>
+                        </a>
+                    ))
+                :
+                <Message context="notice" type="Un peu de patience..." content="Il n'y a rien ici pour l'instant. :)"/>
+            }
+        </div>
+    </section>
+    <Footer/>
+</MainLayout>

@@ -2,14 +2,26 @@
   display: flex;
   align-content: flex-start;
   flex-direction: column;
+  gap: $spacing-25;
   margin-bottom: $spacing-400;
 
   &Meta {
-    @extend .-column;
-
     display: flex;
-    justify-content: center;
-    margin-bottom: $spacing-50;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: calc($spacing-1600 + $spacing-200);
+    margin-bottom: 0;
+
+    @include medium-display {
+      gap: calc($spacing-800 + $spacing-200);
+    }
+
+    @include small-display {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: $spacing-50;
+    }
   }
 
   &Dates {
@@ -59,7 +71,7 @@
     }
 
     line-height: 1.4;
-    margin-bottom: $spacing-50;
+    margin-bottom: 0;
   }
 
   &Place {

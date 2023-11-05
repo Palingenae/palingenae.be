@@ -2,17 +2,14 @@
 import Logo from '@components/logo.astro';
 
 const currentPath = Astro.url.pathname;
+let navLinks;
 
-const navigationLinks = [
-    {
-        label: "Projets",
-        route: "/projects"
-    },
-    {
-        label: "À propos",
-        route: "/about"
-    },
-]
+try {
+    const response = await fetch(`${import.meta.env.API_URL}/api/globals/navigation`);
+    navLinks = await response.json();
+} catch (error) {
+    console.error(error);
+}
 ---
 <nav class="navigation">
     <div class="navigation__bar">
@@ -23,9 +20,12 @@ const navigationLinks = [
         </div>
         <div class="navigation__horizontal">
             {
-                navigationLinks.map((link) =>  (
-                    <a class={currentPath === link.route ? "link -ui -active" : "link -ui"} href={ link.route }>{ link.label }</a>
-                ))
+                navLinks === undefined ?
+                    <a class={currentPath === '/about' ? "link -ui -active" : "link -ui"} href="/about">À propos</a>
+                :
+                    navLinks.Routes.map((link: any) => (
+                        <a class={currentPath === link.URL ? "link -ui -active" : "link -ui"} href={ link.URL }>{ link.Name }</a>
+                    ))
             }
         </div>
         <div class="navigation__vertical__toggler">
@@ -36,22 +36,26 @@ const navigationLinks = [
         <div class="navigation__vertical__menu">
             <p class="navigation__vertical__menu__title">Navigation</p>
             {
-                navigationLinks.map((link) =>  (
-                        <a class={currentPath === link.route ? "link -navigation -vertical -active" : "link -navigation -vertical"} href={ link.route }>{ link.label }</a>
+                navLinks !== undefined ?
+                navLinks.Routes.map((link: any) => (
+                    <a class={currentPath === link.URL ? "link -navigation -vertical -active" : "link -navigation -vertical"} href={ link.URL }>{ link.Name }</a>
                 ))
+                :
+                <a class={currentPath === '/about' ? "link -navigation -vertical -active" : "link -navigation -vertical"} href="/about">A propos</a>
             }
         </div>
     </div>
 </nav>
 
 
-
 <script>
     const drawerMenuToggler = document.querySelector('.navigation__vertical__toggler');
     const drawerMenu = document.querySelector('.navigation__vertical__menu');
 
-    drawerMenuToggler.addEventListener('click', () => {
-        drawerMenu.classList.toggle('-visible');
-    });
+    if (drawerMenuToggler !== null && drawerMenu !== null) {
+        drawerMenuToggler.addEventListener('click', () => {
+            drawerMenu.classList.toggle('-visible');
+        });
+    }
 </script>
 

@@ -69,4 +69,13 @@
       color: inherit;
     }
   }
+
+  &.-down {
+    &::after {
+      content: "\00261F";
+      display: inline-flex;
+      font-size: inherit;
+      color: inherit;
+    }
+  }
 }

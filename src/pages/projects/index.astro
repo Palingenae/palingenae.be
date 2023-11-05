@@ -3,33 +3,46 @@ import MainLayout from "@layouts/main.astro";
 import Footer from "../../components/footer.astro";
 import Tag from "../../components/tag.astro";
 import Action from "../../components/action.astro";
+import PageHeader from "@components/PageHeader.astro";
+import type { Project } from "types/Project";
+import Message from "@components/message.astro";
 
-const pageTitle = "Projets";
+const pageTitle: string = "Projets";
+const pageDescription: string = "Mes projets favoris";
 
-const response = await fetch('http://localhost:3333/api/projects');
-const projects = await response.json();
+let projects;
+
+try {
+    const response = await fetch(`${import.meta.env.API_URL}/api/projects`);
+    projects = await response.json();
+} catch (error) {
+    console.error(error);
+} finally {
+    Astro.redirect('/404');
+}
 ---
 <MainLayout title={pageTitle}>
-    <section class="section -column">
-        <h1 class="display -thin decorated">Projets</h1>
-        <div class="projectCollection">
-            {
-                projects.docs.map((project) => (
-                        <a href={`projects/${project.slug}`} class="project">
-                            <div class="projectContainer">
-                                <div class="projectContent">
-                                    <h2 class="projectTitle">{project.title}</h2>
-                                    <div class="projectMeta">
-                                        <span class="projectDate">{project.year}</span>
+    <PageHeader pageName={pageTitle} pageDescription={pageDescription}/>
+    <section class="section -column -top-spacer">
+        <div class="collection">
+            {   projects !== undefined ?
+                    projects.docs.map((project: Project) => (
+                        <a href={`projects/${project.slug}`} class="collection__card">
+                            <div class="card__container -counter">
+                                <div class="card__content">
+                                    <h2 class="card__title">{project.title}</h2>
+                                    <div class="card__meta">
+                                        <span class="card__date">{project.year}</span>
                                         <Tag class="projectType" variant="outline" label={project.type}/>
                                     </div>
                                 </div>
                             </div>
                             <Action label="Voir" icon="forward"/>
                         </a>
-                ))
+                    ))
+                    :
+                    <Message context="notice" type="Un peu de patience..." content="Il n'y a rien ici pour l'instant. :)"/>
             }
         </div>
     </section>
     <Footer/>
-</MainLayout>
