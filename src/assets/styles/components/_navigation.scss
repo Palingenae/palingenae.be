@@ -46,7 +46,7 @@
   &__horizontal {
     display: flex;
     align-items: baseline;
-    gap: $spacing-100;
+    gap: $spacing-400;
 
     @include medium-display {
       display: none;

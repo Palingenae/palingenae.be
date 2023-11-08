@@ -2,21 +2,23 @@
   @extend .section;
   @extend .-column;
 
-  @include light-theme {
-    background-color: $colour-emerald-700;
-  }
+  gap: $spacing-200;
+
+  // @include light-theme {
+  //   background-color: $colour-emerald-700;
+  // }
 
   &Mean {
     @extend .context;
     @extend .-subtitle;
 
-    @include light-theme {
-      color: $grey-100;
-    }
+    // @include light-theme {
+    //   color: $grey-100;
+    // }
 
-    @include dark-theme {
-      color: $grey-200;
-    }
+    // @include dark-theme {
+    //   color: $grey-200;
+    // }
 
     @include medium-display {
       text-align: center;
@@ -24,16 +26,15 @@
   }
 
   &Mail {
-    @extend .display;
-    @extend .-fat;
+    @extend h1;
 
-    @include light-theme {
-      color: $colour-gold-100;
-    }
+    // @include light-theme {
+    //   color: $colour-gold-100;
+    // }
 
-    @include dark-theme {
-      color: $colour-emerald-300;
-    }
+    // @include dark-theme {
+    //   color: $colour-emerald-300;
+    // }
 
     @include medium-display {
       text-align: center;
@@ -49,7 +50,7 @@
     @include diamond('filled', $colour-gold-200, $colour-gold-200,);
     @extend .decorated;
 
-    color: $grey-100;
+    // color: $grey-100;
   }
 
   &Links {
@@ -81,7 +82,7 @@
       }
 
       .link.-ui {
-        color: $white;
+        // color: $white;
       }
     }
   }
@@ -93,7 +94,7 @@
 
     .paragraph {
       text-align: end;
-      color: $white;
+      // color: $white;
     }
 
     @include medium-display {
@@ -109,7 +110,7 @@
 
     @include small-display {
       .paragraph {
-        color: $white;
+        // color: $white;
         text-align: center;
       }
     }

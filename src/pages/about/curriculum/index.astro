@@ -16,86 +16,101 @@ import Footer from "@components/Footer";
         </h1>
         <p class="paragraph -jumbo -sans">Développeuse Front-End</p>
     </section>
-    <hr class="separator">
-    <section class="curriculum">
-        <div class="curriculumEventContainer">
-            <h2>Projet en cours</h2>
-            <p class="paragraph -jumbo">Les Films de Plein Air : Director's Cut</p>
-            <p class="paragraph">Blablabla</p>
-        </div>
-        <aside class="aside -column">
-            <p class="paragraph"><a href="https://palingenae.github.io" target="_blank" rel="noopener">palingenae.github.io</a></p>
-            <p class="paragraph"><a href="https://linkedin.com/in/oliviadescheerder" target="_blank" rel="noopener">LinkedIn</a></p>
-        </aside>
+    <section class="section">
+        <main class="main">
+            <h2>Dernier projet</h2>
+            <div class="card -grid">
+                <div class="card__header">
+                    <span class="card__meta__repoType -side">SIDE PROJECT</span>
+                </div>
+                <div class="card__content">
+                    <p class="card__title">Les Films de Plein Air : Director's Cut</p>
+                    <div class="card__meta">
+                        <span class="card__meta__repoName">palingenae/palingenae.be</span><span class="card__meta__repoStatus -active">Actif</span>
+                    </div>
+                    <p class="paragraph">Revisite d'un projet OpenClassrooms, Les Films de Plein Air. Maintenant le projet sera un produit fini, comme si je l'avais réalisé en tant que conceptrice freelance. N'utilise <strong>pas</strong> Wordpress.</p>
+                </div>
+                <div class="card__footer">
+                    <a href="#" rel="noopener" target="_blank" class="link">Dépôt Github</a>
+                </div>
+            </div>
+        </main>
+        <!-- <aside class="aside">
+            <p class="paragraph -jumbo"><strong>Liens utiles</strong></p>
+            <p class="paragraph"><a href="https://linkedin.com/in/oliviadescheerder" target="_blank" rel="noopener" class="link -ui">LinkedIn</a></p>
+            <p class="paragraph"><a href="https://palingenae.github.io" target="_blank" rel="noopener" class="link -ui">Projets Github</a></p>
+        </aside> -->
     </section>
-    <section class="curriculum">
-        <div class="curriculumPath">
-            <div class="division -column">
-                <h2>Mes expériences</h2>
-                <div class="curriculumEventContainer">
-                    <CurriculumEvent
-                            startDate="05/2023"
-                            endDate="07/2023"
-                            eventName="Développeuse Full-Stack"
-                            eventPlace="Saint-Herblain, France"
-                            description="Création d’un module de simplification de gestion de modèles de données en format CSV pour la mise en production chez le client."
-                    />
-                    <CurriculumEvent
-                            startDate="11/2021"
-                            endDate="10/2022"
-                            eventName="Développeuse React / Symfony"
-                            eventPlace="Nantes / Lille, France"
-                            description="Maintenance, en incluant une migration de toute la stack, puis de la mise en place d'une CI/CD et développement de fonctionnalités Back-End et Front-End d’un outil de questionnaires et de tests techniques."
-                    />
-                    <CurriculumEvent
-                            startDate="08/2020"
-                            endDate="11/2021"
-                            eventName="Développeuse PHP / Symfony"
-                            eventPlace="Nantes, France"
-                            description="Intégration de l’interface d’un projet de gestion des salarié·e·s en collaboration avec l’équipe d’UX Design."
-                    />
-                    <CurriculumEvent
-                            startDate="02/2018"
-                            endDate="05/2018"
-                            eventName="Développeuse Full-Stack"
-                            eventPlace="Bruxelles, Belgique"
-                            description="Maintenance de projets clients déjà livrés."
-                    />
-    
+    <section class="section">
+        <main class="main">
+            <div class="curriculumPath">
+                <div class="division -column">
+                    <h2>Mes expériences</h2>
+                    <div class="curriculumEventContainer">
+                        <CurriculumEvent
+                                startDate="05/2023"
+                                endDate="07/2023"
+                                eventName="Développeuse Full-Stack"
+                                eventPlace="Saint-Herblain, France"
+                                description="Création d’un module de simplification de gestion de modèles de données en format CSV pour la mise en production chez le client."
+                        />
+                        <CurriculumEvent
+                                startDate="11/2021"
+                                endDate="10/2022"
+                                eventName="Développeuse React / Symfony"
+                                eventPlace="Nantes / Lille, France"
+                                description="Maintenance, en incluant une migration de toute la stack, puis de la mise en place d'une CI/CD et développement de fonctionnalités Back-End et Front-End d’un outil de questionnaires et de tests techniques."
+                        />
+                        <CurriculumEvent
+                                startDate="08/2020"
+                                endDate="11/2021"
+                                eventName="Développeuse PHP / Symfony"
+                                eventPlace="Nantes, France"
+                                description="Intégration de l’interface d’un projet de gestion des salarié·e·s en collaboration avec l’équipe d’UX Design."
+                        />
+                        <CurriculumEvent
+                                startDate="02/2018"
+                                endDate="05/2018"
+                                eventName="Développeuse Full-Stack"
+                                eventPlace="Bruxelles, Belgique"
+                                description="Maintenance de projets clients déjà en production."
+                        />
+        
+                    </div>
                 </div>
-            </div>
-            <div class="division -column">
-                <h2>Mes formations</h2>
-                <div class="eventContainer">
-                    <CurriculumEvent
-                            startDate="08/2020"
-                            endDate="Auj."
-                            eventName="“Développeur d’applications PHP / Symfony”"
-                            eventPlace="OpenClassrooms, France"
-                    />
-                    <CurriculumEvent
-                            startDate="01/2017"
-                            endDate="08/2017"
-                            eventName="“Développeur Web Apps”"
-                            eventPlace="Gosselies, Belgique"
-                    />
-                    <CurriculumEvent
-                            startDate="09/2016"
-                            endDate="11/2016"
-                            eventName="“Développeur Logiciel d’Entreprise”"
-                            eventPlace="Gosselies, Belgique"
-                    />
-                    <CurriculumEvent
-                            startDate="09/2012"
-                            endDate="09/2015"
-                            eventName="Licence Pro en Écriture Multimédia"
-                            eventPlace="Charleroi, Belgique"
-                    />
+                <div class="division -column">
+                    <h2>Mes formations</h2>
+                    <div class="eventContainer">
+                        <CurriculumEvent
+                                startDate="08/2020"
+                                endDate="Auj."
+                                eventName="“Développeur d’applications PHP / Symfony”"
+                                eventPlace="OpenClassrooms, France"
+                        />
+                        <CurriculumEvent
+                                startDate="01/2017"
+                                endDate="08/2017"
+                                eventName="“Développeur Web Apps”"
+                                eventPlace="Gosselies, Belgique"
+                        />
+                        <CurriculumEvent
+                                startDate="09/2016"
+                                endDate="11/2016"
+                                eventName="“Développeur Logiciel d’Entreprise”"
+                                eventPlace="Gosselies, Belgique"
+                        />
+                        <CurriculumEvent
+                                startDate="09/2012"
+                                endDate="09/2015"
+                                eventName="Licence Pro en Écriture Multimédia"
+                                eventPlace="Charleroi, Belgique"
+                        />
+                    </div>
                 </div>
+                <Message context="notice" type="Important !" content="Il s'agit d'une version intentionnellement réduite. Une version complète de mon CV (au format PDF) et mes références sont disponibles sur demande par email ou LinkedIn uniquement."/>
             </div>
-            <Message context="notice" type="Important !" content="Il s'agit d'une version intentionnellement réduite. Une version complète de mon CV (au format PDF) et mes références sont disponibles sur demande par email ou LinkedIn uniquement."/>
-        </div>
-        <aside class="aside -column">
+        </main>
+        <aside class="aside">
             <h2>Mes technos</h2>
             <div class="asideSection">
                 <p class="asideSectionTitle">Front-End</p>
@@ -166,6 +181,7 @@ import Footer from "@components/Footer";
             </div>
         </aside>
     </section>
+    
     <Contact />
     <Footer/>
 </MainLayout>

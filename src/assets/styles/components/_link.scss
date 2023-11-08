@@ -1,23 +1,46 @@
 a,
 %link {
+  @include transition(all);
+  @include transition(font-variation-settings);
+
+  width: fit-content;
+  line-height: $spacing-body-line-height;
+  text-decoration: none;
+  
+  @include light-theme {
+    color: $colour-cobalt-700;
+    
+    &:hover {
+      color: $colour-emerald-700;
+      text-decoration: underline;
+    }
+    
+    &:visited {
+      color: $colour-amethyst-700;
+    }
+  }
+  
+  @include dark-theme {
+    font-variation-settings: $text-code-block, $text-dark-theme-regular;
+    color: $colour-cobalt-200;  
+    
+    &:hover {
+      color: $colour-emerald-200;
+      text-decoration: underline;
+    }
+
+    &:visited {
+      color: $colour-amethyst-200;
+    }
+  }
+
   &.-ui {
-    @include transition(border-bottom);
-
-    width: fit-content;
-    font-size: ms(1);
-    line-height: $spacing-body-line-height;
+    @extend %link;
     text-decoration: none;
-    padding-bottom: $spacing-50;
+    font-size: ms(1);
+    padding-bottom: $spacing-25;
     border-bottom: solid 3px transparent;
-    margin: 0 $spacing-100;
-
-    &:first-of-type {
-      margin-left: 0;
-    }
-
-    &:last-of-type {
-      margin-right: 0;
-    }
+    // margin: 0 $spacing-100;
 
     @include medium-display {
       margin: $spacing-50 0;
@@ -34,18 +57,21 @@ a,
     @include light-theme {
       font-variation-settings: $text-ui, "wght" 500;
       color: $grey-900;
-
+      
       &:hover {
         border-bottom: solid 2px $grey-900;
       }
-    }
 
+    }
+  
     @include dark-theme {
       font-variation-settings: $text-ui, "wght" 520;
       color: $grey-100;
-
-      &:hover {
-        border-bottom: solid 2px $grey-100;
+  
+      &:hover,
+      &:focus {
+        color: $colour-cobalt-300;
+        border-bottom: solid 2px $colour-cobalt-300;
       }
     }
 
@@ -53,7 +79,6 @@ a,
       font-variation-settings: $text-ui, "wght" 700;
       border-bottom: solid 3px $grey-400;
     }
-  }
 
   &.-navigation {
     @include transition(border-bottom);
@@ -73,7 +98,7 @@ a,
 
     &:hover,
     &:focus {
-      @keyframes widden-on-interaction {
+      @keyframes widen-on-interaction {
         from {
           font-variation-settings: $text-ui, $text-light-theme-regular;
         }
@@ -83,7 +108,7 @@ a,
         }
       }
 
-      animation: widden-on-interaction 100ms ease-in;
+      animation: widen-on-interaction 100ms ease-in;
       font-variation-settings: $text-ui, 'wght' 600;
       color: $colour-cobalt-700;
 
@@ -143,4 +168,5 @@ a,
       }
     }
   }
+}
 }

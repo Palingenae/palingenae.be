@@ -3,6 +3,12 @@
   flex-direction: column;
   counter-reset: collection-counter 5;
 
+  &.-column {}
+  &.-row {}
+  &.-grid {}
+
+  &__element {}
+
   &__card {
     @include transition(all);
     @include diamond('outline', $grey-800, $grey-200);
