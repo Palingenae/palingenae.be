@@ -62,33 +62,64 @@
     }
   }
 
-  &Greeting,
-  &Description {
-    @extend h3;
-
-    font-family: $font-text;
-
-    @include light-theme {
-      color: $grey-800;
-      font-variation-settings: $text-content, $text-light-theme-regular;
-    }
-
-    @include dark-theme {
-      color: $grey-200;
-      font-variation-settings: $text-content, $text-dark-theme-regular;
-    }
-
-    &:not(.hero__description) {
-      margin-bottom: $spacing-400;
+  &__logo {
+    .logo.-long {
+      @include very-very-large-display {
+        height: ms(12);
+      }
+  
+      @include very-large-display {
+        height: ms(11);
+      }
+  
+      @include large-display {
+        height: ms(10);
+      }
+  
+      @include medium-display {
+        height: ms(9);
+      }
+  
+      @include small-display {
+        height: ms(8);
+      }
     }
   }
 
-  &Introduction {
-    @extend .display;
-    @extend .-fat;
+  &__separator {
+    display: flex;
+    @include very-very-large-display {
+      width: 880px;
+    }
 
-    font-family: $font-display;
-    max-width: 20ch;
+    @include very-large-display {
+      width: 672px;
+    }
+
+    @include large-display {
+      width: 560px;
+    }
+
+    @include medium-display {
+      width: 432px;
+    }
+
+    @include small-display {
+      width: 352px;
+    }
+  }
+
+  &__description {
+
+    p {
+      @extend h3;
+      font-family: $font-text;
+      font-variation-settings: $text-paragraph, 'wght' 300;
+    }
+    
+    @include light-theme {
+      color: $grey-800;
+    }
 
     @include dark-theme {
       color: $grey-200;

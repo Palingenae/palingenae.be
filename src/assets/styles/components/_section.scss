@@ -25,6 +25,53 @@
     padding: $spacing-400 $spacing-200;
   }
 
+  &.-offset {
+    @include very-very-large-display {
+      padding: {
+        top: $spacing-800;
+        left: 768px;
+        right: 256px;
+        bottom: $spacing-800;
+      }
+    }
+  
+    @include very-large-display {
+      padding: {
+        top: $spacing-800;
+        left: 512px;
+        right: 256px;
+        bottom: $spacing-800;
+      }
+    }
+  
+    @include large-display {
+      padding: {
+        top: $spacing-800;
+        left: 512px;
+        right: 256px;
+        bottom: $spacing-800;
+      }
+    }
+  
+    @include medium-display {
+      padding: {
+        top: $spacing-800;
+        left: 512px;
+        right: 256px;
+        bottom: $spacing-800;
+      }
+    }
+  
+    @include small-display {
+      padding: {
+        top: $spacing-800;
+        left: 512px;
+        right: 256px;
+        bottom: $spacing-800;
+      }
+    }
+  }
+
   &.-gold {
     @include light-theme {
       background-color: $colour-gold-100;

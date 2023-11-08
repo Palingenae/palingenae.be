@@ -4,10 +4,10 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import localeFR from 'dayjs/locale/fr';
 import MainLayout from '@layouts/main.astro';
 import Action from "@components/action.astro";
-import Tag from "@components/tag.astro";
+import Tag from "@components/Tag";
 import type { Article } from 'types/Article';
 import PageHeader from '@components/PageHeader.astro';
-import Footer from '@components/footer.astro';
+import Footer from '@components/Footer';
 import Message from '@components/message.astro';
 
 dayjs.extend(relativeTime);
@@ -42,7 +42,7 @@ try {
                                         <span class="card__date">{ dayjs(article.createdAt).locale(localeFR).fromNow() }</span>
                                         <div class="card__meta__tagsContainer">
                                             { article.tags.map((tag) => (
-                                                <Tag class="articleType" variant="outline" label={tag}/>
+                                                <Tag variant="outline" label={tag}/>
                                             ))}
                                         </div>
                                     </div>
@@ -57,4 +57,4 @@ try {
         </div>
     </section>
     <Footer/>
-</MainLayout>
+</MainLayout>@types/Article

@@ -135,6 +135,11 @@ h4 {
 .display {
   font-family: $font-display;
   letter-spacing: $spacing-letter-spacing-display;
+  font-variation-settings: 
+  'SOFT' 48,
+  'WONK' 1,
+  'opsz' 96,
+  'wght' 400;
   line-height: $spacing-display-line-height;
   margin-bottom: $spacing-400;
 

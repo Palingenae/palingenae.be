@@ -1,7 +1,7 @@
 ---
 import MainLayout from "@layouts/main.astro";
-import Footer from "../../components/footer.astro";
-import Tag from "../../components/tag.astro";
+import Footer from "../../components/Footer";
+import Tag from "../../components/Tag";
 import Action from "../../components/action.astro";
 import PageHeader from "@components/PageHeader.astro";
 import type { Project } from "types/Project";
@@ -33,7 +33,7 @@ try {
                                     <h2 class="card__title">{project.title}</h2>
                                     <div class="card__meta">
                                         <span class="card__date">{project.year}</span>
-                                        <Tag class="projectType" variant="outline" label={project.type}/>
+                                        <Tag variant="outline" label={project.type}/>
                                     </div>
                                 </div>
                             </div>
@@ -45,4 +45,4 @@ try {
             }
         </div>
     </section>
-    <Footer/>
+    <Footer/>@types/Project

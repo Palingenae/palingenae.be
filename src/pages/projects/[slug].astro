@@ -1,10 +1,10 @@
 ---
 import MainLayout from '@layouts/main.astro';
 import RichText from "@components/RichText.astro";
-import Tag from "@components/tag.astro";
-import Contact from "@components/contact.astro";
-import Footer from "@components/footer.astro"
-import type { Project } from "../../../types/Project";
+import Tag from "@components/Tag";
+import Contact from "@components/Contact";
+import Footer from "@components/Footer"
+import type { Project } from "@types/Project";
 
 const { title, year, type, status, stack, content, image } = Astro.props;
 
@@ -75,3 +75,4 @@ export async function getStaticPaths(): Promise<Project | []> {
     <Contact />
     <Footer />
 </MainLayout>
+../../types/Project
