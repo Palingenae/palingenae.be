@@ -6,6 +6,7 @@
   @include dark-theme {
     fill: $grey-200;
   }
+
   &.-short {
     max-height: ms(2);
   }

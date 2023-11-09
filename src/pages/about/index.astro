@@ -4,23 +4,27 @@ import MainLayout from '@layouts/main.astro'
 import Contact from '@components/Contact';
 import Footer from "@components/Footer";
 import Tag from '@components/Tag';
+import Action from '@components/Action';
 
 const pageTitle = "À propos"
 const availableForHire = true;
 ---
 <MainLayout title={pageTitle}>
     <section class="hero -pageBanner">
-        { availableForHire == true ?
-                <p class="curriculumAvailable">Disponible</p>
-            :
-            ''
-        }
-        <h1 class="display">
+        <h1 class="display -name">
             <span>Olivia </span> 
             <span>De Scheerder</span>
         </h1>
-        <h3>@Palingenae</h3>
-        <div>
+        <hr>
+        <p class="paragraph -jumbo">@Palingenae</p>
+    </section>
+    <section class="section -offset -column">
+        <article class="article">
+            <p class="paragraph -jumbo">Je suis une “<em>développeuse créative</em>”, je porte un grand soin à la conception avant de passer au développement, <strong>du Back-End au Front-End</strong>.</p>
+            <p class="paragraph -sans">Même si j’ai une expérience principalement en PHP, j’ai toujours eu une préférence pour l’environnement Front-End et le Design de manière générale, que je pratique pour le loisir depuis au moins 10 ans avec la photographie. Mon expérience acquise en PHP me servira pour le Back-End JavaScript.</p>
+            <p class="paragraph -sans">Et quand je ne fais rien de tout cela, vous pourrez me retrouver en train de cuisiner, sortir avec mes ami·e·s, et bientôt en train d’arbitrer ou jouer un match de Roller Derby.</p>
+        </article>
+        <div class="hero__now">
             <p class="paragraph -jumbo -sans"><strong>Actuellement concentrée sur :</strong></p>
             <div class="tagContainer">
                 <Tag label='ReactJS' variant='filledCobaltLight'/>
@@ -29,19 +33,25 @@ const availableForHire = true;
             </div>
         </div>
     </section>
-    <section class="section -row -offset">
-        <article class="article">
-            <p class="paragraph -jumbo">Je suis une “<em>développeuse créative</em>”, je porte un grand soin à la conception avant de passer au développement, <strong>du Back-End au Front-End</strong>.</p>
-            <p class="paragraph -sans">Même si j’ai une expérience principalement en PHP, j’ai toujours eu une préférence pour l’environnement Front-End et le Design de manière générale, que je pratique pour le loisir depuis au moins 10 ans avec la photographie. Mon expérience acquise en PHP me servira pour le Back-End JavaScript.</p>
-            <p class="paragraph -sans">Et quand je ne fais rien de tout cela, vous pourrez me retrouver en train de cuisiner, sortir avec mes ami·e·s, et bientôt en train d’arbitrer ou jouer un match de Roller Derby.</p>
-            { availableForHire == true ? 
-                <p class="paragraph -sans">Je suis actuellement à l’écoute du marché en tant que Développeuse PHP ou en tant qu’Intégratrice Web afin d’évoluer vers le Développement Front-End.</p>
-                <p>
-                    <a href="/about/curriculum" class="link -ui">Vers le mini CV</a>
-                </p>
-            : ''}
-        </article>
+    <section class="section -offset">
+        <h2>Photos ?</h2>
     </section>
+    { availableForHire == true ? 
+        <section class="section -offset -column">
+            <p class="curriculumAvailable">Disponible</p>
+            <p class="paragraph -jumbo -sans">Je suis actuellement à l’écoute du marché en tant que Développeuse, qu’Intégratrice Web ou ma préférence, le Développement Front-End.</p>
+            <a href="/about/curriculum" class="link -ui">Vers le mini CV</a> 
+        </section>
+        : ''}
+        <section class="section -offset -column">
+            <h2>Ailleurs sur les réseaux</h2>
+            <div class="contactNetworksList -column">
+                <a class="link -ui" href="https://github.com/Palingenae">Github</a>
+                <a class="link -ui" rel="me" href="https://front-end.social/@Palingenae">Mastodon</a>
+                <a class="link -ui" href="https://bsky.app/profile/palingenae.bsky.social">BlueSky</a>
+                <a class="link -ui" href="https://bento.me/palingenae">Bento</a>
+            </div>
+        </section>
     <Contact />
     <Footer />
 </MainLayout>

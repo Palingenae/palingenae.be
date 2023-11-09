@@ -51,7 +51,6 @@ h1 {
 
 h2 {
   font-family: $font-display;
-  margin-bottom: $spacing-400;
 
   @include light-theme {
     font-variation-settings:
@@ -182,6 +181,17 @@ h4 {
       'wght' 300;
   }
 
+  &.-name {
+    display: flex;
+    flex-direction: row;
+    gap: $spacing-150;
+
+    @include large-display {
+      gap: $spacing-50;
+      flex-direction: column;
+    }
+  }
+
   &.decorated {
     &::after {
       margin-top: $spacing-150;
@@ -232,7 +242,7 @@ h4 {
 
   &.-jumbo {
     line-height: $spacing-large-text-line-height;
-    max-width: 68ch;
+    max-width: 69ch;
     font-size: ms(3);
 
     &:not(:last-of-type) {
@@ -242,6 +252,16 @@ h4 {
     @include large-display {
       font-size: ms(2);
     }
+
+    @include small-display {
+      font-size: ms(1);
+    }
+  }
+
+  &.-lead {
+    line-height: $spacing-large-text-line-height;
+    max-width: 69ch;
+    font-size: ms(2);
 
     @include small-display {
       font-size: ms(1);

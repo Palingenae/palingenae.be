@@ -3,7 +3,8 @@ article,
   h2 {
     max-width: 48ch;
     line-height: $spacing-display-line-height;
-    margin-bottom: $spacing-400;
+    margin-top: $spacing-400;
+    margin-bottom: $spacing-200;
 
     @include very-very-large-display {
       font-size: ms(6);

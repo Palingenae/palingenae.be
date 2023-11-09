@@ -1,0 +1,33 @@
+---
+import MainLayout from '@layouts/main.astro';
+import PageHeader from '@components/PageHeader';
+import Message from '@components/Message';
+import Footer from '@components/Footer';
+---
+<MainLayout title="Signaler un problème">
+    <PageHeader 
+        pageName="Signaler un problème"
+        pageDescription="Qu'est-ce qui ne fonctionne pas ? Qu'est-ce qu'il faut améliorer ?"
+        />
+    <section class="section -column">
+        <p class="paragraph -lead">Que ça soit avec le site web en lui-même (bug d'affichage, manque d'accessibilité,etc.), quelque chose que j'aurais pu écrire (incorrect, oppressif, etc.), je suis toute ouïe. Je suis prête à faire en sorte à m'améliorer.</p>
+        <Message context="info" type="Petite précision :" content="Gardez en tête qu'il s'agit d'un site web personnel, qu'il s'agit de mon contenu uniquement. Je ne prendrai en considération que ce qui nuit entièrement à votre expérience ici, que ça soit de propos maladroits ou oppressifs, un bug, ou quelque chose qui améliorerait l'accessibilité."/>
+    </section>
+    <hr class="separator">
+    <section class="section -column">
+        <article class="article">
+            <h2>Le site web</h2>
+            <p class="paragraph">Le dépôt de ce site est visible sur Github. Si vous avez un compte, <strong>vous pouvez ouvrir une <em>issue</em></strong> et expliquer le problème le plus clairement possible.</p>
+            <p class="paragraph">Alternativement, si vous n'avez pas de compte Github et que vous ne voulez pas en ouvrir un, ce qui est totalement légitime, <strong>vous pouvez m'envoyer un email</strong>.</p>
+            <p class="paragraph">Dans les deux cas, j'apprécierais que vous apposiez des captures d'écrans pour que je puisse mieux comprendre.</p>
+            <h2>Un article, une page, mes mots</h2>
+            <p class="paragraph">Il se peut que j'aie laissé passer une erreur de français en me relisant. Ça arrive !</p>
+            <p class="paragraph">Ou alors j'ai probablement écrit des choses que <strong>je pensais correctes</strong> sur le moment <strong>sans avoir conscience</strong> de ce qui se passe autour ou du problème en question. Vous pouvez aussi m'envoyer un email pour expliquer le souci, j'écouterai. Je comprendrai certainement votre frustration, mais je promets que <strong>je fais ce que je peux</strong>.</p>
+        </article>
+        <div class="division -row">
+            <a class="button" href="https://github.com/Palingenae/palingenae.be/issues/new" target="_blank" rel="noopener">Ouvrir une issue Github</a>
+            <a class="button" href="mailto:hey@palingenae.be?subject=Signalement d'un problème">Envoyer un  email</a>
+        </div>
+    </section>
+    <Footer />
+</MainLayout>

@@ -6,34 +6,31 @@ import Message from "@components/message.astro";
 import Tag from "@components/Tag";
 import Contact from "@components/Contact";
 import Footer from "@components/Footer";
+import Card from "@components/Card";
 ---
 <MainLayout title="Curriculum">
     <section class="hero -pageBanner">
         <p class="curriculumAvailable">Disponible</p>
-        <h1 class="display">
-            <span>Olivia </span> 
+        <h1 class="display -name">
+            <span>Olivia </span>
             <span>De Scheerder</span>
         </h1>
-        <p class="paragraph -jumbo -sans">Développeuse Front-End</p>
+        <p class="paragraph -jumbo -sans">Développeuse Full-Stack PHP / JavaScript</p>
     </section>
     <section class="section">
         <main class="main">
             <h2>Dernier projet</h2>
-            <div class="card -grid">
-                <div class="card__header">
-                    <span class="card__meta__repoType -side">SIDE PROJECT</span>
-                </div>
-                <div class="card__content">
-                    <p class="card__title">Les Films de Plein Air : Director's Cut</p>
-                    <div class="card__meta">
-                        <span class="card__meta__repoName">palingenae/palingenae.be</span><span class="card__meta__repoStatus -active">Actif</span>
-                    </div>
-                    <p class="paragraph">Revisite d'un projet OpenClassrooms, Les Films de Plein Air. Maintenant le projet sera un produit fini, comme si je l'avais réalisé en tant que conceptrice freelance. N'utilise <strong>pas</strong> Wordpress.</p>
-                </div>
-                <div class="card__footer">
-                    <a href="#" rel="noopener" target="_blank" class="link">Dépôt Github</a>
-                </div>
-            </div>
+            <Card 
+                variant="grid" 
+                title="Les Films de Plein Air : Director's Cut"
+                type="Side Project"
+                typeClass="side"
+                repoName="palingenae/palingenae.be"
+                repoStatus="Actif"
+                repoStatusClass="active"
+                description="Revisite d'un projet OpenClassrooms, Les Films de Plein Air. Maintenant le projet sera un produit fini, comme si je l'avais réalisé en tant que conceptrice freelance. N'utilise pas Wordpress."
+                repoLink="https://github.com/Palingenae/lfpa-directors-cut"
+            />
         </main>
         <!-- <aside class="aside">
             <p class="paragraph -jumbo"><strong>Liens utiles</strong></p>
@@ -181,7 +178,6 @@ import Footer from "@components/Footer";
             </div>
         </aside>
     </section>
-    
     <Contact />
     <Footer/>
 </MainLayout>

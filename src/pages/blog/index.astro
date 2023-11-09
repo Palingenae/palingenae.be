@@ -5,10 +5,10 @@ import localeFR from 'dayjs/locale/fr';
 import MainLayout from '@layouts/main.astro';
 import Action from "@components/action.astro";
 import Tag from "@components/Tag";
-import type { Article } from 'types/Article';
-import PageHeader from '@components/PageHeader.astro';
+import PageHeader from '@components/PageHeader';
 import Footer from '@components/Footer';
-import Message from '@components/message.astro';
+import Message from '@components/Message';
+import type { Article } from '@types/Article';
 
 dayjs.extend(relativeTime);
 dayjs.locale('fr');
@@ -57,4 +57,4 @@ try {
         </div>
     </section>
     <Footer/>
-</MainLayout>@types/Article
+</MainLayout>
