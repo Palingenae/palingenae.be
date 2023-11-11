@@ -1,3 +1,5 @@
+import Icon from "./Icon"
+
 interface CardProps {
     variant: "grid" | "column" | "row",
     title: string,
@@ -32,8 +34,10 @@ export default function Card({variant, title, type, typeClass, description, repo
             </div>
             { (repoLink !== undefined) || (websiteLink !== undefined) ? 
                 <div className="card__footer">
-                    { repoLink !== undefined ? <a href={repoLink} rel="noopener" target="_blank">Dépôt Github</a>: ''}
-                    { websiteLink !== undefined ? <a href={websiteLink} rel="noopener" target="_blank">Projet</a>: ''}
+                    {repoLink !== undefined ? <a href={repoLink} rel="noopener" target="_blank" className="link -ui">
+                       <Icon iconName="github" /> Dépôt Github
+                    </a> : ''}
+                    { websiteLink !== undefined ? <a href={websiteLink} rel="noopener" target="_blank" className="link -ui">Projet</a>: ''}
                 </div>
                 :
                 ''

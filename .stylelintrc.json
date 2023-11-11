@@ -4,26 +4,15 @@
     "stylelint-config-standard-scss"
   ],
   "plugins": [
-    "stylelint-scss",
-    "@namics/stylelint-bem",
-    "stylelint-selector-bem-pattern"
+    "stylelint-scss"
   ],
   "rules": {
     "import-notation": "string",
     "font-family-name-quotes": "always-where-recommended",
+    "selector-class-pattern": false,
     "resolveNestedSelectors": true,
     "declaration-block-no-duplicate-properties": true,
     "block-closing-brace-newline-before": "always",
-    "no-descending-specificity": true,
-    "plugin/stylelint-bem-namics": true,
-    "plugin/selector-bem-pattern": {
-      "componentName": "[A-Z]+",
-      "preset": "bem",
-      "componentSelectors": {
-        "initial": "^\\.{componentName}(?:-[a-z]+)?$",
-        "combined": "^\\.combined-{componentName}-[a-z]+$"
-      },
-      "utilitySelectors": "^\\.-[a-z]+$"
-    }
+    "no-descending-specificity": true
   }
 }

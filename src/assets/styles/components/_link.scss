@@ -36,6 +36,7 @@ a,
 
   &.-ui {
     @extend %link;
+    @include transition(all);
 
     text-decoration: none;
     font-size: ms(1);
@@ -61,7 +62,7 @@ a,
       color: $grey-900;
       
       &:hover {
-        border-bottom: solid 2px $grey-900;
+        border-bottom: solid 3px $grey-900;
       }
 
     }
@@ -73,7 +74,7 @@ a,
       &:hover,
       &:focus {
         color: $colour-cobalt-300;
-        border-bottom: solid 2px $colour-cobalt-300;
+        border-bottom: solid 3px $colour-cobalt-300;
       }
     }
 

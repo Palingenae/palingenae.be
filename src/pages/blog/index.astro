@@ -1,14 +1,14 @@
 ---
+import MainLayout from '@layouts/main.astro';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import localeFR from 'dayjs/locale/fr';
-import MainLayout from '@layouts/main.astro';
-import Action from "@components/action.astro";
+import Action from "@components/Action";
 import Tag from "@components/Tag";
 import PageHeader from '@components/PageHeader';
 import Footer from '@components/Footer';
 import Message from '@components/Message';
-import type { Article } from '@types/Article';
+import type { Article } from '../../types/Article';
 
 dayjs.extend(relativeTime);
 dayjs.locale('fr');
@@ -34,7 +34,7 @@ try {
             {
                 articles !== undefined ?
                     articles.docs.map((article: Article): void => (
-                        <a href={`/blog/${article.slug}`} class="collection__card">
+                        <a href={`/blog/${article.slug}`} class="card -column">
                             <div class="card__container">
                                 <div class="card__content">
                                     <h2 class="card__title">{ article.title }</h2>
@@ -48,7 +48,7 @@ try {
                                     </div>
                                 </div>
                             </div>
-                            <Action label="Voir" icon="forward"/>
+                            <Action label="Voir" icon="arrow-right"/>
                         </a>
                     ))
                 :

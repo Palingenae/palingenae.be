@@ -32,7 +32,7 @@
     @include very-very-large-display {
       padding: {
         top: $spacing-800;
-        left: calc($spacing-800*6);
+        left: calc($spacing-800 * 6);
         right: $spacing-1600;
         bottom: $spacing-800;
       }
@@ -41,7 +41,7 @@
     @include very-large-display {
       padding: {
         top: $spacing-800;
-        left: calc($spacing-800*4);
+        left: calc($spacing-800 * 4);
         right: $spacing-1600;
         bottom: $spacing-800;
       }
@@ -50,7 +50,7 @@
     @include large-display {
       padding: {
         top: $spacing-600;
-        left: calc($spacing-800*2);
+        left: calc($spacing-800 * 2);
         right: $spacing-800;
         bottom: $spacing-600;
       }

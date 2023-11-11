@@ -5,12 +5,12 @@
   align-items: center;
   font-size: ms(0);
   width: fit-content;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: $spacing-25 $spacing-100;
 
   @include small-display {
     font-size: ms(-1);
-    border-radius: 10px;
+    border-radius: 12px;
     padding-right: $spacing-25 $spacing-50;
   }
 
@@ -53,6 +53,7 @@
       &Light {
         color: $colour-ruby-900;
         background-color: $colour-ruby-200;
+        border: solid 2px $colour-ruby-200;
       }
     }
 
@@ -60,11 +61,13 @@
       @include light-theme {
         color: $white;
         background-color: $colour-copper-400;
+        border: solid 2px $colour-copper-400;
       }
 
       @include dark-theme {
         color: $colour-copper-900;
         background-color: $colour-copper-200;
+        border: solid 2px $colour-copper-200;
       }
     }
 
@@ -72,16 +75,18 @@
       @include light-theme {
         color: $white;
         background-color: $colour-amethyst-600;
+        border: solid 2px $colour-amethyst-600;
       }
 
       @include dark-theme {
         color: $colour-amethyst-900;
         background-color: $colour-amethyst-200;
+        border: solid 2px $colour-amethyst-200;
       }
 
       &Light {
         color: $colour-amethyst-900;
-        background-color: $colour-amethyst-200;
+        background-color: $colour-amethyst-200;border: solid 2px $colour-amethyst-200;
       }
     }
 
@@ -89,11 +94,13 @@
       @include light-theme {
         color: $grey-900;
         background-color: $colour-gold-200;
+        border: solid 2px $colour-gold-200;
       }
 
       @include dark-theme {
         color: $colour-gold-900;
         background-color: $colour-gold-100;
+        border: solid 2px $colour-gold-100;
       }
     }
 
@@ -101,16 +108,19 @@
       @include light-theme {
         color: $white;
         background-color: $colour-emerald-600;
+        border: solid 2px $colour-emerald-600;
       }
 
       @include dark-theme {
         color: $colour-emerald-900;
         background-color: $colour-emerald-200;
+        border: solid 2px $colour-emerald-200;
       }
 
       &Light {
         color: $colour-emerald-1000;
         background-color: $colour-emerald-300;
+        border: solid 2px $colour-emerald-300;
       }
     }
 
@@ -118,16 +128,19 @@
       @include light-theme {
         color: $white;
         background-color: $colour-cobalt-600;
+        border: solid 2px $colour-cobalt-600;
       }
 
       @include dark-theme {
         color: $colour-cobalt-900;
         background-color: $colour-cobalt-300;
+        border: solid 2px $colour-cobalt-300;
       }
 
       &Light {
         color: $colour-cobalt-900;
         background-color: $colour-cobalt-200;
+        border: solid 2px $colour-cobalt-200;
       }
     }
   }
