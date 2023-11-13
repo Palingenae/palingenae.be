@@ -4,6 +4,6 @@ interface iconProps {
 
 export default function Icon({ iconName }: iconProps) {
     return (
-        <i className={`iconoir-${iconName}`}></i>
+        <i className={`icon iconoir-${iconName}`}></i>
     )
 }

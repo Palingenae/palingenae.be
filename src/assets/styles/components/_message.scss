@@ -4,13 +4,19 @@
   @include transition(border-left);
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   color: $grey-900;
   width: fit-content;
   background-color: $grey-100;
   border-left: solid 8px $grey-900;
   border-radius: 16px;
   padding: $spacing-200;
+  gap: $spacing-150;
+
+  @include small-display {
+    flex-direction: column;
+    padding: $spacing-100;
+  }
 
   &:not(:last-of-type) {
     margin-bottom: $spacing-200;
@@ -22,21 +28,35 @@
     border-left: solid 8px $grey-100;
   }
 
-  &Container {
+  &__content {
     display: flex;
+    gap: $spacing-100;
     flex-direction: column;
   }
 
-  &Type {
+  &__title {
     font-variation-settings: 'wght' 700;
     font-size: ms(0);
-    margin-bottom: $spacing-100;
+    text-transform: uppercase;
+    margin-bottom: $spacing-50;
   }
 
-  &Content {
+  &__text {
     @extend .paragraph;
 
     margin-bottom: 0;
+  }
+
+  &__icon {
+    display: flex;
+
+    @include small-display {
+      justify-content: flex-end;
+    }
+
+    .icon {
+      font-size: ms(4);
+    }
   }
 
   &.-info {

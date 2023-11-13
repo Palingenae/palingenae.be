@@ -1,13 +1,25 @@
 ---
+import escapeHTML from 'escape-html';
+
 import MainLayout from '@layouts/main.astro'
 
 import Contact from '@components/Contact';
 import Footer from "@components/Footer";
 import Tag from '@components/Tag';
-import Action from '@components/Action';
+import RichText from '@components/RichText.astro';
+
+let page;
+
+try {
+    let response = await fetch(`${import.meta.env.API_URL}/api/globals/about`);
+    page = await response.json();
+
+
+} catch (error) {
+    console.error(error);
+}
 
 const pageTitle = "À propos"
-const availableForHire = true;
 ---
 <MainLayout title={pageTitle}>
     <section class="hero -pageBanner">
@@ -20,9 +32,8 @@ const availableForHire = true;
     </section>
     <section class="section -offset -column">
         <article class="article">
-            <p class="paragraph -jumbo">Je suis une “<em>développeuse créative</em>”, je porte un grand soin à la conception avant de passer au développement, <strong>du Back-End au Front-End</strong>.</p>
-            <p class="paragraph -sans">Même si j’ai une expérience principalement en PHP, j’ai toujours eu une préférence pour l’environnement Front-End et le Design de manière générale, que je pratique pour le loisir depuis au moins 10 ans avec la photographie. Mon expérience acquise en PHP me servira pour le Back-End JavaScript.</p>
-            <p class="paragraph -sans">Et quand je ne fais rien de tout cela, vous pourrez me retrouver en train de cuisiner, sortir avec mes ami·e·s, et bientôt en train d’arbitrer ou jouer un match de Roller Derby.</p>
+            <p class="paragraph -jumbo">{ page.lead }</p>
+            <RichText richText={page.article} />
         </article>
         <div class="hero__now">
             <p class="paragraph -jumbo -sans"><strong>Actuellement concentrée sur :</strong></p>
@@ -33,10 +44,14 @@ const availableForHire = true;
             </div>
         </div>
     </section>
-    <section class="section -offset">
-        <h2>Photos ?</h2>
+    <section class="section">
+        <div class="imageCollection -about">
+            { page.photos.map((pellicule: any)=> 
+                <img class="image -vertical" src={ escapeHTML(`${import.meta.env.API_URL}${pellicule.photo.url}`) } alt={ pellicule.photo.alt }/>
+            )}
+        </div>
     </section>
-    { availableForHire == true ? 
+    { page.availableForHire == true ? 
         <section class="section -offset -column">
             <p class="curriculumAvailable">Disponible</p>
             <p class="paragraph -jumbo -sans">Je suis actuellement à l’écoute du marché en tant que Développeuse, qu’Intégratrice Web ou ma préférence, le Développement Front-End.</p>
