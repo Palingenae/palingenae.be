@@ -7,7 +7,7 @@ export default function Footer(): JSX.Element {
                 <span className="copyright">&copy; Palingenae { new Date().getFullYear() } - Tous droits réservés</span>
             </div>
             <div className="footer__column__last">
-                <a href="/explain-your-problem" className="link">Signaler un problème</a>
+                <a href="/report-issue" className="link -navigation">Signaler un problème</a>
                 <Tag variant="filledEmeraldLight" label="v0.4"/>
             </div>
         </footer>

@@ -193,6 +193,44 @@ h4 {
     }
   }
 
+  &.-nickname {
+    font-family: $font-text;
+    letter-spacing: $spacing-letter-spacing-display;
+    
+    @include light-theme {
+      color: $color-emerald-600;
+      font-variation-settings: $text-content, 'wght' 320;
+    }
+
+    @include dark-theme {
+      color: $color-citrine-200;
+      font-variation-settings: $text-content, 'wght' 350;
+    }
+
+    @include very-very-large-display {
+      font-size: ms(6);
+    }
+  
+    @include very-large-display {
+      font-size: ms(5);
+    }
+  
+    @include large-display {
+      font-size: ms(4);
+      margin-bottom: $spacing-300;
+    }
+  
+    @include medium-display {
+      font-size: ms(3);
+      margin-bottom: $spacing-200;
+    }
+  
+    // @include small-display {
+    //   font-size: ms(2);
+    //   margin-bottom: $spacing-100;
+    // }
+  }
+
   &.decorated {
     &::after {
       margin-top: $spacing-150;
@@ -260,7 +298,7 @@ h4 {
   }
 
   &.-lead {
-    line-height: $spacing-large-text-line-height;
+    line-height: $spacing-body-line-height;
     max-width: 69ch;
     font-size: ms(2);
 

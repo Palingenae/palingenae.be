@@ -3,18 +3,18 @@
   @extend .-column;
 
   // @include light-theme {
-  //   background-color: $colour-emerald-700;
+  //   background-color: $color-emerald-700;
   // }
 
   &__mail {
     @extend h1;
 
     // @include light-theme {
-    //   color: $colour-gold-100;
+    //   color: $color-citrine-100;
     // }
 
     // @include dark-theme {
-    //   color: $colour-emerald-300;
+    //   color: $color-emerald-300;
     // }
 
     @include medium-display {
@@ -28,7 +28,7 @@
   }
 
   &__title {
-    @include diamond('filled', $colour-gold-200, $colour-gold-200,);
+    @include diamond('filled', $color-emerald-600, $color-citrine-200);
     @extend h4;
     @extend .decorated;
 

@@ -7,14 +7,14 @@ import Contact from '@components/Contact';
 import Footer from "@components/Footer";
 import Tag from '@components/Tag';
 import RichText from '@components/RichText.astro';
+import SocialLinks from '@components/SocialLinks';
+import Icon from '@components/Icon';
 
 let page;
 
 try {
     let response = await fetch(`${import.meta.env.API_URL}/api/globals/about`);
     page = await response.json();
-
-
 } catch (error) {
     console.error(error);
 }
@@ -27,13 +27,12 @@ const pageTitle = "À propos"
             <span>Olivia </span> 
             <span>De Scheerder</span>
         </h1>
-        <hr>
-        <p class="paragraph -jumbo">@Palingenae</p>
+        <p class="display -nickname">@Palingenae</p>
     </section>
     <section class="section -offset -column">
         <article class="article">
-            <p class="paragraph -jumbo">{ page.lead }</p>
-            <RichText richText={page.article} />
+            <p class="paragraph -lead"><strong>{ page.lead }</strong></p>
+            <RichText richText={ page.article }/>
         </article>
         <div class="hero__now">
             <p class="paragraph -jumbo -sans"><strong>Actuellement concentrée sur :</strong></p>
@@ -51,21 +50,15 @@ const pageTitle = "À propos"
             )}
         </div>
     </section>
-    { page.availableForHire == true ? 
+    { page.availableForHire == true ?
         <section class="section -offset -column">
             <p class="curriculumAvailable">Disponible</p>
             <p class="paragraph -jumbo -sans">Je suis actuellement à l’écoute du marché en tant que Développeuse, qu’Intégratrice Web ou ma préférence, le Développement Front-End.</p>
-            <a href="/about/curriculum" class="link -ui">Vers le mini CV</a> 
+            <a href="/about/curriculum" class="button -hasIcon">Vers le mini CV <Icon iconName='arrow-right'/></a> 
         </section>
         : ''}
         <section class="section -offset -column">
-            <h2>Ailleurs sur les réseaux</h2>
-            <div class="contactNetworksList -column">
-                <a class="link -ui" href="https://github.com/Palingenae">Github</a>
-                <a class="link -ui" rel="me" href="https://front-end.social/@Palingenae">Mastodon</a>
-                <a class="link -ui" href="https://bsky.app/profile/palingenae.bsky.social">BlueSky</a>
-                <a class="link -ui" href="https://bsky.app/profile/palingenae.bsky.social">Dribbble</a>
-            </div>
+            <SocialLinks/>
         </section>
     <Contact />
     <Footer />

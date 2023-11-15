@@ -9,7 +9,11 @@
   
   &.-row {
     display: flex;
-    gap: $spacing-200;
+    gap: $spacing-400;
+
+    @include small-display {
+      gap: $spacing-200;
+    }
   }
 
   &.-grid {

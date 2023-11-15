@@ -64,7 +64,7 @@
       z-index: 1001;
 
       &__label {
-        @include diamond('filled', $colour-emerald-600, $colour-emerald-200);
+        @include diamond('filled', $color-emerald-600, $color-emerald-200);
 
         cursor: pointer;
         display: inline-flex;

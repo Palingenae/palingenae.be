@@ -30,10 +30,10 @@ try {
         <div class="navigation__horizontal">
             {
                 navLinks === undefined ?
-                    <a class={currentPath === '/about' ? "link -ui -active" : "link -ui"} href="/about">À propos</a>
+                    <a class={currentPath === '/about' ? "link -navigation -active" : "link -navigation"} href="/about">À propos</a>
                 :
                     navLinks.Routes.map((link: any) => (
-                        <a class={currentPath === link.URL ? "link -ui -active" : "link -ui"} href={ link.URL }>{ link.Name }</a>
+                        <a class={currentPath === link.URL ? "link -navigation -active" : "link -navigation"} href={ link.URL }>{ link.Name }</a>
                     ))
             }
         </div>

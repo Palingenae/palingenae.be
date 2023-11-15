@@ -1,0 +1,313 @@
+@mixin colored-block($color: "gray", $is-interactive: "interactive") {
+    @if $color != "gray" and $color != "gray-inverse" and $color != "color-ruby" and $color != "color-amber" and $color != "color-citrine" and $color != "color-emerald" and $color != "color-cobalt" and $color != "color-amethyst" {
+        @error "Only available options are: 'gray', 'gray-inverse', 'ruby', 'amber', 'citrine', 'emerald', 'cobalt', 'amethyst'";
+    }
+
+    @if $is-interactive != "interactive" and $is-interactive != false {
+        @error "Adding interactive colors to components can only be used with the key 'interactive'";
+    }
+
+    @if $color == "gray" {
+        @include light-theme {
+            color: $black;
+            background-color: $gray-100;
+
+            @if $is-interactive == "interactive" {
+                &:hover,
+                &:focus {
+                    color: $black;
+                    background-color: $gray-200;
+                }
+
+                &:active {
+                    color: $black;
+                    background-color: $white;
+                }
+            } @else {}
+        }
+
+        @include dark-theme {
+            color: $gray-100;
+            background-color: $gray-900;
+
+            @if $is-interactive == "interactive" {
+                &:hover,
+                &:focus {
+                    color: $white;
+                    background-color: $gray-600;
+                }
+
+                &:active {
+                    color: $white;
+                    background-color: $black;
+                }
+            } @else {}
+        }
+    }
+
+    @if $color == "gray-inverse" {
+        @include light-theme {
+            color: $gray-100;
+            background-color: $gray-900;
+
+            @if $is-interactive == "interactive" {
+                &:hover,
+                &:focus {
+                    color: $black;
+                    background-color: $gray-200;
+                }
+
+                &:active {
+                    color: $white;
+                    background-color: $black;
+                }
+            } @else {}
+        }
+
+        @include dark-theme {
+            color: $gray-900;
+            background-color: $gray-200;
+
+            @if $is-interactive == "interactive" {
+                &:hover,
+                &:focus {
+                    color: $white;
+                    background-color: $gray-600;
+                }
+
+                &:active {
+                    color: $black;
+                    background-color: $white;
+                }
+            } @else {}
+        }
+    }
+
+    @if $color == "color-ruby" {
+        @include light-theme {
+            color: $color-ruby-900;
+            background-color: $color-ruby-200;
+
+            @if $is-interactive == "interactive" {
+                &:hover,
+                &:focus {
+                    color: $color-ruby-50;
+                    background-color: $color-ruby-500;
+                }
+
+                &:active {
+                    color: $color-ruby-50;
+                    background-color: $color-ruby-800;
+                }
+            } @else {}
+        }
+
+        @include dark-theme {
+            color: $color-ruby-100;
+            background-color: $color-ruby-950;
+
+            @if $is-interactive == "interactive" {
+                &:hover,
+                &:focus {
+                    color: $color-ruby-950;
+                    background-color: $color-ruby-500;
+                }
+
+                &:active {
+                    color: $color-ruby-950;
+                    background-color: $color-ruby-200;
+                }
+            } @else {}
+        }
+    }
+
+    @if $color == "color-amber" {
+        @include light-theme {
+            color: $color-amber-900;
+            background-color: $color-amber-200;
+
+            @if $is-interactive == "interactive" {
+                &:hover,
+                &:focus {
+                    color: $color-amber-100;
+                    background-color: $color-amber-200;
+                }
+
+                &:active {
+                    color: $color-amber-100;
+                    background-color: $color-amber-200;
+                }
+            } @else {}
+        }
+
+        @include dark-theme {
+            color: $color-amber-200;
+            background-color: $color-amber-950;
+
+            @if $is-interactive == "interactive" {
+                &:hover,
+                &:focus {
+                    color: $color-amber-100;
+                    background-color: $color-amber-200;
+                }
+
+                &:active {
+                    color: $color-amber-100;
+                    background-color: $color-amber-200;
+                }
+            }
+        }
+    }
+
+    @if $color == "color-citrine" {
+        @include light-theme {
+            color: $color-citrine-900;
+            background-color: $color-citrine-200;
+
+            @if $is-interactive == "interactive" {
+                &:hover,
+                &:focus {
+                    color: $color-citrine-950;
+                    background-color: $color-citrine-400;
+                }
+
+                &:active {
+                    color: $color-citrine-50;
+                    background-color: $color-citrine-800;
+                }
+            } @else {}
+        }
+
+        @include dark-theme {
+            color: $color-citrine-200;
+            background-color: $color-citrine-900;
+
+            @if $is-interactive == "interactive" {
+                &:hover,
+                &:focus {
+                    color: $color-citrine-950;
+                    background-color: $color-citrine-400;
+                }
+
+                &:active {
+                    color: $color-citrine-950;
+                    background-color: $color-citrine-200;
+                }
+            } @else {}
+        }
+    }
+
+    @if $color == "color-emerald" {
+        @include light-theme {
+            color: $color-emerald-950;
+            background-color: $color-emerald-200;
+
+            @if $is-interactive == "interactive" {
+                &:hover,
+                &:focus {
+                    color: $color-emerald-50;
+                    background-color: $color-emerald-500;
+                }
+
+                &:active {
+                    color: $color-emerald-50;
+                    background-color: $color-emerald-800;
+                }
+            } @else {}
+        }
+
+        @include dark-theme {
+            color: $color-emerald-100;
+            background-color: $color-emerald-900;
+
+            @if $is-interactive == "interactive" {
+                &:hover,
+                &:focus {
+                    color: $color-emerald-950;
+                    background-color: $color-emerald-400;
+                }
+
+                &:active {
+                    color: $color-emerald-800;
+                    background-color: $color-emerald-200;
+                }
+            } @else {}
+        }
+    }
+
+    @if $color == "color-cobalt" {
+        @include light-theme {
+            color: $color-cobalt-900;
+            background-color: $color-cobalt-200;
+
+            @if $is-interactive == "interactive" {
+                &:hover,
+                &:focus {
+                    color: $color-cobalt-50;
+                    background-color: $color-cobalt-600;
+                }
+
+                &:active {
+                    color: $color-cobalt-100;
+                    background-color: $color-cobalt-800;
+                }
+            } @else {}
+        }
+
+        @include dark-theme {
+            color: $color-cobalt-100;
+            background-color: $color-cobalt-950;
+
+            @if $is-interactive == "interactive" {
+                &:hover,
+                &:focus {
+                    color: $color-cobalt-950;
+                    background-color: $color-cobalt-400;
+                }
+
+                &:active {
+                    color: $color-cobalt-800;
+                    background-color: $color-cobalt-200;
+                }
+            } @else {}
+        }
+    }
+
+    @if $color == "color-amethyst" {
+        @include light-theme {
+            color: $color-amethyst-950;
+            background-color: $color-amethyst-200;
+
+            @if $is-interactive == "interactive" {
+                &:hover,
+                &:focus {
+                    color: $color-amethyst-950;
+                    background-color: $color-amethyst-300;
+                }
+
+                &:active {
+                    color: $color-amethyst-100;
+                    background-color: $color-amethyst-800;
+                }
+            } @else {}
+        }
+
+        @include dark-theme {
+            color: $color-amethyst-100;
+            background-color: $color-amethyst-900;
+
+            @if $is-interactive == "interactive" {
+                &:hover,
+                &:focus {
+                    color: $color-amethyst-100;
+                    background-color: $color-amethyst-200;
+                }
+
+                &:active {
+                    color: $color-amethyst-100;
+                    background-color: $color-amethyst-200;
+                }
+            } @else {}
+        }
+    }
+}

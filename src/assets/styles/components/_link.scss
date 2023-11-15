@@ -1,175 +1,188 @@
 a,
+.link,
 %link {
   @include transition(all);
   @include transition(font-variation-settings);
 
   width: fit-content;
   line-height: $spacing-body-line-height;
-  text-decoration: none;
+
+  // text-decoration: none;
   
   @include light-theme {
-    color: $colour-cobalt-700;
+    color: $color-cobalt-700;
     
     &:hover {
-      color: $colour-emerald-700;
+      color: $color-emerald-700;
       text-decoration: underline;
     }
     
     &:visited {
-      color: $colour-amethyst-700;
+      color: $color-amethyst-700;
     }
   }
   
   @include dark-theme {
     font-variation-settings: $text-code-block, $text-dark-theme-regular;
-    color: $colour-cobalt-200;  
+    color: $color-cobalt-200;  
     
     &:hover {
-      color: $colour-emerald-200;
+      color: $color-emerald-200;
       text-decoration: underline;
     }
 
     &:visited {
-      color: $colour-amethyst-200;
+      color: $color-amethyst-200;
     }
+  }
+
+  &.-hasIcon {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-100;
+  }
+  
+  &.-out {
+    @include transition(all);
+
+    font-variation-settings: $text-ui;
+    display: inline-flex;
+    font-size: ms(2);
+    color: inherit;
+    padding: $spacing-25 $spacing-100;
+    text-decoration: none;
+    border-radius: 8px;
+  
+    @include small-display {
+      font-size: ms(1);
+    }
+
+    &:hover,
+    &:focus {
+      @include colored-block("gray", "interactive");
+    }
+    
+    // &:visited {
+    //   @include transition(all);
+    //   @include colored-block("color-amethyst");
+    // }
   }
 
   &.-ui {
     @extend %link;
     @include transition(all);
-
+    
     text-decoration: none;
+    color: inherit;
     font-size: ms(1);
-    padding-bottom: $spacing-25;
-    border-bottom: solid 3px transparent;
-
-    // margin: 0 $spacing-100;
-
-    @include medium-display {
-      margin: $spacing-50 0;
-
-      &:first-of-type {
-        margin-top: 0;
-      }
-
-      &:last-of-type {
-        margin-bottom: 0;
-      }
-    }
-
-    @include light-theme {
-      font-variation-settings: $text-ui, "wght" 500;
-      color: $grey-900;
-      
-      &:hover {
-        border-bottom: solid 3px $grey-900;
-      }
-
-    }
+    font-variation-settings: $text-ui;
+    padding: $spacing-50 $spacing-150;
+    border-radius: 8px;
   
-    @include dark-theme {
-      font-variation-settings: $text-ui, "wght" 520;
-      color: $grey-100;
+    &:hover,
+    &:focus {
+      @include colored-block("gray", "interactive");
+    }
+    
+  }
   
-      &:hover,
-      &:focus {
-        color: $colour-cobalt-300;
-        border-bottom: solid 3px $colour-cobalt-300;
-      }
-    }
-
-    &.-active {
-      font-variation-settings: $text-ui, "wght" 700;
-      border-bottom: solid 3px $grey-400;
-    }
-
   &.-navigation {
-    @include transition(border-bottom);
-
+    @extend %link;
+    @include transition(all);
+  
     color: inherit;
     width: fit-content;
     font-size: ms(1);
     line-height: $spacing-body-line-height;
     text-decoration: none;
-    padding-bottom: $spacing-50;
-    border-bottom: solid 3px transparent;
-  }
-
-  &.-vertical{
-    font-size: ms(4);
-    font-variation-settings: $text-ui, $text-light-theme-regular;
-
+    padding: $spacing-25 $spacing-100;
+    border-radius: 8px;
+  
     &:hover,
     &:focus {
-      @keyframes widen-on-interaction {
-        from {
-          font-variation-settings: $text-ui, $text-light-theme-regular;
-        }
+      @include colored-block("gray");
+    }
 
-        to {
-          font-variation-settings: $text-ui, 'wght' 600;
-        }
-      }
-
-      animation: widen-on-interaction 100ms ease-in;
-      font-variation-settings: $text-ui, 'wght' 600;
-      color: $colour-cobalt-700;
-
-      @include dark-theme {
-        color: $colour-cobalt-300;
-      }
-
-      &::before {
-        @keyframes point-to-route {
+    &.-vertical {
+      font-size: ms(7);
+      font-variation-settings: $text-ui, $text-light-theme-regular;
+    
+      &:hover,
+      &:focus {
+        @keyframes widen-on-interaction {
           from {
             font-variation-settings: $text-ui, $text-light-theme-regular;
-            opacity: 0;
-            margin-right: $spacing-400
           }
-
+    
           to {
             font-variation-settings: $text-ui, 'wght' 600;
-            opacity: 1;
-            margin-right: $spacing-300;
           }
         }
-
-        content: "\00261E";
-        font-family: $font-text;
-        font-size: inherit;
-        color: inherit;
-        opacity: 1;
-        margin-right: $spacing-300;
-        animation: point-to-route 200ms ease-in;
+    
+        animation: widen-on-interaction 100ms ease-in;
+        font-variation-settings: $text-ui, 'wght' 600;
+        color: $color-cobalt-700;
+    
+        @include dark-theme {
+          color: $color-cobalt-300;
+        }
+    
+        &::before {
+          @keyframes point-to-route {
+            from {
+              font-variation-settings: $text-ui, $text-light-theme-regular;
+              opacity: 0;
+              margin-right: $spacing-400
+            }
+    
+            to {
+              font-variation-settings: $text-ui, 'wght' 600;
+              opacity: 1;
+              margin-right: $spacing-300;
+            }
+          }
+  
+          font-family: $font-text;
+          font-size: inherit;
+          color: inherit;
+          opacity: 1;
+          margin-right: $spacing-300;
+          animation: point-to-route 200ms ease-in;
+        }
+      }
+    
+      @include large-display {
+        font-size: ms(4);
+      }
+    
+      @include small-display {
+        font-size: ms(3);
+      }
+    
+      &.-active {
+        font-variation-settings: $text-ui, 'wght' 700;
+        color: $color-emerald-600;
+    
+        @include dark-theme {
+          color: $color-emerald-300;
+        }
+    
+        &::before {
+          content: "\01F441";
+          font-family: $font-text;
+          font-size: inherit;
+          color: inherit;
+          opacity: 1;
+          margin-right: $spacing-300;
+          animation: point-to-route 200ms ease-in;
+        }
       }
     }
-
-    @include large-display {
-      font-size: ms(4);
-    }
-
-    @include small-display {
-      font-size: ms(3);
-    }
-
+    
     &.-active {
-      font-variation-settings: $text-ui, 'wght' 700;
-      color: $colour-emerald-600;
+      @include colored-block("color-emerald");
 
-      @include dark-theme {
-        color: $colour-emerald-300;
-      }
-
-      &::before {
-        content: "\01F441";
-        font-family: $font-text;
-        font-size: inherit;
-        color: inherit;
-        opacity: 1;
-        margin-right: $spacing-300;
-        animation: point-to-route 200ms ease-in;
-      }
+      font-variation-settings: $text-ui, "wght" 700;
     }
   }
-}
 }

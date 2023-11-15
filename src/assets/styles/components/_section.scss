@@ -31,28 +31,19 @@
   &.-offset {
     @include very-very-large-display {
       padding: {
-        top: $spacing-800;
-        left: calc($spacing-800 * 6);
-        right: $spacing-1600;
-        bottom: $spacing-800;
+        inset: $spacing-800 $spacing-1600 $spacing-800 calc($spacing-800 * 6);
       }
     }
   
     @include very-large-display {
       padding: {
-        top: $spacing-800;
-        left: calc($spacing-800 * 4);
-        right: $spacing-1600;
-        bottom: $spacing-800;
+        inset: $spacing-800 $spacing-1600 $spacing-800 calc($spacing-800 * 4);
       }
     }
   
     @include large-display {
       padding: {
-        top: $spacing-600;
-        left: calc($spacing-800 * 2);
-        right: $spacing-800;
-        bottom: $spacing-600;
+        inset: $spacing-600 $spacing-800 $spacing-600 calc($spacing-800 * 2);
       }
     }
   
@@ -62,10 +53,7 @@
   
     @include small-display {
       padding: {
-        top: $spacing-400;
-        left: $spacing-200;
-        right: $spacing-200;
-        bottom: $spacing-400;
+        inset: $spacing-400 $spacing-200 $spacing-400 $spacing-200;
       }
     }
   }
@@ -73,6 +61,7 @@
   & > .main {
     display: flex;
     flex-direction: column;
+
     // flex-grow: 1;
     width: 66%;
 

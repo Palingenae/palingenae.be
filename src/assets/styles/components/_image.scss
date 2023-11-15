@@ -16,6 +16,7 @@
 
         &.-about {
             gap: $spacing-200;
+
             @include small-display {
                 gap: $spacing-100;
             }

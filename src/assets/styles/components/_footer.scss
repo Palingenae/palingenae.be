@@ -33,14 +33,6 @@
     padding: $spacing-200;
   }
 
-  @include light-theme {
-    // background-color: $colour-emerald-800;
-  }
-
-  @include dark-theme {
-    // background-color: $black;
-  }
-
   &__column {
     &__last {
       display: flex;
@@ -50,6 +42,10 @@
       @include medium-display {
         flex-direction: column-reverse;
         justify-content: center;
+      }
+
+      .link.-navigation {
+        font-size: ms(0);
       }
     }
   }

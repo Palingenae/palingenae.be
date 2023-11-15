@@ -1,9 +1,10 @@
 @import 'vendor/modularscale';
-@import 'vendor/iconoir/iconoir.css';   
+@import 'vendor/iconoir/iconoir.css';
 
 @import 'modules/_variables';
 @import 'modules/_transitions';
 @import 'modules/_theme';
+@import 'modules/_colored-block';
 @import 'modules/_breakpoints';
 @import 'modules/_top-spacer';
 @import 'modules/_typography';
@@ -31,6 +32,5 @@
 @import 'components/_curriculum';
 @import 'components/_navigation';
 @import 'components/_footer';
-
-@import "pages/_collection";
-@import "pages/_story";
+@import "components/_collection";
+@import "components/_story";

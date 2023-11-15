@@ -60,44 +60,50 @@
   }
 
   &.-info {
+    @include colored-block("color-cobalt", false);
+
     @include dark-theme {
-      color: $colour-cobalt-100;
-      background-color: $colour-cobalt-1000;
-      border-left: solid 8px $colour-cobalt-100;
+      border-left: solid 8px $color-cobalt-100;
     }
 
     @include light-theme {
-      color: $colour-cobalt-900;
-      background-color: $colour-cobalt-100;
-      border-left: solid 8px $colour-cobalt-900;
+      border-left: solid 8px $color-cobalt-900;
     }
   }
 
   &.-notice {
+    @include colored-block("color-citrine", false);
+
     @include dark-theme {
-      color: $colour-copper-100;
-      background-color: $colour-copper-900;
-      border-left: solid 8px $colour-copper-100;
+      border-left: solid 8px $color-citrine-100;
     }
 
     @include light-theme {
-      color: $colour-copper-900;
-      background-color: $colour-copper-100;
-      border-left: solid 8px $colour-copper-900;
+      border-left: solid 8px $color-citrine-950;
     }
   }
 
   &.-positive {
+    @include colored-block("color-emerald", false);
+
     @include dark-theme {
-      color: $colour-emerald-100;
-      background-color: $colour-emerald-900;
-      border-left: solid 8px $colour-emerald-100;
+      border-left: solid 8px $color-emerald-100;
     }
 
     @include light-theme {
-      color: $colour-emerald-900;
-      background-color: $colour-emerald-100;
-      border-left: solid 8px $colour-emerald-900;
+      border-left: solid 8px $color-emerald-900;
+    }
+  }
+
+  &.-negative {
+    @include colored-block("color-ruby", false);
+
+    @include dark-theme {
+      border-left: solid 8px $color-ruby-100;
+    }
+
+    @include light-theme {
+      border-left: solid 8px $color-ruby-900;
     }
   }
 }

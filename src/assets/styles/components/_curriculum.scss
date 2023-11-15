@@ -25,11 +25,11 @@
       border-radius: 25%;
 
       @include light-theme {
-        background-color: $colour-emerald-600;
+        background-color: $color-emerald-600;
       }
 
       @include dark-theme {
-        background-color: $colour-emerald-200;
+        background-color: $color-emerald-200;
       }
 
 

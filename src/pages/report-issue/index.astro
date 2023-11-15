@@ -3,6 +3,7 @@ import MainLayout from '@layouts/main.astro';
 import PageHeader from '@components/PageHeader';
 import Message from '@components/Message';
 import Footer from '@components/Footer';
+import Icon from '@components/Icon';
 ---
 <MainLayout title="Signaler un problème">
     <PageHeader 
@@ -10,8 +11,8 @@ import Footer from '@components/Footer';
         pageDescription="Qu'est-ce qui ne fonctionne pas ? Qu'est-ce qu'il faut améliorer ?"
         />
     <section class="section -column">
-        <p class="paragraph -lead">Que ça soit avec le site web en lui-même (bug d'affichage, manque d'accessibilité,etc.), quelque chose que j'aurais pu écrire (incorrect, oppressif, etc.), je suis toute ouïe. Je suis prête à faire en sorte à m'améliorer.</p>
-        <Message context="info" title="Petite précision :" text="Gardez en tête qu'il s'agit d'un site web personnel, qu'il s'agit de mon contenu uniquement. Je ne prendrai en considération que ce qui nuit entièrement à votre expérience ici, que ça soit de propos maladroits ou oppressifs, un bug, ou quelque chose qui améliorerait l'accessibilité."/>
+        <p class="paragraph -lead">Que ça soit avec le site web en lui-même (bug d'affichage, manque d'accessibilité, etc.), quelque chose que j'aurais pu écrire (incorrect, oppressif, etc.), je suis toute ouïe. Je suis prête à faire en sorte à m'améliorer.</p>
+        <Message context="info" icon="emoji-blink-right" title="Petite précision :" text="Gardez en tête qu'il s'agit d'un site web personnel, qu'il s'agit de mon contenu uniquement. Je ne prendrai en considération que ce qui nuit entièrement à votre expérience ici, que ça soit de propos maladroits ou oppressifs, un bug, ou quelque chose qui améliorerait l'accessibilité."/>
     </section>
     <hr class="separator">
     <section class="section -column">
@@ -24,9 +25,9 @@ import Footer from '@components/Footer';
             <p class="paragraph">Il se peut que j'aie laissé passer une erreur de français en me relisant. Ça arrive !</p>
             <p class="paragraph">Ou alors j'ai probablement écrit des choses que <strong>je pensais correctes</strong> sur le moment <strong>sans avoir conscience</strong> de ce qui se passe autour ou du problème en question. Vous pouvez aussi m'envoyer un email pour expliquer le souci, j'écouterai. Je comprendrai certainement votre frustration, mais je promets que <strong>je fais ce que je peux</strong>.</p>
         </article>
-        <div class="division -row">
-            <a class="button" href="https://github.com/Palingenae/palingenae.be/issues/new" target="_blank" rel="noopener">Ouvrir une issue Github</a>
-            <a class="button" href="mailto:hey@palingenae.be?subject=Signalement d'un problème">Envoyer un  email</a>
+        <div class="buttonContainer">
+            <a class="button -filled -hasIcon" href="https://github.com/Palingenae/palingenae.be/issues/new" target="_blank" rel="noopener"><Icon iconName='github' />Ouvrir un ticket</a>
+            <a class="button -hasIcon" href="mailto:hey@palingenae.be?subject=Signalement d'un problème"><Icon iconName='send-mail' />Envoyer un email</a>
         </div>
     </section>
     <Footer />

@@ -4,7 +4,7 @@
 
   &.-column {
     @include transition(all);
-    @include diamond('outline', $grey-800, $grey-200);
+    @include diamond('outline', $gray-800, $gray-200);
 
     flex-direction: row;
     align-items: center;
@@ -49,14 +49,14 @@
     }
 
     &:hover {
-      @include diamond('outline', $colour-gold-200, $colour-gold-200);
-      @include diamond('filled', $colour-gold-200, $colour-gold-200);
+      @include diamond('outline', $color-citrine-400, $color-citrine-200);
+      @include diamond('filled', $color-citrine-400, $color-citrine-200);
 
       background-color: $grey-800;
       color: $grey-100;
 
       @include dark-theme {
-        @include diamond('filled', $colour-gold-200, $colour-gold-200);
+        @include diamond('filled', $color-citrine-200, $color-citrine-200);
 
         background-color: $grey-800;
         color: $white;
@@ -68,7 +68,7 @@
       }
 
       .card__container::before {
-        color: $colour-gold-100;
+        color: $color-citrine-100;
       }
 
       .action {
@@ -84,7 +84,7 @@
       @include diamond('filled', $grey-100, $grey-600);
       @include diamond('outline', transparent, transparent);
 
-      background-color: $colour-emerald-600;
+      background-color: $color-emerald-600;
       color: $grey-100;
 
       .tag {
@@ -102,7 +102,7 @@
         }
 
         .card__container::before {
-          color: $colour-emerald-500;
+          color: $color-emerald-500;
         }
       }
     }
@@ -147,8 +147,6 @@
       }
     }
   }
-
-
 
   &__content {
     display: flex;
@@ -233,15 +231,15 @@
           font-variation-settings: $text-code-block, 'wght' 500;
 
           &.-side {
-            color: $colour-gold-600;
+            color: $color-citrine-600;
           }
 
           &.-group {
-            color: $colour-cobalt-400;
+            color: $color-cobalt-400;
           }
 
           &.-openClassrooms {
-            color: $colour-amethyst-400;
+            color: $color-amethyst-400;
           }
         }
 
@@ -249,15 +247,15 @@
           font-variation-settings: $text-code-block, 'wght' 400;
 
           &.-side {
-            color: $colour-gold-500;
+            color: $color-citrine-500;
           }
 
           &.-group {
-            color: $colour-cobalt-700;
+            color: $color-cobalt-700;
           }
 
           &.-openClassrooms {
-            color: $colour-amethyst-700;
+            color: $color-amethyst-700;
           }
         }
       }
@@ -275,18 +273,18 @@
           background-color: $grey-100;
 
           &.-active {
-            color: $colour-emerald-700;
-            background-color: $colour-emerald-100;
+            color: $color-emerald-700;
+            background-color: $color-emerald-100;
           }
 
           &.-done {
-            color: $colour-cobalt-1000;
-            background-color: $colour-cobalt-200;
+            color: $color-cobalt-950;
+            background-color: $color-cobalt-200;
           }
 
           &.-onHold {
-            color: $colour-ruby-1000;
-            background-color: $colour-ruby-100;
+            color: $color-ruby-950;
+            background-color: $color-ruby-100;
           }
 
           &.-abandoned {
@@ -300,18 +298,18 @@
           background-color: $grey-900;
 
           &.-active {
-            color: $colour-emerald-200;
-            background-color: $colour-emerald-1000;
+            color: $color-emerald-200;
+            background-color: $color-emerald-950;
           }
 
           &.-done {
-            color: $colour-cobalt-100;
-            background-color: $colour-cobalt-1000;
+            color: $color-cobalt-100;
+            background-color: $color-cobalt-950;
           }
 
           &.-onHold {
-            color: $colour-ruby-100;
-            background-color: $colour-ruby-1000;
+            color: $color-ruby-100;
+            background-color: $color-ruby-950;
           }
 
           &.-abandoned {
@@ -362,6 +360,7 @@
     gap: $spacing-200;
     align-items: center;
     padding-top: $spacing-100;
+
     a {
       gap: $spacing-100;
       display: inline-flex;
