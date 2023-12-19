@@ -12,6 +12,7 @@
     "prettier": "prettier --check ."
   },
   "dependencies": {
+    "@astrojs/netlify": "^3.0.4",
     "@astrojs/prefetch": "^0.3.0",
     "@astrojs/prism": "^2.1.2",
     "@astrojs/react": "^3.0.3",
@@ -30,6 +31,7 @@
     "slate": "^0.94.1"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
     "@namics/stylelint-bem": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
