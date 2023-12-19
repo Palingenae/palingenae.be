@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "type": "module",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -12,6 +12,7 @@
     "prettier": "prettier --check ."
   },
   "dependencies": {
+    "@astrojs/netlify": "^3.0.4",
     "@astrojs/prefetch": "^0.3.0",
     "@astrojs/prism": "^2.1.2",
     "@astrojs/react": "^3.0.3",
@@ -23,12 +24,15 @@
     "dayjs": "^1.11.10",
     "dotenv": "^16.3.1",
     "escape-html": "^1.0.3",
+    "iconoir": "^7.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.64.1",
     "slate": "^0.94.1"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "@namics/stylelint-bem": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
     "eslint": "^8.51.0",
@@ -41,6 +45,7 @@
     "prettier-plugin-astro": "^0.12.0",
     "stylelint": "^15.10.2",
     "stylelint-config-standard": "^34.0.0",
-    "stylelint-config-standard-scss": "^10.0.0"
+    "stylelint-config-standard-scss": "^10.0.0",
+    "stylelint-selector-bem-pattern": "^3.0.1"
   }
 }

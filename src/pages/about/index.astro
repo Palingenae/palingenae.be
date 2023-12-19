@@ -1,39 +1,65 @@
 ---
+import escapeHTML from 'escape-html';
+
 import MainLayout from '@layouts/main.astro'
 
-import Contact from '@components/contact.astro';
-import Footer from "@components/footer.astro";
-import Curriculum from "@components/curriculum.astro";
+import Contact from '@components/Contact';
+import Footer from "@components/Footer";
+import Tag from '@components/Tag';
+import RichText from '@components/RichText.astro';
+import SocialLinks from '@components/SocialLinks';
+import Icon from '@components/Icon';
+
+let page;
+
+try {
+    let response = await fetch(`${import.meta.env.API_URL}/api/globals/about`);
+    page = await response.json();
+} catch (error) {
+    console.error(error);
+}
 
 const pageTitle = "À propos"
-const availableForHire = true;
 ---
 <MainLayout title={pageTitle}>
     <section class="hero -pageBanner">
-        { availableForHire == true ?
-                <p class="curriculumAvailable">Disponible</p>
-            :
-            ''
-        }
-        <p class="display">Simplement : <b><i>Olivia</i></b>.</p>
-        <p class="paragraph -jumbo -sans">Je suis une “<i>développeuse créative</i>”, je porte un grand soin à la conception avant de passer au développement, <b>du Back-End au Front-End</b>.</p>
+        <h1 class="display -name">
+            <span>Olivia </span> 
+            <span>De Scheerder</span>
+        </h1>
+        <p class="display -nickname">@Palingenae</p>
     </section>
-    <section class="section -row -gold">
+    <section class="section -offset -column">
         <article class="article">
-            <p class="paragraph">Clairement, la phrase qui me caractérise le mieux est :</p>
-
-            <blockquote> "Une véritable curieuse et touche-à-tout."</blockquote>
-
-            <p class="paragraph">J'aime beaucoup le design, la photographie et la typographie, de manière générale. Sans oublier le fait que j'ai décidé que j'allais faire du développement web ma carrière, commencée en Belgique, dont je suis originaire. C'est pour cela que je me désigne comme "<em>Développeuse Créative</em>", car je m'intéresse autant design qu'au code.</p>
-
-            <p class="paragraph">J'ai repris une formation en tant que <em>Développeuse PHP / Symfony</em> à travers OpenClassrooms. Toujours à l'écoute de ce qui se passe dans mon domaine, j'ai récemment décidé de m'intéresser très fortement à JavaScript. Je songe d'ailleurs reprendre un projet originalement en Symfony pour le réécrire en TypeScript.</p>
+            <p class="paragraph -lead"><strong>{ page.lead }</strong></p>
+            <RichText richText={ page.article }/>
         </article>
+        <div class="hero__now">
+            <p class="paragraph -jumbo -sans"><strong>Actuellement concentrée sur :</strong></p>
+            <div class="tagContainer">
+                <Tag label='ReactJS' variant='filledCobaltLight'/>
+                <Tag label='NextJS' variant='filled'/>
+                <Tag label='TypeScript' variant='filledCobalt'/>
+            </div>
+        </div>
     </section>
-    { availableForHire == true ?
-        <Curriculum />
-        :
-        ''
-    }
+    <section class="section">
+        <div class="imageCollection -about">
+            { page.photos.map((pellicule: any)=> 
+                <img class="image -vertical" src={ escapeHTML(`${import.meta.env.API_URL}${pellicule.photo.url}`) } alt={ pellicule.photo.alt }/>
+            )}
+        </div>
+    </section>
+    { page.availableForHire == true ?
+        <section class="section -offset -column">
+            <p class="curriculumAvailable">Disponible</p>
+            <p class="paragraph -jumbo -sans">Je suis actuellement à l’écoute du marché en tant que Développeuse, qu’Intégratrice Web ou ma préférence, le Développement Front-End.</p>
+            <a href="/about/curriculum" class="button -hasIcon">Vers le mini CV <Icon iconName='arrow-right'/></a> 
+        </section>
+        : ''}
+        <section class="section -offset -column">
+            <SocialLinks/>
+        </section>
     <Contact />
     <Footer />
 </MainLayout>

@@ -1,18 +1,21 @@
 article,
 .article {
   h2 {
-    max-width: 48ch;
+    max-width: 30ch;
     line-height: $spacing-display-line-height;
-    margin-bottom: $spacing-400;
+    margin-top: $spacing-400;
+    margin-bottom: $spacing-200;
 
     @include very-very-large-display {
-      font-size: ms(6);
-      margin-bottom: $spacing-400;
+      font-size: ms(5);
+      margin-top: $spacing-400;
+      margin-bottom: $spacing-200;
     }
 
     @include very-large-display {
       font-size: ms(5);
-      margin-bottom: $spacing-300;
+      margin-top: $spacing-400;
+      margin-bottom: $spacing-200;
     }
 
     @include large-display {
@@ -33,12 +36,12 @@ article,
   h3 {
     max-width: 50ch;
     font-family: $font-text;
-    line-height: 1.5;
+    line-height: 1.35;
 
     @include very-very-large-display {
-      font-size: ms(5);
+      font-size: ms(3);
       margin-top: $spacing-400;
-      margin-bottom: $spacing-400;
+      margin-bottom: $spacing-200;
     }
 
     @include very-large-display {
@@ -60,10 +63,6 @@ article,
     }
   }
 
-  p {
-    @extend .paragraph;
-  }
-
   blockquote {
     @extend .paragraph;
     @extend .-jumbo;
@@ -71,9 +70,40 @@ article,
     font-style: italic;
     font-variation-settings: $text-content;
     padding: $spacing-100 $spacing-200;
-    border-left: solid 4px $colour-gold-600;
+    border-left: solid 4px $color-citrine-600;
     margin-top: $spacing-200;
     margin-bottom: $spacing-200;
+  }
+
+  
+  p {
+    @extend .paragraph;
+
+    a {
+      @include light-theme {
+        color: $color-cobalt-800;
+      }
+
+      @include dark-theme {
+        color: $color-cobalt-400;
+      }
+    }
+  }
+
+  code {
+    font-family: $font-text;
+    font-variation-settings: $text-code-block, inherit;
+    color: inherit;
+    padding: $spacing-25 $spacing-50;
+    border-radius: 6px;
+
+    @include light-theme {
+      background-color: $grey-100;
+    }
+    
+    @include dark-theme {
+      background-color: $grey-900;
+    }
 
   }
 }

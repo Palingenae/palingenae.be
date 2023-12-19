@@ -4,12 +4,19 @@
   @include transition(border-left);
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   color: $grey-900;
+  width: fit-content;
   background-color: $grey-100;
-  border-left: solid 2px $grey-900;
-  border-radius: 8px;
-  padding: $spacing-100 $spacing-200;
+  border-left: solid 8px $grey-900;
+  border-radius: 16px;
+  padding: $spacing-200;
+  gap: $spacing-150;
+
+  @include small-display {
+    flex-direction: column;
+    padding: $spacing-100;
+  }
 
   &:not(:last-of-type) {
     margin-bottom: $spacing-200;
@@ -18,65 +25,85 @@
   @include dark-theme {
     color: $grey-100;
     background-color: $grey-900;
-    border-left: solid 2px $grey-100;
+    border-left: solid 8px $grey-100;
   }
 
-  &Container {
+  &__content {
     display: flex;
+    gap: $spacing-100;
     flex-direction: column;
   }
 
-  &Type {
+  &__title {
     font-variation-settings: 'wght' 700;
     font-size: ms(0);
+    text-transform: uppercase;
     margin-bottom: $spacing-50;
   }
 
-  &Content {
+  &__text {
     @extend .paragraph;
 
     margin-bottom: 0;
   }
 
+  &__icon {
+    display: flex;
+
+    @include small-display {
+      justify-content: flex-end;
+    }
+
+    .icon {
+      font-size: ms(4);
+    }
+  }
+
   &.-info {
+    @include colored-block("color-cobalt", false);
+
     @include dark-theme {
-      color: $colour-cobalt-100;
-      background-color: $colour-cobalt-1000;
-      border-left: solid 2px $colour-cobalt-100;
+      border-left: solid 8px $color-cobalt-100;
     }
 
     @include light-theme {
-      color: $colour-cobalt-900;
-      background-color: $colour-cobalt-100;
-      border-left: solid 2px $colour-cobalt-900;
+      border-left: solid 8px $color-cobalt-900;
     }
   }
 
   &.-notice {
+    @include colored-block("color-citrine", false);
+
     @include dark-theme {
-      color: $colour-copper-100;
-      background-color: $colour-copper-900;
-      border-left: solid 2px $colour-copper-100;
+      border-left: solid 8px $color-citrine-100;
     }
 
     @include light-theme {
-      color: $colour-copper-900;
-      background-color: $colour-copper-100;
-      border-left: solid 2px $colour-copper-900;
+      border-left: solid 8px $color-citrine-950;
     }
   }
 
   &.-positive {
+    @include colored-block("color-emerald", false);
+
     @include dark-theme {
-      color: $colour-emerald-100;
-      background-color: $colour-emerald-900;
-      border-left: solid 2px $colour-emerald-100;
+      border-left: solid 8px $color-emerald-100;
     }
 
     @include light-theme {
-      color: $colour-emerald-900;
-      background-color: $colour-emerald-100;
-      border-left: solid 2px $colour-emerald-900;
+      border-left: solid 8px $color-emerald-900;
+    }
+  }
+
+  &.-negative {
+    @include colored-block("color-ruby", false);
+
+    @include dark-theme {
+      border-left: solid 8px $color-ruby-100;
+    }
+
+    @include light-theme {
+      border-left: solid 8px $color-ruby-900;
     }
   }
 }

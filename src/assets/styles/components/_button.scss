@@ -1,64 +1,73 @@
 /* ----- This deserves to be a mixin ----- */
 
-.button {
-  @include transition(background-color);
+.button,
+%button {
+  @include transition(all);
+  @include colored-block("gray", "interactive");
 
   font-variation-settings: $text-ui, 'wght' 500;
+  font-size: ms(1);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: $spacing-150;
   border-radius: 8px;
   text-decoration: none;
-
-  @include light-theme {
-    color: $grey-700;
-    background-color: $grey-200;
-
-    &:hover,
-    &:active {
-      color: $grey-900;
-      background-color: $grey-200;
-    }
-  }
-
-  @include dark-theme {
-    color: $black;
-    background-color: $grey-400;
-
-    &:hover,
-    &:active {
-      color: $grey-900;
-      background-color: $grey-200;
-    }
-  }
-
   padding: $spacing-100 $spacing-200;
-  margin: $spacing-200 0;
 
-  .icon {
-    font-size: ms(1);
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+  
+  // Special case just because we can
+  &:visited {
+    color: $color-amethyst-500;
+  }
+  
+  &Container {
+    display: flex;
+    flex-flow: row wrap;
+    gap: $spacing-200;
+    margin: $spacing-200 0;
+  
+    @include small-display {
+      flex-direction: column;
+      flex-grow: 1;
+    }
+  }
+
+  @include small-display {
+    width: 100%
+  }
+
+
+  &.-hasIcon {
+    display: inline-flex;
+    align-items: center;
+
+    .icon {
+      font-size: ms(2);
+    }
+  }
+
+  &.-filled {
+    @include colored-block ("gray-inverse", "interactive");
   }
 
   &.-emerald {
-    @include light-theme {
-      background-color: $colour-emerald-600;
-      color: $colour-emerald-100;
-      font-variation-settings: "wght" 550;
+    @include colored-block("color-emerald", "interactive");
+  }
 
-      &:hover,
-      &:active {
-        background-color: $colour-emerald-800;
-      }
-    }
+  &.-cobalt {
+    @include colored-block("color-cobalt", "interactive");
+  }
 
-    @include dark-theme {
-      background-color: $colour-emerald-400;
-      color: $colour-emerald-1000;
+  &.-citrine {
+    @include colored-block("color-citrine", "interactive");
+  }
 
-      &:hover,
-      &:active {
-        background-color: $colour-emerald-200;
-      }
-    }
+  &.-ruby {
+    @include colored-block("color-ruby", "interactive");
   }
 }

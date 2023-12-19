@@ -3,20 +3,20 @@
   flex-flow: column nowrap;
   align-content: flex-start;
   align-items: flex-start;
-
+  
   &.-pageCover {
     flex-grow: 1;
     justify-content: flex-end;
     padding: $spacing-800;
-
+    
     @include very-very-large-display {
       padding: $spacing-800 $spacing-1600;
     }
-
+    
     @include very-large-display {
       padding: $spacing-800;
     }
-
+    
     @include large-display {
       padding: $spacing-600;
     }
@@ -24,32 +24,34 @@
     @include medium-display {
       padding: $spacing-400;
     }
-
+    
     @include small-display {
       padding: $spacing-200;
     }
   }
-
+  
   &.-pageBanner {
     @include top-spacer;
-    height: 80vh;
-    justify-content: flex-end;
 
+    height: 80lvh;
+    justify-content: flex-end;
+    gap: $spacing-400;
+    
     @include very-very-large-display {
       padding: $spacing-800 $spacing-1600;
       padding-top: calc($spacing-800 + 3rem);
     }
-
+    
     @include very-large-display {
       padding: $spacing-800;
       padding-top: calc($spacing-800 + 3rem);
     }
-
+    
     @include large-display {
       padding: $spacing-600;
       padding-top: calc($spacing-800 + 3rem);
     }
-
+    
     @include medium-display {
       padding: $spacing-400;
       padding-top: calc($spacing-600 + 3rem);
@@ -60,36 +62,90 @@
       padding: $spacing-400 $spacing-200;
       padding-top: calc($spacing-400 + 3rem);
     }
+
+    .display {
+      margin-bottom: 0;
+    }
+
+    hr {
+      width: 100%;
+    }
+
   }
 
-  &Greeting,
-  &Description {
-    @extend h3;
+  
+  &__logo {
+    .logo.-long {
+      @include very-very-large-display {
+        height: ms(12);
+      }
+      
+      @include very-large-display {
+        height: ms(11);
+      }
+      
+      @include large-display {
+        height: ms(10);
+      }
+      
+      @include medium-display {
+        height: ms(9);
+      }
+      
+      @include small-display {
+        height: ms(8);
+      }
+    }
+  }
+  
+  &__separator {
+    display: flex;
 
-    font-family: $font-text;
+    @include very-very-large-display {
+      width: 880px;
+    }
+    
+    @include very-large-display {
+      width: 672px;
+    }
+    
+    @include large-display {
+      width: 560px;
+    }
+    
+    @include medium-display {
+      width: 432px;
+    }
+    
+    @include small-display {
+      width: 352px;
+    }
+  }
 
+  &__now {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-100;
+  }
+
+  &__introduction {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-400;
+  }
+
+  &__description {
+    p {
+      @extend h3;
+
+      font-family: $font-text;
+      font-variation-settings: $text-paragraph, 'wght' 300;
+    }
+    
     @include light-theme {
       color: $grey-800;
-      font-variation-settings: $text-content, $text-light-theme-regular;
     }
-
-    @include dark-theme {
-      color: $grey-200;
-      font-variation-settings: $text-content, $text-dark-theme-regular;
-    }
-
-    &:not(.hero__description) {
-      margin-bottom: $spacing-400;
-    }
-  }
-
-  &Introduction {
-    @extend .display;
-    @extend .-fat;
-
-    font-family: $font-display;
-    max-width: 20ch;
-
+    
     @include dark-theme {
       color: $grey-200;
     }

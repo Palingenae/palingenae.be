@@ -1,0 +1,29 @@
+.image {
+    // height: 640px;
+    height: auto;
+    width: 100%;
+    border-radius: 16px;
+
+    @include medium-display {
+        height: 60lvh;
+        width: auto;
+    }
+
+    &Collection {
+        display: flex;
+        justify-content: space-between;
+        flex-grow: 1;
+
+        &.-about {
+            gap: $spacing-200;
+
+            @include small-display {
+                gap: $spacing-100;
+            }
+        }
+
+        @include medium-display {
+            overflow-x: scroll;
+        }
+    }
+}

@@ -1,4 +1,124 @@
-.card {
+.card {  
+  display: flex;
+  flex-direction: column;
+
+  &.-column {
+    @include transition(all);
+    @include diamond('outline', $gray-800, $gray-200);
+
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    gap: $spacing-400;
+    border-radius: 8px;
+    padding: $spacing-200 $spacing-400;
+    width: 100%;
+    color: inherit;
+    margin-bottom: $spacing-200;
+
+    .card__content {
+      gap: $spacing-50;
+    }
+
+    @include medium-display {
+      gap: $spacing-400;
+      padding: $spacing-200;
+    }
+
+    @include small-display {
+      @include diamond('none');
+      
+      padding: $spacing-100;
+
+      .card__content {
+        gap: $spacing-50;
+      }
+
+      .action {
+        display: none;
+      }
+    }
+    
+    .action {
+      color: transparent;
+      font-style: italic;
+    }
+
+    .card__meta__tagsContainer {
+      padding: 0;
+    }
+
+    &:hover {
+      @include diamond('outline', $color-citrine-400, $color-citrine-200);
+      @include diamond('filled', $color-citrine-400, $color-citrine-200);
+
+      background-color: $grey-800;
+      color: $grey-100;
+
+      @include dark-theme {
+        @include diamond('filled', $color-citrine-200, $color-citrine-200);
+
+        background-color: $grey-800;
+        color: $white;
+      }
+
+      .tag.-outline {
+        border-color: $grey-100;
+        color: $grey-100;
+      }
+
+      .card__container::before {
+        color: $color-citrine-100;
+      }
+
+      .action {
+        color: inherit;
+      }
+
+      @include small-display {
+        @include diamond('none');
+      }
+    }
+
+    &:focus {
+      @include diamond('filled', $grey-100, $grey-600);
+      @include diamond('outline', transparent, transparent);
+
+      background-color: $color-emerald-600;
+      color: $grey-100;
+
+      .tag {
+        color: $grey-100;
+        border-color: $grey-100;
+      }
+
+      @include dark-theme {
+        background-color: $grey-100;
+        color: $grey-800;
+
+        .tag {
+          border-color: $grey-600;
+          color: $grey-600;
+        }
+
+        .card__container::before {
+          color: $color-emerald-500;
+        }
+      }
+    }
+  }
+  
+  &.-grid {
+    gap: $spacing-200;
+    border: 1px solid $grey-300;
+    border-radius: 16px;
+    padding: $spacing-200;
+
+    @include dark-theme {
+      border: 1px solid $grey-800;
+    }
+  }
+
   &__container {
     display: flex;
     flex-flow: row nowrap;
@@ -31,41 +151,198 @@
   &__content {
     display: flex;
     flex-direction: column;
+    gap: $spacing-100;
   }
 
   &__title {
-    @extend h2;
+    @extend h3;
 
-    font-size: ms(5);
-    margin-bottom: $spacing-100;
+    font-size: ms(4);
+    margin-bottom: 0;
 
     @include light-theme {
-      font-variation-settings: 'wght' 450;
+      font-variation-settings: $text-content, 'wght' 700;
     }
 
     @include dark-theme {
-      font-variation-settings: 'wght' 480;
+      font-variation-settings: $text-content, 'wght' 700;
     }
 
     @include large-display {
-      font-size: ms(4);
+      font-size: ms(3);
     }
 
     @include medium-display {
-      font-size: ms(3);
+      font-size: ms(2);
     }
   }
 
   &__meta {
     display: flex;
     align-items: center;
-    gap: $spacing-400;
+    gap: $spacing-200;
 
     @include small-display {
       gap: $spacing-100;
       flex-direction: column;
       align-items: flex-start;
     }
+
+    &__tagsContainer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacing-50;
+      padding: $spacing-200 0;
+    }
+
+    &__repo {
+      display: flex;
+      gap: $spacing-50;
+      align-items: center;
+      padding: $spacing-100 0;
+
+      @include small-display {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+      }
+
+      &Name {
+        @include transition(color);
+        @include transition(background-color);
+
+        font-variation-settings: $text-code-block, $text-light-theme-regular;
+        border-radius: 4px;
+        padding: $spacing-25;
+        color: $grey-900;
+        background-color: $grey-100;
+
+        @include dark-theme {
+          color: $grey-100;
+          background-color: $grey-900;
+        }
+      }
+
+      &Type {
+        display: inline-flex;
+        text-transform: uppercase;
+        margin-bottom: $spacing-50;
+
+        @include light-theme {
+          font-variation-settings: $text-code-block, 'wght' 500;
+
+          &.-side {
+            color: $color-citrine-600;
+          }
+
+          &.-group {
+            color: $color-cobalt-400;
+          }
+
+          &.-openClassrooms {
+            color: $color-amethyst-400;
+          }
+        }
+
+        @include dark-theme {
+          font-variation-settings: $text-code-block, 'wght' 400;
+
+          &.-side {
+            color: $color-citrine-500;
+          }
+
+          &.-group {
+            color: $color-cobalt-700;
+          }
+
+          &.-openClassrooms {
+            color: $color-amethyst-700;
+          }
+        }
+      }
+
+      &Status {
+        @include transition(color);
+        @include transition(background-color);
+
+        font-variation-settings: $text-code-block, 'wght' 500;
+        border-radius: 4px;
+        padding: $spacing-25;
+
+        @include light-theme {
+          color: $grey-900;
+          background-color: $grey-100;
+
+          &.-active {
+            color: $color-emerald-700;
+            background-color: $color-emerald-100;
+          }
+
+          &.-done {
+            color: $color-cobalt-950;
+            background-color: $color-cobalt-200;
+          }
+
+          &.-onHold {
+            color: $color-ruby-950;
+            background-color: $color-ruby-100;
+          }
+
+          &.-abandoned {
+            color: $grey-500;
+            background-color: transparent;
+          }
+        }
+        
+        @include dark-theme {
+          color: $grey-100;
+          background-color: $grey-900;
+
+          &.-active {
+            color: $color-emerald-200;
+            background-color: $color-emerald-950;
+          }
+
+          &.-done {
+            color: $color-cobalt-100;
+            background-color: $color-cobalt-950;
+          }
+
+          &.-onHold {
+            color: $color-ruby-100;
+            background-color: $color-ruby-950;
+          }
+
+          &.-abandoned {
+            color: $grey-400;
+            background-color: $grey-1000;
+          }
+        }
+      }
+    }
+
+    &__public {
+      &Status {
+        &.-soon {
+          color: $grey-500;
+        }
+      }
+    }
+    
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+
+    // gap: $spacing-400;
+
+    @include small-display {
+      gap: $spacing-100;
+
+      // flex-direction: column;
+      align-items: flex-start;
+    }
+
 
     &__tagsContainer {
       display: flex;
@@ -76,5 +353,18 @@
   &__date {
     font-size: ms(1);
     font-variation-settings: $text-code-block, $text-light-theme-regular;
+  }
+
+  &__footer {
+    display: flex;
+    gap: $spacing-200;
+    align-items: center;
+    padding-top: $spacing-100;
+
+    a {
+      gap: $spacing-100;
+      display: inline-flex;
+      align-items: center;
+    }
   }
 }

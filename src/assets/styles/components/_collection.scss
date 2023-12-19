@@ -1,0 +1,23 @@
+.collection {
+  counter-reset: collection-counter 5;
+  
+  &.-column {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-200;
+  }
+  
+  &.-row {
+    display: flex;
+    gap: $spacing-400;
+
+    @include small-display {
+      gap: $spacing-200;
+    }
+  }
+
+  &.-grid {
+    display: grid;
+    gap: $spacing-200;
+  }
+}

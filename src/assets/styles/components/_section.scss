@@ -4,6 +4,8 @@
 
   display: flex;
   flex-grow: 1;
+  justify-content: space-between;
+  gap: $spacing-200;
 
   @include very-very-large-display {
     padding: $spacing-800 $spacing-1600;
@@ -18,6 +20,7 @@
   }
 
   @include medium-display {
+    flex-direction: column;
     padding: $spacing-400;
   }
 
@@ -25,15 +28,67 @@
     padding: $spacing-400 $spacing-200;
   }
 
-  &.-gold {
-    @include light-theme {
-      background-color: $colour-gold-100;
-      color: $colour-gold-900;
+  &.-offset {
+    @include very-very-large-display {
+      padding: {
+        top: $spacing-800;
+        left: calc($spacing-800 * 6);
+        right: $spacing-1600;
+        bottom: $spacing-800;
+      }
     }
+  
+    @include very-large-display {
+      padding: {
+        top: $spacing-800;
+        left: calc($spacing-800 * 4);
+        right: $spacing-1600;
+        bottom: $spacing-800;
+      }
+    }
+  
+    @include large-display {
+      padding: {
+        top: $spacing-600;
+        left: calc($spacing-800 * 2);
+        right: $spacing-800;
+        bottom: $spacing-600;
+      }
+    }
+  
+    @include medium-display {
+      padding: $spacing-400;
+    }
+  
+    @include small-display {
+      padding: {
+        top: $spacing-400;
+        left: $spacing-200;
+        right: $spacing-200;
+        bottom: $spacing-400;
+      }
+    }
+  }
 
-    @include dark-theme {
-      background-color: $colour-gold-900;
-      color: $colour-gold-100;
+  & > .main {
+    display: flex;
+    flex-direction: column;
+    // flex-grow: 1;
+    width: 66%;
+
+    @include medium-display {
+      width: 100%;
+    }
+  }
+
+  & > .aside {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 33%;
+
+    @include medium-display {
+      width: 100%;
     }
   }
 }

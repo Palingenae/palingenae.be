@@ -5,12 +5,12 @@
   align-items: center;
   font-size: ms(0);
   width: fit-content;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: $spacing-25 $spacing-100;
 
   @include small-display {
     font-size: ms(-1);
-    border-radius: 10px;
+    border-radius: 12px;
     padding-right: $spacing-25 $spacing-50;
   }
 
@@ -27,13 +27,13 @@
 
     &Ruby {
       @include light-theme {
-        color: $colour-ruby-600;
-        border: solid 2px $colour-ruby-600;
+        color: $color-ruby-600;
+        border: solid 2px $color-ruby-600;
       }
 
       @include dark-theme {
-        color: $colour-ruby-400;
-        border: solid 2px $colour-ruby-400;
+        color: $color-ruby-400;
+        border: solid 2px $color-ruby-400;
       }
     }
   }
@@ -51,83 +51,96 @@
 
     &Ruby {
       &Light {
-        color: $colour-ruby-900;
-        background-color: $colour-ruby-200;
+        color: $color-ruby-900;
+        background-color: $color-ruby-200;
+        border: solid 2px $color-ruby-200;
       }
     }
 
     &Copper {
       @include light-theme {
         color: $white;
-        background-color: $colour-copper-400;
+        background-color: $color-amber-400;
+        border: solid 2px $color-amber-400;
       }
 
       @include dark-theme {
-        color: $colour-copper-900;
-        background-color: $colour-copper-200;
+        color: $color-amber-900;
+        background-color: $color-amber-200;
+        border: solid 2px $color-amber-200;
       }
     }
 
     &Amethyst {
       @include light-theme {
         color: $white;
-        background-color: $colour-amethyst-600;
+        background-color: $color-amethyst-600;
+        border: solid 2px $color-amethyst-600;
       }
 
       @include dark-theme {
-        color: $colour-amethyst-900;
-        background-color: $colour-amethyst-200;
+        color: $color-amethyst-900;
+        background-color: $color-amethyst-200;
+        border: solid 2px $color-amethyst-200;
       }
 
       &Light {
-        color: $colour-amethyst-900;
-        background-color: $colour-amethyst-200;
+        color: $color-amethyst-900;
+        background-color: $color-amethyst-200;border: solid 2px $color-amethyst-200;
       }
     }
 
     &Gold {
       @include light-theme {
         color: $grey-900;
-        background-color: $colour-gold-200;
+        background-color: $color-citrine-200;
+        border: solid 2px $color-citrine-200;
       }
 
       @include dark-theme {
-        color: $colour-gold-900;
-        background-color: $colour-gold-100;
+        color: $color-citrine-900;
+        background-color: $color-citrine-100;
+        border: solid 2px $color-citrine-100;
       }
     }
 
     &Emerald {
       @include light-theme {
         color: $white;
-        background-color: $colour-emerald-600;
+        background-color: $color-emerald-600;
+        border: solid 2px $color-emerald-600;
       }
 
       @include dark-theme {
-        color: $colour-emerald-900;
-        background-color: $colour-emerald-200;
+        color: $color-emerald-900;
+        background-color: $color-emerald-200;
+        border: solid 2px $color-emerald-200;
       }
 
       &Light {
-        color: $colour-emerald-1000;
-        background-color: $colour-emerald-300;
+        color: $color-emerald-950;
+        background-color: $color-emerald-300;
+        border: solid 2px $color-emerald-300;
       }
     }
 
     &Cobalt {
       @include light-theme {
         color: $white;
-        background-color: $colour-cobalt-600;
+        background-color: $color-cobalt-600;
+        border: solid 2px $color-cobalt-600;
       }
 
       @include dark-theme {
-        color: $colour-cobalt-900;
-        background-color: $colour-cobalt-300;
+        color: $color-cobalt-900;
+        background-color: $color-cobalt-300;
+        border: solid 2px $color-cobalt-300;
       }
 
       &Light {
-        color: $colour-cobalt-900;
-        background-color: $colour-cobalt-200;
+        color: $color-cobalt-900;
+        background-color: $color-cobalt-200;
+        border: solid 2px $color-cobalt-200;
       }
     }
   }

@@ -1,0 +1,183 @@
+---
+import MainLayout from "@layouts/main.astro";
+
+import CurriculumEvent from "@components/CurriculumEvent";
+import Message from "@components/Message";
+import Tag from "@components/Tag";
+import Contact from "@components/Contact";
+import Footer from "@components/Footer";
+import Card from "@components/Card";
+---
+<MainLayout title="Curriculum">
+    <section class="hero -pageBanner">
+        <p class="curriculumAvailable">Disponible</p>
+        <h1 class="display -name">
+            <span>Olivia </span>
+            <span>De Scheerder</span>
+        </h1>
+        <p class="paragraph -jumbo -sans">Développeuse Full-Stack PHP / JavaScript</p>
+    </section>
+    <section class="section">
+        <main class="main">
+            <h2>Dernier projet</h2>
+            <Card 
+                variant="grid" 
+                title="Les Films de Plein Air : Director's Cut"
+                type="Side Project"
+                typeClass="side"
+                repoName="palingenae/palingenae.be"
+                repoStatus="Actif"
+                repoStatusClass="active"
+                description="Revisite d'un projet OpenClassrooms, Les Films de Plein Air. Maintenant le projet sera un produit fini, comme si je l'avais réalisé en tant que conceptrice freelance. N'utilise pas Wordpress."
+                repoLink="https://github.com/Palingenae/lfpa-directors-cut"
+            />
+        </main>
+        <!-- <aside class="aside">
+            <p class="paragraph -jumbo"><strong>Liens utiles</strong></p>
+            <p class="paragraph"><a href="https://linkedin.com/in/oliviadescheerder" target="_blank" rel="noopener" class="link -ui">LinkedIn</a></p>
+            <p class="paragraph"><a href="https://palingenae.github.io" target="_blank" rel="noopener" class="link -ui">Projets Github</a></p>
+        </aside> -->
+    </section>
+    <section class="section">
+        <main class="main">
+            <div class="curriculumPath">
+                <div class="division -column">
+                    <h2>Mes expériences</h2>
+                    <div class="curriculumEventContainer">
+                        <CurriculumEvent
+                                startDate="05/2023"
+                                endDate="07/2023"
+                                eventName="Développeuse Full-Stack"
+                                eventPlace="Saint-Herblain, France"
+                                description="Création d’un module de simplification de gestion de modèles de données en format CSV pour la mise en production chez le client."
+                        />
+                        <CurriculumEvent
+                                startDate="11/2021"
+                                endDate="10/2022"
+                                eventName="Développeuse React / Symfony"
+                                eventPlace="Nantes / Lille, France"
+                                description="Maintenance, en incluant une migration de toute la stack, puis de la mise en place d'une CI/CD et développement de fonctionnalités Back-End et Front-End d’un outil de questionnaires et de tests techniques."
+                        />
+                        <CurriculumEvent
+                                startDate="08/2020"
+                                endDate="11/2021"
+                                eventName="Développeuse PHP / Symfony"
+                                eventPlace="Nantes, France"
+                                description="Intégration de l’interface d’un projet de gestion des salarié·e·s en collaboration avec l’équipe d’UX Design."
+                        />
+                        <CurriculumEvent
+                                startDate="02/2018"
+                                endDate="05/2018"
+                                eventName="Développeuse Full-Stack"
+                                eventPlace="Bruxelles, Belgique"
+                                description="Maintenance de projets clients déjà en production."
+                        />
+        
+                    </div>
+                </div>
+                <div class="division -column">
+                    <h2>Mes formations</h2>
+                    <div class="eventContainer">
+                        <CurriculumEvent
+                                startDate="08/2020"
+                                endDate="Auj."
+                                eventName="“Développeur d’applications PHP / Symfony”"
+                                eventPlace="OpenClassrooms, France"
+                        />
+                        <CurriculumEvent
+                                startDate="01/2017"
+                                endDate="08/2017"
+                                eventName="“Développeur Web Apps”"
+                                eventPlace="Gosselies, Belgique"
+                        />
+                        <CurriculumEvent
+                                startDate="09/2016"
+                                endDate="11/2016"
+                                eventName="“Développeur Logiciel d’Entreprise”"
+                                eventPlace="Gosselies, Belgique"
+                        />
+                        <CurriculumEvent
+                                startDate="09/2012"
+                                endDate="09/2015"
+                                eventName="Licence Pro en Écriture Multimédia"
+                                eventPlace="Charleroi, Belgique"
+                        />
+                    </div>
+                </div>
+                <Message icon="emoji-sing-right-note" context="notice" title="Important !" text="Il s'agit d'une version intentionnellement réduite. Une version complète de mon CV (au format PDF) et mes références sont disponibles sur demande par email ou LinkedIn uniquement."/>
+            </div>
+        </main>
+        <aside class="aside">
+            <h2>Mes technos</h2>
+            <div class="asideSection">
+                <p class="asideSectionTitle">Front-End</p>
+                <div class="tagContainer">
+                    <Tag variant="filledCopper" label="HTML"/>
+                    <Tag variant="outline" label="Twig"/>
+                    <Tag variant="outline" label="Nunjucks"/>
+                    <Tag variant="outline" label="Pug"/>
+                </div>
+                <div class="tagContainer">
+                    <Tag variant="filledCobalt" label="CSS"/>
+                    <Tag variant="filledRubyLight" label="Sass"/>
+                    <Tag variant="outline" label="Bootstrap"/>
+                    <Tag variant="outline" label="Atomic Design"/>
+                    <Tag variant="outline" label="(A)BEM"/>
+                    <Tag variant="outline" label="Utility CSS"/>
+                </div>
+                <div class="tagContainer">
+                    <Tag variant="filledGold" label="JavaScript"/>
+                    <Tag variant="outline" label="NPM"/>
+                    <Tag variant="outline" label="Yarn"/>
+                    <Tag variant="outline" label="Webpack"/>
+                    <Tag variant="outline" label="PostCSS"/>
+                </div>
+                <p class="asideNote">Concentrée sur :</p>
+                <div class="tagContainer">
+                    <Tag variant="filledCobalt" label="TypeScript"/>
+                    <Tag variant="filledCobaltLight" label="ReactJS"/>
+                    <Tag variant="filledAmethystLight" label="ViteJS"/>
+                </div>
+            </div>
+            <div class="asideSection">
+                <p class="asideSectionTitle">Back-Ends</p>
+                <div class="tagContainer">
+                    <Tag variant="filledAmethyst" label="PHP"/>
+                    <Tag variant="filled" label="Symfony"/>
+                    <Tag variant="outline" label="CS Fixer"/>
+                    <Tag variant="outline" label="PHPStan"/>
+                    <Tag variant="outline" label="PHPUnit"/>
+                    <Tag variant="outline" label="Behat"/>
+                </div>
+                <p class="asideNote">Concentrée sur :</p>
+                <div class="tagContainer">
+                    <Tag variant="filledEmeraldLight" label="NodeJS"/>
+                    <Tag variant="filledRubyLight" label="NestJS"/>
+                </div>
+            </div>
+            <div class="asideSection">
+                <p class="asideSectionTitle">Environnements</p>
+                <div class="tagContainer">
+                    <Tag variant="filledCopper" label="Git"/>
+                    <Tag variant="outline" label="Github"/>
+                    <Tag variant="outline" label="Gitlab"/>
+                    <Tag variant="outline" label="Bitbucket"/>
+                </div>
+                <div class="tagContainer">
+                    <Tag variant="filledCobaltLight" label="Docker"/>
+                    <Tag variant="outline" label=".env"/>
+                    <Tag variant="outline" label="Make"/>
+                </div>
+                <div class="tagContainer">
+                    <Tag variant="filled" label="Linux"/>
+                    <Tag variant="outline" label="FedoraLinux"/>
+                    <Tag variant="outline" label="Ubuntu"/>
+                    <Tag variant="filled" label="MacOS"/>
+                    <Tag variant="outline" label="Windows"/>
+                </div>
+            </div>
+        </aside>
+    </section>
+    <Contact />
+    <Footer/>
+</MainLayout>

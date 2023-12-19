@@ -3,12 +3,14 @@
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
-  color: $white;
+
+  // color: $white;
   padding: $spacing-200 $spacing-800;
 
   @include medium-display {
     text-align: center;
     flex-direction: column-reverse;
+    gap: $spacing-200;
     padding: $spacing-200 $spacing-400;
 
     .copyright {
@@ -31,11 +33,21 @@
     padding: $spacing-200;
   }
 
-  @include light-theme {
-    background-color: $colour-emerald-800;
-  }
+  &__column {
+    &__last {
+      display: flex;
+      align-items: center;
+      gap: $spacing-200;
+      
+      @include medium-display {
+        flex-direction: column-reverse;
+        justify-content: center;
+      }
 
-  @include dark-theme {
-    background-color: $black;
+      .link.-navigation {
+        font-size: ms(0);
+      }
+    }
   }
+ 
 }

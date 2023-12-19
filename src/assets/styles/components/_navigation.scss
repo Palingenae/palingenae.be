@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   background-color: $white;
+  padding: $spacing-200;
 
   &__bar {
     display: flex;
@@ -29,7 +30,6 @@
   }
 
   @include medium-display {
-    //bottom: 0;
     padding: $spacing-200 $spacing-400;
   }
 
@@ -46,7 +46,7 @@
   &__horizontal {
     display: flex;
     align-items: baseline;
-    gap: $spacing-100;
+    gap: $spacing-400;
 
     @include medium-display {
       display: none;
@@ -65,7 +65,7 @@
       z-index: 1001;
 
       &__label {
-        @include diamond('filled', $colour-emerald-600, $colour-emerald-200);
+        @include diamond('filled', $color-emerald-600, $color-emerald-200);
 
         cursor: pointer;
         display: inline-flex;

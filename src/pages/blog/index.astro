@@ -1,14 +1,14 @@
 ---
+import MainLayout from '@layouts/main.astro';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import localeFR from 'dayjs/locale/fr';
-import MainLayout from '@layouts/main.astro';
-import Action from "@components/action.astro";
-import Tag from "@components/tag.astro";
-import type { Article } from 'types/Article';
-import PageHeader from '@components/PageHeader.astro';
-import Footer from '@components/footer.astro';
-import Message from '@components/message.astro';
+import Action from "@components/Action";
+import Tag from "@components/Tag";
+import PageHeader from '@components/PageHeader';
+import Footer from '@components/Footer';
+import Message from '@components/Message';
+import type { Article } from '../../types/Article';
 
 dayjs.extend(relativeTime);
 dayjs.locale('fr');
@@ -34,7 +34,7 @@ try {
             {
                 articles !== undefined ?
                     articles.docs.map((article: Article): void => (
-                        <a href={`/blog/${article.slug}`} class="collection__card">
+                        <a href={`/blog/${article.slug}`} class="card -column">
                             <div class="card__container">
                                 <div class="card__content">
                                     <h2 class="card__title">{ article.title }</h2>
@@ -42,17 +42,17 @@ try {
                                         <span class="card__date">{ dayjs(article.createdAt).locale(localeFR).fromNow() }</span>
                                         <div class="card__meta__tagsContainer">
                                             { article.tags.map((tag) => (
-                                                <Tag class="articleType" variant="outline" label={tag}/>
+                                                <Tag variant="outline" label={tag}/>
                                             ))}
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <Action label="Voir" icon="forward"/>
+                            <Action label="Voir" icon="arrow-right"/>
                         </a>
                     ))
                 :
-                <Message context="notice" type="Un peu de patience..." content="Il n'y a rien ici pour l'instant. :)"/>
+                <Message context="notice" title="Un peu de patience..." text="Il n'y a rien ici pour l'instant. :)"/>
             }
         </div>
     </section>

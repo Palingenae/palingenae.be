@@ -9,6 +9,8 @@
   "rules": {
     "import-notation": "string",
     "font-family-name-quotes": "always-where-recommended",
+    "selector-class-pattern": false,
+    "resolveNestedSelectors": true,
     "declaration-block-no-duplicate-properties": true,
     "block-closing-brace-newline-before": "always",
     "no-descending-specificity": true

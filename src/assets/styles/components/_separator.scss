@@ -1,6 +1,6 @@
 .separator {
   @extend .decorated;
-  @include diamond("filled");
+  @include diamond("filled", $color-emerald-600, $color-citrine-400);
 
   display: flex;
   height: 4rem;

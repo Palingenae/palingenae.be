@@ -3,16 +3,16 @@ import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import MainLayout from '@layouts/main.astro';
 import RichText from "@components/RichText.astro";
-import Tag from "@components/tag.astro";
-import Contact from "@components/contact.astro";
-import Footer from "@components/footer.astro"
-import Action from '@components/action.astro';
-import type { Article } from '../../../types/Article';
+import Tag from "@components/Tag";
+import Contact from "@components/Contact";
+import Footer from "@components/Footer"
+import Action from '@components/Action';
+import type { Article } from '../../types/Article';
 
 dayjs.extend(relativeTime);
 dayjs.locale('fr');
 
-const { title, category, tags, published, content, image } = Astro.props;
+const { title, category, tags, published, article } = Astro.props;
 
 export async function getStaticPaths(): Promise<Article | undefined> {
     try {
@@ -29,7 +29,7 @@ export async function getStaticPaths(): Promise<Article | undefined> {
                         title: article.title,
                         category: article.categories,
                         tags: article.tags,
-                        content: article.article,
+                        article: article.article,
                         published: article.createdAt,
                     }
                 }
@@ -60,17 +60,18 @@ export async function getStaticPaths(): Promise<Article | undefined> {
             </div>
             <div class="story__header__meta__tags">
                 {
-                    tags.map((tag: any): void => (<Tag label={ tag } variant="outline"/>
+                    tags.map((tag: any): void => (
+                        <Tag label={ tag } variant="outline"/>
                     ))
                 }
             </div>
         </div>
-        <Action variant='reverse' icon='down' label='Scroll' />
+        <Action variant='reverse' icon='arrow-down' label='Scroll' />
     </header>
     <section class="section">
         <main class="main">
             <article class="article">
-                <RichText richText={ content }/>
+                <RichText richText={ article }/>
             </article>
         </main>
     </section>
