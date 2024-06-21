@@ -2,31 +2,10 @@ article,
 .article {
   h2 {
     max-width: 30ch;
+    font-size: var(--fs-step-5);
     line-height: $spacing-display-line-height;
     margin-top: $spacing-400;
     margin-bottom: $spacing-200;
-
-    @include very-very-large-display {
-      font-size: ms(5);
-      margin-top: $spacing-400;
-      margin-bottom: $spacing-200;
-    }
-
-    @include very-large-display {
-      font-size: ms(5);
-      margin-top: $spacing-400;
-      margin-bottom: $spacing-200;
-    }
-
-    @include large-display {
-      font-size: ms(4);
-      margin-bottom: $spacing-200;
-    }
-
-    @include medium-display {
-      font-size: ms(3);
-      margin-bottom: $spacing-200;
-    }
 
     & + p {
       margin-top: 3rem;
@@ -36,31 +15,8 @@ article,
   h3 {
     max-width: 50ch;
     font-family: $font-text;
+    font-size: var(--fs-step-3);
     line-height: 1.35;
-
-    @include very-very-large-display {
-      font-size: ms(3);
-      margin-top: $spacing-400;
-      margin-bottom: $spacing-200;
-    }
-
-    @include very-large-display {
-      font-size: ms(3);
-      margin-top: $spacing-400;
-      margin-bottom: $spacing-200;
-    }
-
-    @include large-display {
-      font-size: ms(2);
-      margin-top: $spacing-400;
-      margin-bottom: $spacing-200;
-    }
-
-    @include medium-display {
-      font-size: ms(2);
-      margin-top: $spacing-300;
-      margin-bottom: $spacing-150;
-    }
   }
 
   blockquote {
@@ -68,7 +24,6 @@ article,
     @extend .-jumbo;
 
     font-style: italic;
-    font-variation-settings: $text-content;
     padding: $spacing-100 $spacing-200;
     border-left: solid 4px $color-citrine-600;
     margin-top: $spacing-200;
@@ -92,17 +47,16 @@ article,
 
   code {
     font-family: $font-text;
-    font-variation-settings: $text-code-block, inherit;
     color: inherit;
     padding: $spacing-25 $spacing-50;
     border-radius: 6px;
 
     @include light-theme {
-      background-color: $grey-100;
+      background-color: $gray-100;
     }
     
     @include dark-theme {
-      background-color: $grey-900;
+      background-color: $gray-900;
     }
 
   }

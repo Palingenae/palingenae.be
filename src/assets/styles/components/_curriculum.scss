@@ -8,14 +8,9 @@
     display: flex;
     align-items: baseline;
     gap: $spacing-100;
-    font-size: ms(2);
-    font-variation-settings: $text-code-block,  'wght' 500;
+    font-size: var(--fs-step-2);
+    font-variation-settings: 'wght' 500;
     margin-bottom: $spacing-200;
-
-    @include small-display {
-      font-size: ms(1);
-      margin-bottom: $spacing-300;
-    }
 
     &::before {
       content: "";
