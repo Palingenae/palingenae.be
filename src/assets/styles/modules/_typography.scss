@@ -9,9 +9,24 @@
 }
 
 @font-face {
+  font-family: InterVar;
+  font-style: normal;
+  src: url('../fonts/inter/InterVariable.woff2');
+}
+
+@font-face {
+  font-family: InterVar;
+  font-style: italic;
+  src: url('../fonts/inter/InterVariable-Italic.woff2');
+}
+
+
+@font-face {
   font-family: Uncut Sans;
   src: url('../fonts/uncut-sans/UncutSans-Variable.woff2');
 }
+
+
 
 /*
 ** Defining typographic variables
@@ -19,51 +34,58 @@
 
 h1 {
   font-family: $font-display;
+  font-size: var(--fs-step-6);
+  font-variation-settings: 'opsz' 12, 'wdth' 100, 'wght' 800;
+  letter-spacing: var(--spacing-letter-spacing-title);
   margin-bottom: $spacing-200;
-  font-size: var(--fs-step-7);
-
 }
 
 h2 {
-  font-family: $font-text;
-  margin-bottom: $spacing-200;
-  font-size: var(--fs-step-6);
+  font-family: $font-display;
+  font-size: var(--fs-step-5);
+  font-variation-settings: 'opsz' 12, 'wdth' 100, 'wght' 600;
+  letter-spacing: var(--spacing-letter-spacing-title);
+  margin-bottom: 0;
 }
 
 h3 {
   font-family: $font-text;
-  font-size: var(--fs-step-5);
-  margin-bottom: $spacing-100;
+  font-size: var(--fs-step-4);
+  margin-bottom: 0;
 }
 
 h4 {
   font-family: $font-text;
   font-variation-settings: "wght" 440;
-  font-size: var(--fs-step-4);
-  margin-bottom: $spacing-400;
+  font-size: var(--fs-step-3);
+  margin-bottom: 0;
 }
 
 .display {
   font-family: $font-display;
   letter-spacing: $spacing-letter-spacing-display;
-  font-size: var(--fs-step-8);
   line-height: $spacing-display-line-height;
-  margin-bottom: $spacing-200;
-
+  
   &.-fat {
-    font-variation-settings:
-      'wght' 900;
+    font-size: var(--fs-step-8);
+    font-variation-settings: 'opsz' 96, 'wdth' 100, 'wght' 800;
   }
-
+  
   &.-thin {
-    font-variation-settings:
-      'wght' 200;
+    font-size: var(--fs-step-9);
+    font-variation-settings: 'opsz' 96, 'wdth' 100,'wght' 200;
+    letter-spacing: $spacing-letter-spacing-display;
   }
 
   &.-name {
     display: flex;
     flex-direction: row;
-    gap: $spacing-150;
+    gap: $spacing-200;
+    margin-bottom: 0;
+    & > span {
+      font-size: var(--fs-step-8);
+      font-variation-settings: 'opsz' 96, 'wdth' 100, 'wght' 700;
+    }
 
     @include large-display {
       gap: $spacing-50;
@@ -77,7 +99,7 @@ h4 {
     font-size: var(--fs-step-5);
   }
 
-  &.decorated {
+  &.-decorated {
     &::after {
       margin-top: $spacing-150;
 
@@ -92,15 +114,17 @@ h4 {
   font-family: $font-text, sans-serif, -apple-system, BlinkMacSystemFont, “Segoe UI”, “Roboto”, “Helvetica Neue”, sans-serif;
   letter-spacing: $spacing-letter-spacing-text;
   line-height: $spacing-body-line-height;
+  font-variation-settings: "wght" 700;
   max-width: 72ch;
-  font-size: var(--fs-step-1);
+  font-size: var(--fs-step-2);
+  // font-feature-settings: "ss02", "ss07", "ss08", "zero", "dlig", "calt", "case", "zero"; // Inter
+  font-feature-settings: "ss02", "ss05", "ss06", "ss07", "ss08", "zero", "dlig", "calt", "case", "zero";
 
   & > a,
   & > .link {
     color: inherit;
 
     @include light-theme {
-      font-variation-settings: 'wght' 400;
     }
 
     @include dark-theme {
@@ -108,9 +132,9 @@ h4 {
     }
   }
 
-  &:not(:last-of-type) {
-    margin-bottom: $spacing-150;
-  }
+  // &:not(:last-of-type) {
+  //   margin-bottom: $spacing-150;
+  // }
 
   @include light-theme {
     font-variation-settings: $text-light-theme-regular;
@@ -120,14 +144,10 @@ h4 {
     font-variation-settings: $text-dark-theme-regular;
   }
 
-  @include small-display {
-    margin-bottom: $spacing-100;
-  }
-
   &.-jumbo {
     line-height: $spacing-large-text-line-height;
-    max-width: 69ch;
-    font-size: var(--fs-step-3);
+    max-width: 40ch;
+    font-size: var(--fs-step-4);
 
     &:not(:last-of-type) {
       margin-bottom: $spacing-400;
@@ -136,8 +156,9 @@ h4 {
 
   &.-lead {
     line-height: $spacing-body-line-height;
-    max-width: 69ch;
-    font-size: var(--fs-step-2);
+    max-width: 64ch;
+    font-size: var(--fs-step-3);
+    margin-bottom: var(--spacing-600);
   }
 }
 
@@ -162,20 +183,4 @@ em,
 span {
   font-family: inherit;
   line-height: inherit;
-}
-
-i,
-em,
-.italic {
-  color: inherit;
-  font-family: inherit;
-  font-style: italic;
-}
-
-b,
-strong,
-.bold {
-  color: inherit;
-  font-family: inherit;
-  font-variation-settings: 'wght' 700;
 }

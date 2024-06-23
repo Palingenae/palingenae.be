@@ -1,15 +1,16 @@
 .hero {
   display: flex;
-  flex-flow: column nowrap;
-  align-content: flex-start;
-  align-items: flex-start;
+  // flex-flow: column nowrap;
+  // align-content: flex-start;
+  // align-items: flex-start;
   
   &.-pageCover {
     // @include top-spacer;
 
-    flex-flow: row wrap;
-    flex-grow: 1;
-    justify-content: space-between;
+    display: grid;
+    // flex-flow: column wrap;
+    // flex-grow: 1;
+    // justify-content: space-between;
     padding: $spacing-400;
     height: calc(100vh - 306px);
     
@@ -37,6 +38,7 @@
   &.-pageBanner {
     @include top-spacer;
 
+    flex-direction: column;
     height: 80lvh;
     justify-content: flex-end;
     gap: $spacing-400;
