@@ -8,7 +8,6 @@ export default function Footer(): JSX.Element {
             </div>
             <div className="footer__column__last">
                 <a href="/report-issue" className="link -navigation">Signaler un problème</a>
-                <Tag variant="filledEmeraldLight" label="v0.5"/>
             </div>
         </footer>
     )

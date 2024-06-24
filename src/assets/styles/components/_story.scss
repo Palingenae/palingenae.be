@@ -68,29 +68,17 @@
       &Label {
         display: inline-flex;
         font-family: $font-display;
-        font-size: ms(3);
+        font-size: var(--fs-step-3);
         width: 30%;
-
-        @include medium-display {
-          font-size: ms(2);
-        }
-
-        @include small-display {
-          font-size: ms(1);
-        }
       }
 
       &Properties {
         display: inline-flex;
         justify-content: flex-end;
         flex-wrap: wrap;
-        font-size: ms(2);
+        font-size: var(--fs-step-2);
         gap: $spacing-50;
         width: 70%;
-
-        @include small-display {
-          font-size: ms(1);
-        }
       }
 
       &Container {
@@ -135,7 +123,7 @@
             }
 
             &Properties {
-              font-size: ms(1);
+              font-size: var(--fs-step-1);
             }
 
             flex-direction: column;

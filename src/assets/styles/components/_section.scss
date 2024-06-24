@@ -8,11 +8,11 @@
   gap: $spacing-200;
 
   @include very-very-large-display {
-    padding: $spacing-800 $spacing-1600;
+    padding: $spacing-800 $spacing-400;
   }
 
   @include very-large-display {
-    padding: $spacing-800;
+    padding: $spacing-400;
   }
 
   @include large-display {

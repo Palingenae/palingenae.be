@@ -5,8 +5,8 @@
   @include transition(all);
   @include colored-block("gray", "interactive");
 
-  font-variation-settings: $text-ui, 'wght' 500;
-  font-size: ms(1);
+  font-variation-settings: 'wght' 500;
+  font-size: var(--fs-step-1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,7 +47,7 @@
     align-items: center;
 
     .icon {
-      font-size: ms(2);
+      font-size: var(--fs-step-2);
     }
   }
 

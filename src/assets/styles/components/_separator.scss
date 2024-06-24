@@ -8,11 +8,11 @@
   padding-left: $spacing-25;
 
   @include very-very-large-display {
-    margin: $spacing-400 $spacing-1600;
+    margin: $spacing-400 $spacing-400;
   }
 
   @include very-large-display {
-    margin: $spacing-200 $spacing-800;
+    margin: $spacing-200 $spacing-400;
   }
 
   @include large-display {

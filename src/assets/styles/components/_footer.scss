@@ -5,7 +5,7 @@
   justify-content: space-between;
 
   // color: $white;
-  padding: $spacing-200 $spacing-800;
+  padding: $spacing-200 $spacing-400;
 
   @include medium-display {
     text-align: center;
@@ -20,18 +20,18 @@
   }
 
 
-  @include very-very-large-display {
-    padding: $spacing-200 $spacing-1600;
-  }
+  // @include very-very-large-display {
+  //   padding: $spacing-200 $spacing-1600;
+  // }
 
-  @include very-large-display {
-    padding: $spacing-200 $spacing-800;
-  }
+  // @include very-large-display {
+  //   padding: $spacing-200 $spacing-800;
+  // }
 
 
-  @include small-display {
-    padding: $spacing-200;
-  }
+  // @include small-display {
+  //   padding: $spacing-200;
+  // }
 
   &__column {
     &__last {
@@ -45,7 +45,7 @@
       }
 
       .link.-navigation {
-        font-size: ms(0);
+        font-size: var(--fs-step-1);
       }
     }
   }

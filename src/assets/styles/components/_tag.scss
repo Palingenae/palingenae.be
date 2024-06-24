@@ -3,26 +3,25 @@
 
   display: inline-flex;
   align-items: center;
-  font-size: ms(0);
+  font-size: var(--fs-step-1);
   width: fit-content;
   border-radius: 16px;
   padding: $spacing-25 $spacing-100;
 
   @include small-display {
-    font-size: ms(-1);
     border-radius: 12px;
     padding-right: $spacing-25 $spacing-50;
   }
 
   &.-outline {
     @include light-theme {
-      color: $grey-800;
-      border: solid 2px $grey-800;
+      color: $gray-800;
+      border: solid 2px $gray-800;
     }
 
     @include dark-theme {
-      color: $grey-200;
-      border: solid 2px $grey-200;
+      color: $gray-200;
+      border: solid 2px $gray-200;
     }
 
     &Ruby {
@@ -40,13 +39,13 @@
 
   &.-filled {
     @include light-theme {
-      color: $grey-100;
-      background-color: $grey-900;
+      color: $gray-100;
+      background-color: $gray-900;
     }
 
     @include dark-theme {
-      color: $grey-900;
-      background-color: $grey-100;
+      color: $gray-900;
+      background-color: $gray-100;
     }
 
     &Ruby {
@@ -92,7 +91,7 @@
 
     &Gold {
       @include light-theme {
-        color: $grey-900;
+        color: $gray-900;
         background-color: $color-citrine-200;
         border: solid 2px $color-citrine-200;
       }

@@ -10,13 +10,13 @@
   background-color: transparent;
 
   @include light-theme {
-    background-color: $grey-900;
-    color: $grey-100;
+    background-color: $gray-900;
+    color: $gray-100;
   }
 
   @include dark-theme {
-    background-color: $grey-100;
-    color: $grey-900;
+    background-color: $gray-100;
+    color: $gray-900;
   }
 }
 
@@ -31,16 +31,16 @@ body {
   font-size: 1em; /*  16px */
   font-kerning: normal;
   font-variant-ligatures: common-ligatures;
-  font-feature-settings: 'dlig', 'ss03', 'ss04', 'ss05', 'liga';
+  // font-feature-settings: 'dlig', 'ss03', 'ss04', 'ss05', 'liga';
   scroll-behavior: smooth;
 
   @include light-theme {
-    color: $grey-1000;
+    color: $gray-1000;
     background-color: $white;
   }
 
   @include dark-theme {
-    color: $grey-100;
+    color: $gray-100;
     background-color: $black;
   }
 }
