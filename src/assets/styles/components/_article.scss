@@ -104,4 +104,13 @@ article,
     font-family: inherit;
     font-variation-settings: 'wght' 600;
   }
+
+  b,
+  strong,
+  i,
+  em,
+  span {
+    font-family: inherit;
+    line-height: inherit;
+  }
 }

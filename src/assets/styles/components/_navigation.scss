@@ -1,41 +1,19 @@
 .navigation {
-  // position: fixed;
   z-index: 10000;
   width: 100%;
   display: flex;
   flex-direction: column;
-  // background-color: $white;
-  padding: $spacing-200 $spacing-400;
+  padding: var(--spacing-200) var(--spacing-400);
+
+  @include medium-display {
+    padding: var(--spacing-200);
+  }
 
   &__bar {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
   }
-
-  // @include dark-theme {
-  //   background-color: $black;
-  // }
-
-  // @include very-very-large-display {
-  //   padding: $spacing-200 $spacing-400;
-  // }
-
-  // @include very-large-display {
-  //   padding: $spacing-200 $spacing-400;
-  // }
-
-  // @include large-display {
-  //   padding: $spacing-200 $spacing-300;
-  // }
-
-  // @include medium-display {
-  //   padding: $spacing-200 $spacing-300;
-  // }
-
-  // @include small-display {
-  //   padding: $spacing-200;
-  // }
 
   &__logo {
     @include diamond('filled', $color-emerald-500, $color-citrine-400);
