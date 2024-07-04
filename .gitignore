@@ -1,9 +1,12 @@
 .idea
 
+src/pages/_typo-rhythm/
+
 # build output
 dist/
 # generated types
 .astro/
+.storybook
 
 # dependencies
 node_modules/
@@ -21,3 +24,7 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+*storybook.log
+storybook/
+stories/

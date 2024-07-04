@@ -10,7 +10,7 @@ try {
 
 export default function SocialLinks() {
     return (
-        <div className="collection -row">
+        <div className="collection -column">
             {
                 links.Profiles.map((link: any) => (
                     <a className="link -out" href={ link.URL }>{ link.Name }</a>

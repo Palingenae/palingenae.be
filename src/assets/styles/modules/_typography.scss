@@ -26,8 +26,6 @@
   src: url('../fonts/uncut-sans/UncutSans-Variable.woff2');
 }
 
-
-
 /*
 ** Defining typographic variables
 */
@@ -36,6 +34,7 @@ h1 {
   font-family: $font-display;
   font-size: var(--fs-step-6);
   font-variation-settings: 'opsz' 12, 'wdth' 100, 'wght' 800;
+  font-weight: 800;
   letter-spacing: var(--spacing-letter-spacing-title);
   margin-bottom: $spacing-200;
 }
@@ -44,6 +43,7 @@ h2 {
   font-family: $font-display;
   font-size: var(--fs-step-5);
   font-variation-settings: 'opsz' 12, 'wdth' 100, 'wght' 600;
+  font-weight: 600;
   letter-spacing: var(--spacing-letter-spacing-title);
   margin-bottom: 0;
 }
@@ -68,12 +68,14 @@ h4 {
   
   &.-fat {
     font-size: var(--fs-step-8);
-    font-variation-settings: 'opsz' 96, 'wdth' 100, 'wght' 800;
+    font-variation-settings: 'opsz' 96, 'wdth' 100, 'wght' 900;
+    font-weight: 900;
   }
   
   &.-thin {
     font-size: var(--fs-step-9);
     font-variation-settings: 'opsz' 96, 'wdth' 100,'wght' 200;
+    font-weight: 200;
     letter-spacing: $spacing-letter-spacing-display;
   }
 
@@ -85,6 +87,7 @@ h4 {
     & > span {
       font-size: var(--fs-step-8);
       font-variation-settings: 'opsz' 96, 'wdth' 100, 'wght' 700;
+      font-weight: 700;
     }
 
     @include large-display {
