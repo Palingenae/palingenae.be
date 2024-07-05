@@ -1,11 +1,13 @@
 .navigation {
-  position: fixed;
   z-index: 10000;
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: $white;
-  padding: $spacing-200;
+  padding: var(--spacing-200) var(--spacing-400);
+
+  @include medium-display {
+    padding: var(--spacing-200);
+  }
 
   &__bar {
     display: flex;
@@ -13,34 +15,18 @@
     justify-content: space-between;
   }
 
-  @include dark-theme {
-    background-color: $black;
-  }
-
-  @include very-very-large-display {
-    padding: $spacing-200 $spacing-1600;
-  }
-
-  @include very-large-display {
-    padding: $spacing-200 $spacing-800;
-  }
-
-  @include large-display {
-    padding: $spacing-200 $spacing-600;
-  }
-
-  @include medium-display {
-    padding: $spacing-200 $spacing-400;
-  }
-
-  @include small-display {
-    padding: $spacing-200;
-  }
-
   &__logo {
+    @include diamond('filled', $color-emerald-500, $color-citrine-400);
     display: inline-flex;
     align-items: center;
     z-index: 1001;
+    gap: 1rem;
+    
+    .siteName {
+      @extend .paragraph;
+      display: none;
+      align-items: center;
+    }
   }
 
   &__horizontal {
@@ -71,9 +57,9 @@
         display: inline-flex;
         align-items: center;
         gap: $spacing-150;
-        font-size: ms(1);
+        font-size: var(--fs-step-1);
         font-family: $font-text;
-        font-variation-settings: $text-ui, 'wght' 500;
+        font-variation-settings: 'wght' 500;
         color: inherit;
         background-color: transparent;
         border: none;
@@ -83,7 +69,7 @@
 
         &:hover {
           font-family: $font-text;
-          font-variation-settings: $text-ui, 'wght' 700;
+          font-variation-settings: 'wght' 700;
           border-bottom: solid 3px transparent;
         }
 
@@ -112,8 +98,8 @@
       }
 
       &__title {
-        font-size: ms(2);
-        font-variation-settings: $text-ui, 'wght' 800;
+        font-size: var(--fs-step-2);
+        font-variation-settings: 'wght' 800;
         margin-bottom: $spacing-200;
       }
 

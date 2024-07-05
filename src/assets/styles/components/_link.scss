@@ -23,8 +23,8 @@ a,
   }
   
   @include dark-theme {
-    font-variation-settings: $text-code-block, $text-dark-theme-regular;
-    color: $color-cobalt-200;  
+    font-variation-settings: $text-dark-theme-regular;
+    color: $color-cobalt-200;
     
     &:hover {
       color: $color-emerald-200;
@@ -45,17 +45,13 @@ a,
   &.-out {
     @include transition(all);
 
-    font-variation-settings: $text-ui;
+    // font-variation-settings: $text-ui;
     display: inline-flex;
-    font-size: ms(2);
+    font-size: var(--fs-step-1);
     color: inherit;
     padding: $spacing-25 $spacing-100;
     text-decoration: none;
     border-radius: 8px;
-  
-    @include small-display {
-      font-size: ms(1);
-    }
 
     &:hover,
     &:focus {
@@ -74,8 +70,8 @@ a,
     
     text-decoration: none;
     color: inherit;
-    font-size: ms(1);
-    font-variation-settings: $text-ui;
+    font-size: var(--fs-step-1);
+    // font-variation-settings: $text-ui;
     padding: $spacing-50 $spacing-150;
     border-radius: 8px;
   
@@ -92,7 +88,7 @@ a,
   
     color: inherit;
     width: fit-content;
-    font-size: ms(1);
+    font-size: var(--fs-step-1);
     line-height: $spacing-body-line-height;
     text-decoration: none;
     padding: $spacing-25 $spacing-100;
@@ -104,23 +100,23 @@ a,
     }
 
     &.-vertical {
-      font-size: ms(7);
-      font-variation-settings: $text-ui, $text-light-theme-regular;
+      font-size: var(--fs-step-4);
+      // font-variation-settings: $text-ui, $text-light-theme-regular;
     
       &:hover,
       &:focus {
         @keyframes widen-on-interaction {
           from {
-            font-variation-settings: $text-ui, $text-light-theme-regular;
+            // font-variation-settings: $text-ui, $text-light-theme-regular;
           }
     
           to {
-            font-variation-settings: $text-ui, 'wght' 600;
+            font-variation-settings: 'wght' 600;
           }
         }
     
         animation: widen-on-interaction 100ms ease-in;
-        font-variation-settings: $text-ui, 'wght' 600;
+        // font-variation-settings: $text-ui, 'wght' 600;
         color: $color-cobalt-700;
     
         @include dark-theme {
@@ -130,13 +126,13 @@ a,
         &::before {
           @keyframes point-to-route {
             from {
-              font-variation-settings: $text-ui, $text-light-theme-regular;
+              font-variation-settings: $text-light-theme-regular;
               opacity: 0;
               margin-right: $spacing-400
             }
     
             to {
-              font-variation-settings: $text-ui, 'wght' 600;
+              font-variation-settings: 'wght' 600;
               opacity: 1;
               margin-right: $spacing-300;
             }
@@ -151,30 +147,12 @@ a,
         }
       }
     
-      @include large-display {
-        font-size: ms(4);
-      }
-    
-      @include small-display {
-        font-size: ms(3);
-      }
-    
       &.-active {
-        font-variation-settings: $text-ui, 'wght' 700;
+        font-variation-settings: 'wght' 700;
         color: $color-emerald-600;
     
         @include dark-theme {
           color: $color-emerald-300;
-        }
-    
-        &::before {
-          content: "\01F441";
-          font-family: $font-text;
-          font-size: inherit;
-          color: inherit;
-          opacity: 1;
-          margin-right: $spacing-300;
-          animation: point-to-route 200ms ease-in;
         }
       }
     }
@@ -182,7 +160,7 @@ a,
     &.-active {
       @include colored-block("color-emerald");
 
-      font-variation-settings: $text-ui, "wght" 700;
+      font-variation-settings: "wght" 700;
     }
   }
 }

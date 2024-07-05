@@ -52,19 +52,19 @@
       @include diamond('outline', $color-citrine-400, $color-citrine-200);
       @include diamond('filled', $color-citrine-400, $color-citrine-200);
 
-      background-color: $grey-800;
-      color: $grey-100;
+      background-color: $gray-800;
+      color: $gray-100;
 
       @include dark-theme {
         @include diamond('filled', $color-citrine-200, $color-citrine-200);
 
-        background-color: $grey-800;
+        background-color: $gray-800;
         color: $white;
       }
 
       .tag.-outline {
-        border-color: $grey-100;
-        color: $grey-100;
+        border-color: $gray-100;
+        color: $gray-100;
       }
 
       .card__container::before {
@@ -81,24 +81,24 @@
     }
 
     &:focus {
-      @include diamond('filled', $grey-100, $grey-600);
+      @include diamond('filled', $gray-100, $gray-600);
       @include diamond('outline', transparent, transparent);
 
       background-color: $color-emerald-600;
-      color: $grey-100;
+      color: $gray-100;
 
       .tag {
-        color: $grey-100;
-        border-color: $grey-100;
+        color: $gray-100;
+        border-color: $gray-100;
       }
 
       @include dark-theme {
-        background-color: $grey-100;
-        color: $grey-800;
+        background-color: $gray-100;
+        color: $gray-800;
 
         .tag {
-          border-color: $grey-600;
-          color: $grey-600;
+          border-color: $gray-600;
+          color: $gray-600;
         }
 
         .card__container::before {
@@ -110,12 +110,12 @@
   
   &.-grid {
     gap: $spacing-200;
-    border: 1px solid $grey-300;
+    border: 1px solid $gray-300;
     border-radius: 16px;
     padding: $spacing-200;
 
     @include dark-theme {
-      border: 1px solid $grey-800;
+      border: 1px solid $gray-800;
     }
   }
 
@@ -132,13 +132,13 @@
 
         content: "0" counter(collection-counter);
         counter-increment: collection-counter -1;
-        font-size: ms(9);
-        font-variation-settings: $text-code-block, 'wght' 300;
-        color: $grey-100;
+        font-size: var(--fs-step-8);
+        font-variation-settings: 'wght' 300;
+        color: $gray-100;
         line-height: 1;
 
         @include dark-theme {
-          color: $grey-800;
+          color: $gray-800;
         }
 
         @include medium-display {
@@ -157,23 +157,15 @@
   &__title {
     @extend h3;
 
-    font-size: ms(4);
+    font-size: var(--fs-step-4);
     margin-bottom: 0;
 
     @include light-theme {
-      font-variation-settings: $text-content, 'wght' 700;
+      font-variation-settings: 'wght' 700;
     }
 
     @include dark-theme {
-      font-variation-settings: $text-content, 'wght' 700;
-    }
-
-    @include large-display {
-      font-size: ms(3);
-    }
-
-    @include medium-display {
-      font-size: ms(2);
+      font-variation-settings: 'wght' 700;
     }
   }
 
@@ -210,15 +202,15 @@
         @include transition(color);
         @include transition(background-color);
 
-        font-variation-settings: $text-code-block, $text-light-theme-regular;
+        font-variation-settings: $text-light-theme-regular;
         border-radius: 4px;
         padding: $spacing-25;
-        color: $grey-900;
-        background-color: $grey-100;
+        color: $gray-900;
+        background-color: $gray-100;
 
         @include dark-theme {
-          color: $grey-100;
-          background-color: $grey-900;
+          color: $gray-100;
+          background-color: $gray-900;
         }
       }
 
@@ -228,7 +220,7 @@
         margin-bottom: $spacing-50;
 
         @include light-theme {
-          font-variation-settings: $text-code-block, 'wght' 500;
+          font-variation-settings: 'wght' 500;
 
           &.-side {
             color: $color-citrine-600;
@@ -244,7 +236,7 @@
         }
 
         @include dark-theme {
-          font-variation-settings: $text-code-block, 'wght' 400;
+          font-variation-settings:  'wght' 400;
 
           &.-side {
             color: $color-citrine-500;
@@ -264,13 +256,13 @@
         @include transition(color);
         @include transition(background-color);
 
-        font-variation-settings: $text-code-block, 'wght' 500;
+        font-variation-settings: 'wght' 500;
         border-radius: 4px;
         padding: $spacing-25;
 
         @include light-theme {
-          color: $grey-900;
-          background-color: $grey-100;
+          color: $gray-900;
+          background-color: $gray-100;
 
           &.-active {
             color: $color-emerald-700;
@@ -288,14 +280,14 @@
           }
 
           &.-abandoned {
-            color: $grey-500;
+            color: $gray-500;
             background-color: transparent;
           }
         }
         
         @include dark-theme {
-          color: $grey-100;
-          background-color: $grey-900;
+          color: $gray-100;
+          background-color: $gray-900;
 
           &.-active {
             color: $color-emerald-200;
@@ -313,8 +305,8 @@
           }
 
           &.-abandoned {
-            color: $grey-400;
-            background-color: $grey-1000;
+            color: $gray-400;
+            background-color: $gray-1000;
           }
         }
       }
@@ -323,7 +315,7 @@
     &__public {
       &Status {
         &.-soon {
-          color: $grey-500;
+          color: $gray-500;
         }
       }
     }
@@ -351,8 +343,8 @@
   }
 
   &__date {
-    font-size: ms(1);
-    font-variation-settings: $text-code-block, $text-light-theme-regular;
+    font-size: var(--fs-step-1);
+    font-variation-settings: $text-light-theme-regular;
   }
 
   &__footer {

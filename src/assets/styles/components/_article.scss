@@ -1,83 +1,66 @@
 article,
 .article {
+  &Title {
+    margin-bottom: var(--spacing-400);
+  }
+
   h2 {
+    @extend h2;
     max-width: 30ch;
-    line-height: $spacing-display-line-height;
-    margin-top: $spacing-400;
-    margin-bottom: $spacing-200;
-
-    @include very-very-large-display {
-      font-size: ms(5);
-      margin-top: $spacing-400;
-      margin-bottom: $spacing-200;
-    }
-
-    @include very-large-display {
-      font-size: ms(5);
-      margin-top: $spacing-400;
-      margin-bottom: $spacing-200;
-    }
-
-    @include large-display {
-      font-size: ms(4);
-      margin-bottom: $spacing-200;
-    }
-
-    @include medium-display {
-      font-size: ms(3);
-      margin-bottom: $spacing-200;
-    }
+    font-size: var(--fs-step-4);
+    line-height: var(--spacing-display-line-height);
+    margin-bottom: var(--spacing-100);
 
     & + p {
-      margin-top: 3rem;
+      margin-top: var(--spacing-200);
     }
   }
 
   h3 {
     max-width: 50ch;
-    font-family: $font-text;
+    font-family: var(--font-text);
+    font-size: var(--fs-step-3);
     line-height: 1.35;
 
-    @include very-very-large-display {
-      font-size: ms(3);
-      margin-top: $spacing-400;
-      margin-bottom: $spacing-200;
-    }
-
-    @include very-large-display {
-      font-size: ms(3);
-      margin-top: $spacing-400;
-      margin-bottom: $spacing-200;
-    }
-
-    @include large-display {
-      font-size: ms(2);
-      margin-top: $spacing-400;
-      margin-bottom: $spacing-200;
-    }
-
-    @include medium-display {
-      font-size: ms(2);
-      margin-top: $spacing-300;
-      margin-bottom: $spacing-150;
+    & + p {
+      margin-top: var(--spacing-150);
     }
   }
 
   blockquote {
-    @extend .paragraph;
-    @extend .-jumbo;
-
-    font-style: italic;
-    font-variation-settings: $text-content;
-    padding: $spacing-100 $spacing-200;
-    border-left: solid 4px $color-citrine-600;
-    margin-top: $spacing-200;
-    margin-bottom: $spacing-200;
+    width: fit-content;
+    background-color: var(--gray-1000); // theme
+    padding: var(--spacing-200) var(--spacing-400);
+    border-left: solid 8px var(--color-citrine-600); // theme
+    border-radius: 0.5rem;
+    margin: var(--spacing-400) 0;
+    
+    & > .iconoir-quote {
+      font-size: var(--fs-step-4);
+      color: var(--color-citrine-600);
+      margin-bottom: var(--spacing-100);
+    }
+    
+    & > p {
+      @extend .paragraph;
+      @extend .italic;
+      
+      max-width: 48ch;
+      font-size: var(--fs-step-3);
+      font-variation-settings: "wght" 400; // theme
+    }
+    
+    & > footer {
+      font-variation-settings: "wght" 600;
+      font-size: var(--fs-step-2);
+      text-align: end;
+    }
   }
 
   
   p {
     @extend .paragraph;
+    margin-bottom: var(--spacing-200);
 
     a {
       @include light-theme {
@@ -92,18 +75,42 @@ article,
 
   code {
     font-family: $font-text;
-    font-variation-settings: $text-code-block, inherit;
     color: inherit;
     padding: $spacing-25 $spacing-50;
     border-radius: 6px;
 
     @include light-theme {
-      background-color: $grey-100;
+      background-color: $gray-100;
     }
     
     @include dark-theme {
-      background-color: $grey-900;
+      background-color: $gray-900;
     }
+  }
 
+  i,
+  em,
+  .italic {
+    color: inherit;
+    font-family: inherit;
+    // font-style: italic; // Uncut Sans is missing that
+    font-style: oblique;
+  }
+
+  b,
+  strong,
+  .bold {
+    color: inherit;
+    font-family: inherit;
+    font-variation-settings: 'wght' 600;
+  }
+
+  b,
+  strong,
+  i,
+  em,
+  span {
+    font-family: inherit;
+    line-height: inherit;
   }
 }
