@@ -1,19 +1,19 @@
-import Icon from "./Icon";
-
 export default function Navigation() {
     return (
         <nav className="navigation">
             <div className="navigation__bar">
                 <div className="navigation__logo">
                     <a href="/">
-                        <p className="siteName">Retourner à l'accueil</p>
+                        <span className="siteName">Retourner à l'accueil</span>
                     </a>
                 </div>
-                {/* Seeing this here? Yeah, it will be available later :)
+                { 
                 <div className="navigation__horizontal">
-                    <button type="button" data-theme-toggle aria-label="Changer le thème du site"><Icon iconName="half-moon" /></button>
-                    <span><Icon iconName="translate" /> FR</span>
-                </div> */}
+                        <button type="button" data-theme-toggle className="themeToggler"><i data-theme-icon className="icon iconoir-half-moon" aria-hidden> </i></button>
+
+                    {/* Seeing this here? Yeah, it will be available later :)
+                    <span><Icon iconName="translate" /> FR</span> */}
+                </div> }
             </div>
         </nav>
     )

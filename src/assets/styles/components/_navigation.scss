@@ -37,6 +37,17 @@
     @include medium-display {
       display: none;
     }
+
+    .themeToggler {
+      background-color: transparent;
+      border: 0;
+      & > .iconoir-half-moon,
+      & > .iconoir-sun-light {
+        font-size: var(--fs-step-2);
+        color: var(--neutral-1000);
+        fill: var(--neutral-1000);
+      }
+    }
   }
 
   &__vertical {

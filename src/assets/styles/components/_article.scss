@@ -29,7 +29,7 @@ article,
 
   blockquote {
     width: fit-content;
-    background-color: var(--gray-1000); // theme
+    background-color: var(--neutral-50); // theme
     padding: var(--spacing-200) var(--spacing-400);
     border-left: solid 8px var(--color-citrine-600); // theme
     border-radius: 0.5rem;
@@ -47,7 +47,8 @@ article,
       
       max-width: 48ch;
       font-size: var(--fs-step-3);
-      font-variation-settings: "wght" 400; // theme
+      font-weight: var(--weight-base-static); // theme
+      font-variation-settings: var(--weight-base-var); // theme
     }
     
     & > footer {

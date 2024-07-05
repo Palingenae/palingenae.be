@@ -104,12 +104,6 @@
     }
   }
 
-  // &__now {
-  //   display: flex;
-  //   flex-direction: column;
-  //   gap: $spacing-100;
-  // }
-
   &__introduction {
     display: flex;
     flex-direction: column;
@@ -131,7 +125,7 @@
     font-size: var(--fs-step-4);
     // font-variation-settings: var(--weight-base);
     font-variation-settings: 'wght' 300;
-    color: var(--gray-300);
+    color: var(--neutral-600);
     margin-bottom: 0;
   }
 
@@ -139,14 +133,7 @@
       font-family: $font-text;
       font-variation-settings: 'wght' 300;
       font-size: var(--fs-step-5);
-
-    @include light-theme {
-      color: $gray-800;
-    }
-    
-    @include dark-theme {
-      color: $gray-200;
-    }
+      color: var(--neutral-800);
   }
 
   &__aside {

@@ -120,17 +120,41 @@
   --gray-200: #CFD1D2;
   --gray-100: #E6E7E7;
   --white: #F5F6F6;
-
-  [data-theme="dark"] {
-    --weight-base: "wght" 380;
-  }
-
-  [data-theme="light"] {
-    --weight-base: "wght" 400;
-  }
-
 }
 
+[data-theme="dark"] {
+  --weight-base-var: "wght" 330;
+  --weight-base-static: 300;
+  --neutral-1000: #F5F6F6;
+  --neutral-900: #E6E7E7;
+  --neutral-800: #CFD1D2;
+  --neutral-700: #ADB1B3;
+  --neutral-600: #84898C;
+  --neutral-500: #696E71;
+  --neutral-400: #5A5E60;
+  --neutral-300: #4C5052;
+  --neutral-200: #434547;
+  --neutral-100: #3B3C3E;
+  --neutral-50: #1E1F20;
+  --neutral-0: #0D0D0D;
+}
+
+[data-theme="light"] {
+  --weight-base-var: "wght" 350;
+  --weight-base-static: 400;
+  --neutral-1000: #0D0D0D;
+  --neutral-900: #1E1F20;
+  --neutral-800: #3B3C3E;
+  --neutral-700: #434547;
+  --neutral-600: #4C5052;
+  --neutral-500: #5A5E60;
+  --neutral-400: #696E71;
+  --neutral-300: #84898C;
+  --neutral-200: #ADB1B3;
+  --neutral-100: #CFD1D2;
+  --neutral-50: #E6E7E7;
+  --neutral-0: #F5F6F6;
+}
 
 $color-ruby-950: var(--color-ruby-950);
 $color-ruby-900: var(--color-ruby-900);
