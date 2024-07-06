@@ -32,6 +32,8 @@
     
     @include medium-display {
       flex-flow: column;
+      gap: var(--spacing-400);
+      height: auto;
       padding: $spacing-200;
     }
   }
