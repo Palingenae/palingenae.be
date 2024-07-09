@@ -65,11 +65,11 @@ article,
 
     a {
       @include light-theme {
-        color: $color-cobalt-800;
+        color: var(--color-cobalt-800);
       }
 
       @include dark-theme {
-        color: $color-cobalt-400;
+        color: var(--color-cobalt-400);
       }
     }
   }
@@ -77,16 +77,9 @@ article,
   code {
     font-family: $font-text;
     color: inherit;
-    padding: $spacing-25 $spacing-50;
+    padding: var(--spacing-25) var(--spacing-50);
     border-radius: 6px;
-
-    @include light-theme {
-      background-color: $gray-100;
-    }
-    
-    @include dark-theme {
-      background-color: $gray-900;
-    }
+    background-color: var(--neutral-100);
   }
 
   i,

@@ -8,81 +8,41 @@
     }
 
     @if $color == "gray" {
-        @include light-theme {
-            color: $black;
-            background-color: $gray-100;
+        color: var(--neutral-1000);
 
-            @if $is-interactive == "interactive" {
-                &:hover,
-                &:focus {
-                    color: $black;
-                    background-color: $gray-200;
-                }
+        @if $is-interactive == "interactive" {
+            &:hover,
+            &:focus {
+                color: var(--neutral-1000);
+                background-color: var(--neutral-200);
+            }
 
-                &:active {
-                    color: $black;
-                    background-color: $white;
-                }
-            } @else {}
-        }
-
-        @include dark-theme {
-            color: $gray-100;
-            background-color: $gray-900;
-
-            @if $is-interactive == "interactive" {
-                &:hover,
-                &:focus {
-                    color: $white;
-                    background-color: $gray-600;
-                }
-
-                &:active {
-                    color: $white;
-                    background-color: $black;
-                }
-            } @else {}
-        }
+            &:active {
+                color: var(--neutral-1000);
+                background-color: var(--neutral-0);
+            }
+        } @else {}
     }
 
     @if $color == "gray-inverse" {
-        @include light-theme {
-            color: $gray-100;
-            background-color: $gray-900;
+        color: var(--neutral-100);
+        background-color: var(--neutral-900);
 
-            @if $is-interactive == "interactive" {
-                &:hover,
-                &:focus {
-                    color: $black;
-                    background-color: $gray-200;
-                }
+        @if $is-interactive == "interactive" {
+            &:hover,
+            &:focus {
+                color: var(--neutral-1000);
+                background-color: var(--neutral-200);
+            }
 
-                &:active {
-                    color: $white;
-                    background-color: $black;
-                }
-            } @else {}
-        }
-
-        @include dark-theme {
-            color: $gray-900;
-            background-color: $gray-200;
-
-            @if $is-interactive == "interactive" {
-                &:hover,
-                &:focus {
-                    color: $white;
-                    background-color: $gray-600;
-                }
-
-                &:active {
-                    color: $black;
-                    background-color: $white;
-                }
-            } @else {}
-        }
+            &:active {
+                color: var(--neutral-0);
+                background-color: var(--neutral-1000);
+            }
+        } @else {}
     }
 
+    // TODO: After color variable conversion
     @if $color == "color-ruby" {
         @include light-theme {
             color: $color-ruby-900;
