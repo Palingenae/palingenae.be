@@ -88,7 +88,12 @@ h4 {
       font-size: var(--fs-step-8);
       font-variation-settings: 'opsz' 96, 'wdth' 100, 'wght' 700;
       font-weight: 700;
-    }   
+    }
+    
+    @include large-display {
+      gap: $spacing-50;
+      flex-direction: column;
+    }
   }
 
   &.-nickname {
