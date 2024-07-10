@@ -1,12 +1,7 @@
 .hero {
   display: flex;
-  // flex-flow: column nowrap;
-  // align-content: flex-start;
-  // align-items: flex-start;
   
   &.-pageCover {
-    // @include top-spacer;
-
     display: flex;
     flex-flow: column wrap;
     flex-grow: 1;
@@ -14,25 +9,12 @@
     padding: $spacing-400;
     height: calc(100vh - 306px);
     
-    // @include very-very-large-display {
-    //   padding: $spacing-400 $spacing-1600;
-    // }
-    
-    // @include very-large-display {
-    //   padding: $spacing-400 $spacing-800;
-    // }
-    
-    // @include large-display {
-    //   padding: $spacing-600;
-    // }
-
-    // @include medium-display {
-    //   padding: $spacing-400;
-    // }
     
     @include medium-display {
       flex-flow: column;
-      padding: $spacing-200;
+      gap: var(--spacing-400);
+      height: auto;
+      padding: var(--spacing-200);
     }
   }
   
@@ -42,7 +24,7 @@
     flex-direction: column;
     height: 80lvh;
     justify-content: flex-end;
-    gap: $spacing-400;
+    gap: var(--spacing-400);
     
     @include very-very-large-display {
       padding: $spacing-800 $spacing-1600;
@@ -79,36 +61,6 @@
     }
 
   }
-  
-  &__separator {
-    display: flex;
-
-    @include very-very-large-display {
-      width: 880px;
-    }
-    
-    @include very-large-display {
-      width: 672px;
-    }
-    
-    @include large-display {
-      width: 560px;
-    }
-    
-    @include medium-display {
-      width: 432px;
-    }
-    
-    @include small-display {
-      width: 352px;
-    }
-  }
-
-  // &__now {
-  //   display: flex;
-  //   flex-direction: column;
-  //   gap: $spacing-100;
-  // }
 
   &__introduction {
     display: flex;
@@ -131,7 +83,7 @@
     font-size: var(--fs-step-4);
     // font-variation-settings: var(--weight-base);
     font-variation-settings: 'wght' 300;
-    color: var(--gray-300);
+    color: var(--neutral-600);
     margin-bottom: 0;
   }
 
@@ -139,14 +91,7 @@
       font-family: $font-text;
       font-variation-settings: 'wght' 300;
       font-size: var(--fs-step-5);
-
-    @include light-theme {
-      color: $gray-800;
-    }
-    
-    @include dark-theme {
-      color: $gray-200;
-    }
+      color: var(--neutral-800);
   }
 
   &__aside {
@@ -155,7 +100,7 @@
     justify-content: flex-end;
     align-items: flex-end;
     height: 100%;
-    gap: $spacing-200;
+    gap: var(--spacing-200);
     &__section {
       text-align: end;
       &Title {

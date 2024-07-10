@@ -1,6 +1,6 @@
 .decorated {
   display: flex;
-  gap: $spacing-200;
+  gap: var(--spacing-200);
   align-items: center;
 
   &.-gold {
@@ -20,6 +20,6 @@
     display: inline-flex;
     flex-grow: 1;
     height: 2px;
-    background-color: $gray-500;
+    background-color: var(--neutral-500);
   }
 }
