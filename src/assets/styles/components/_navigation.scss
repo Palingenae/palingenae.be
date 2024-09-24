@@ -31,7 +31,7 @@
 
   &__horizontal {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: $spacing-400;
 
     // @include medium-display {

@@ -12,12 +12,12 @@ import Icon from '@components/Icon';
 
 let page;
 
-// try {
-//     let response = await fetch(`${import.meta.env.API_URL}/api/globals/about`);
-//     page = await response.json();
-// } catch (error) {
-//     console.error(error);
-// }
+try {
+    let response = await fetch(`${import.meta.env.API_URL}/api/globals/about`);
+    page = await response.json();
+} catch (error) {
+    console.error(error);
+}
 
 const pageTitle = "À propos"
 ---
@@ -43,23 +43,6 @@ const pageTitle = "À propos"
             </div>
         </div>
     </section>
-    <section class="section">
-        <div class="imageCollection -about">
-            { page.photos.map((pellicule: any)=> 
-                <img class="image -vertical" src={ escapeHTML(`${import.meta.env.API_URL}${pellicule.photo.url}`) } alt={ pellicule.photo.alt }/>
-            )}
-        </div>
-    </section>
-    <!-- { page.availableForHire == true ?
-        <section class="section -offset -column">
-            <p class="curriculumAvailable">Disponible</p>
-            <p class="paragraph -jumbo -sans">Je suis actuellement à l’écoute du marché en tant que Développeuse, qu’Intégratrice Web ou ma préférence, le Développement Front-End.</p>
-            <a href="/about/curriculum" class="button -hasIcon">Vers le mini CV <Icon iconName='arrow-right'/></a> 
-        </section>
-        : ''} -->
-        <section class="section -offset -column">
-            <SocialLinks/>
-        </section>
     <Contact />
     <Footer />
 </MainLayout>
